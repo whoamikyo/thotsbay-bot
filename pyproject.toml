@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "thotsbay-bot"
+version = "0.1.0"
+description = "An thotsbay bot for forum.thotsbay.com"
+authors = ["egornatsu <egornatsu@outlook.com>"]
+license = "GPL-3.0 License"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+colorlog = "^6.6.0"
+cloudwatch = "^1.0.5"
+python-dotenv = "^0.20.0"
+yt-dlp = "^2022.3.8"
+requests = "^2.27.1"
+asyncio = "^3.4.3"
+aiohttp = "^3.8.1"
+bs4 = "^0.0.1"
+httpx = "^0.22.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+black = {version = "^22.3.0", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
