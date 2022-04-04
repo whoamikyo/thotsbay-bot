@@ -1,0 +1,245 @@
+2022-04-04 21:41:07,717 - Utils.utils - INFO - Ambiente de produção ativado
+2022-04-04 21:41:09,060 - Utils.thotshub - INFO - Authorization...
+2022-04-04 21:41:09,868 - Utils.thotshub - INFO - Logado no thotsbay com sucesso.
+2022-04-04 21:41:09,891 - Utils.utils - INFO - Checking if its COLAB enviorement....
+2022-04-04 21:41:09,959 - Utils.utils - INFO - COLAB enviorement not detected
+2022-04-04 21:41:09,990 - Utils.utils - INFO - Tentando conexão com a url: https://api.jsonbin.io/v3/b/623b73257caf5d6783705215, tentativa 1 de 10
+2022-04-04 21:41:10,601 - Utils.utils - INFO - https://api.jsonbin.io/v3/b/623b73257caf5d6783705215 retornou com sucesso, Status Code: 200
+2022-04-04 21:41:10,641 - Utils.utils - INFO - Tentando conexão com a url: https://api.jsonbin.io/v3/b/624b1dfefdd14a0f467fe1c7, tentativa 1 de 10
+2022-04-04 21:41:11,240 - Utils.utils - INFO - https://api.jsonbin.io/v3/b/624b1dfefdd14a0f467fe1c7 retornou com sucesso, Status Code: 200
+2022-04-04 21:41:11,270 - Utils.utils - INFO - Tentando conexão com a url: https://getpantry.cloud/apiv1/pantry/69f3a55c-39b5-4137-b237-184953e4b45b/basket/id_config, tentativa 1 de 10
+2022-04-04 21:41:11,452 - Utils.utils - INFO - https://getpantry.cloud/apiv1/pantry/69f3a55c-39b5-4137-b237-184953e4b45b/basket/id_config retornou com sucesso, Status Code: 200
+2022-04-04 21:41:11,477 - thots.thots - INFO - Tarefa elaquer
+2022-04-04 21:41:11,934 - Utils.utils - INFO -  url: https://onnowplay.com/elaquer/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:13,080 - Utils.utils - INFO -  url: https://onnowplay.com/elaquer/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:13,105 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:41:13,232 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-04 21:41:13,719 - Utils.utils - INFO -  url: https://onnowplay.com/elaquer/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:14,249 - Utils.utils - INFO -  url: https://onnowplay.com/elaquer/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:14,604 - Utils.utils - INFO -  url: https://onnowplay.com/elaquer/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:14,923 - Utils.utils - INFO -  url: https://onnowplay.com/elaquer/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:15,326 - Utils.utils - INFO -  url: https://onnowplay.com/elaquer/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:15,590 - Utils.utils - INFO -  url: https://onnowplay.com/elaquer/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:15,853 - Utils.utils - INFO -  url: https://onnowplay.com/elaquer/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:16,108 - Utils.utils - INFO -  url: https://onnowplay.com/elaquer/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:16,133 - thots.thot_parse - INFO - elaquer - Fim da lista de videos.
+2022-04-04 21:41:16,203 - thots.thots - INFO - Tarefa tatycasadinha
+2022-04-04 21:41:16,436 - thots.thots - INFO - Tarefa afroditehotwife
+2022-04-04 21:41:16,763 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:17,700 - Utils.utils - INFO -  url: https://afroditehotwife.com/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:17,725 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:41:17,788 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-04 21:41:18,053 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:18,364 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:18,687 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:18,990 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:19,397 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:19,941 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:20,260 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/7, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:20,629 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/8, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:20,889 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/9, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:21,225 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/10, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:21,555 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/11, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:21,875 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/12, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:22,166 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/13, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:22,427 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:22,720 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:22,988 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:23,282 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:23,580 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:23,831 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:24,195 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/7, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:24,544 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/8, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:24,921 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/9, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:25,182 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/10, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:25,442 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/11, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:25,697 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/12, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:25,950 - Utils.utils - INFO -  url: https://afroditehotwife.com/videos/13, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:25,981 - thots.thot_parse - INFO - afroditehotwife - Fim da lista de videos.
+2022-04-04 21:41:27,672 - thots.thots - INFO - Tarefa agathalira
+2022-04-04 21:41:28,137 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:28,402 - Utils.utils - INFO -  url: https://agathalira.com.br/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:28,425 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-04 21:41:28,778 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:29,130 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:29,396 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:29,650 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:29,970 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:30,307 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:30,566 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/7, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:30,856 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/8, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:31,214 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/9, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:31,690 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/10, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:32,090 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/11, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:32,675 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/12, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:32,932 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/13, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:32,959 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:41:33,028 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-04 21:41:33,316 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:33,584 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:33,837 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:34,084 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:34,362 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:34,632 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:34,892 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/7, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:35,259 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/8, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:35,504 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/9, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:35,756 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/10, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:36,090 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/11, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:36,331 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/12, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:36,551 - Utils.utils - INFO -  url: https://agathalira.com.br/videos/13, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:36,575 - thots.thot_parse - INFO - agathalira - Fim da lista de videos.
+2022-04-04 21:41:36,637 - thots.thots - INFO - Tarefa bellacasada
+2022-04-04 21:41:37,096 - Utils.utils - INFO -  url: https://bellacasada.com/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:37,786 - Utils.utils - INFO -  url: https://bellacasada.com/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:37,809 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:41:37,881 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-04 21:41:38,135 - Utils.utils - INFO -  url: https://bellacasada.com/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:38,447 - Utils.utils - INFO -  url: https://bellacasada.com/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:38,712 - Utils.utils - INFO -  url: https://bellacasada.com/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:39,034 - Utils.utils - INFO -  url: https://bellacasada.com/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:39,326 - Utils.utils - INFO -  url: https://bellacasada.com/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:39,659 - Utils.utils - INFO -  url: https://bellacasada.com/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:39,995 - Utils.utils - INFO -  url: https://bellacasada.com/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:40,255 - Utils.utils - INFO -  url: https://bellacasada.com/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:40,542 - Utils.utils - INFO -  url: https://bellacasada.com/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:40,859 - Utils.utils - INFO -  url: https://bellacasada.com/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:41,170 - Utils.utils - INFO -  url: https://bellacasada.com/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:41,404 - Utils.utils - INFO -  url: https://bellacasada.com/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:41,428 - thots.thot_parse - INFO - bellacasada - Fim da lista de videos.
+2022-04-04 21:41:41,489 - thots.thots - INFO - Tarefa casalruivaecornooficial
+2022-04-04 21:41:41,782 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:42,341 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:42,365 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:41:42,425 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-04 21:41:42,791 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:43,188 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:43,670 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:44,061 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:44,298 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:44,572 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:44,910 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:45,183 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:45,469 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:45,720 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:45,990 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:46,241 - Utils.utils - INFO -  url: https://onnowplay.com/casalruivaecornooficial/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:46,274 - thots.thot_parse - INFO - casalruivaecornooficial - Fim da lista de videos.
+2022-04-04 21:41:46,339 - thots.thots - INFO - Tarefa casaltopbessa
+2022-04-04 21:41:46,769 - Utils.utils - INFO -  url: https://onnowplay.com/casaltopbessa/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:47,524 - Utils.utils - INFO -  url: https://onnowplay.com/casaltopbessa/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:47,551 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:41:47,617 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-04 21:41:47,917 - Utils.utils - INFO -  url: https://onnowplay.com/casaltopbessa/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:48,132 - Utils.utils - INFO -  url: https://onnowplay.com/casaltopbessa/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:48,412 - Utils.utils - INFO -  url: https://onnowplay.com/casaltopbessa/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:48,655 - Utils.utils - INFO -  url: https://onnowplay.com/casaltopbessa/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:48,677 - thots.thot_parse - INFO - casaltopbessa - Fim da lista de videos.
+2022-04-04 21:41:48,740 - thots.thots - INFO - Tarefa esposagulosinha
+2022-04-04 21:41:49,116 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:50,598 - Utils.utils - INFO -  url: https://esposagulosinha.com/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:50,629 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:41:50,695 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-04 21:41:50,957 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:51,265 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:51,633 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:52,077 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:52,349 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:52,622 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:52,885 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/7, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:53,147 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:53,411 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:53,686 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:53,934 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:54,232 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:54,611 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:54,850 - Utils.utils - INFO -  url: https://esposagulosinha.com/videos/7, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:54,875 - thots.thot_parse - INFO - esposagulosinha - Fim da lista de videos.
+2022-04-04 21:41:54,944 - thots.thots - INFO - Tarefa fabioeanaes
+2022-04-04 21:41:55,462 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:56,007 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:56,033 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-04 21:41:56,353 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:56,950 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:57,483 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:57,759 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:58,036 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:58,063 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:41:58,134 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-04 21:41:58,425 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:58,759 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:59,163 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:59,484 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:59,834 - Utils.utils - INFO -  url: https://fabioeanaes.com.br/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:41:59,856 - thots.thot_parse - INFO - fabioeanaes - Fim da lista de videos.
+2022-04-04 21:41:59,936 - thots.thots - INFO - Tarefa helenafilmes
+2022-04-04 21:42:00,428 - Utils.utils - INFO -  url: https://helenafilmes.com/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:00,757 - Utils.utils - INFO -  url: https://helenafilmes.com/, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:00,833 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:42:00,902 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-04 21:42:01,194 - Utils.utils - INFO -  url: https://helenafilmes.com/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:01,467 - Utils.utils - INFO -  url: https://helenafilmes.com/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:01,819 - Utils.utils - INFO -  url: https://helenafilmes.com/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:02,094 - Utils.utils - INFO -  url: https://helenafilmes.com/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:02,119 - thots.thot_parse - INFO - helenafilmes - Fim da lista de videos.
+2022-04-04 21:42:02,184 - thots.thots - INFO - Tarefa melissadias
+2022-04-04 21:42:02,538 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:02,782 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:02,804 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-04 21:42:03,151 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:03,468 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:03,773 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:04,024 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:04,283 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:04,552 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:04,697 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/7, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:04,723 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:42:04,801 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-04 21:42:05,062 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:05,527 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:06,180 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:06,476 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:06,786 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:07,044 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:07,198 - Utils.utils - INFO -  url: https://onnowplay.com/melissadias/videos/7, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:07,223 - thots.thot_parse - INFO - melissadias - Fim da lista de videos.
+2022-04-04 21:42:07,279 - thots.thots - INFO - Tarefa nikkecasada
+2022-04-04 21:42:07,663 - Utils.utils - INFO -  url: https://nikkecasada.vip/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:08,009 - Utils.utils - INFO -  url: https://nikkecasada.vip/, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:08,041 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-04 21:42:08,463 - Utils.utils - INFO -  url: https://nikkecasada.vip/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:08,849 - Utils.utils - INFO -  url: https://nikkecasada.vip/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:09,414 - Utils.utils - INFO -  url: https://nikkecasada.vip/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:09,700 - Utils.utils - INFO -  url: https://nikkecasada.vip/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:09,733 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:42:09,790 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-04 21:42:10,098 - Utils.utils - INFO -  url: https://nikkecasada.vip/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:10,431 - Utils.utils - INFO -  url: https://nikkecasada.vip/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:10,753 - Utils.utils - INFO -  url: https://nikkecasada.vip/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:11,040 - Utils.utils - INFO -  url: https://nikkecasada.vip/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:11,061 - thots.thot_parse - INFO - nikkecasada - Fim da lista de videos.
+2022-04-04 21:42:11,128 - thots.thots - INFO - Tarefa vidasafada
+2022-04-04 21:42:11,512 - Utils.utils - INFO -  url: https://vidasafada.net/videos/, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:12,680 - Utils.utils - INFO -  url: https://vidasafada.net/, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:12,707 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-04 21:42:12,785 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-04 21:42:13,293 - Utils.utils - INFO -  url: https://vidasafada.net/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:13,724 - Utils.utils - INFO -  url: https://vidasafada.net/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:14,258 - Utils.utils - INFO -  url: https://vidasafada.net/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:14,655 - Utils.utils - INFO -  url: https://vidasafada.net/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:14,989 - Utils.utils - INFO -  url: https://vidasafada.net/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:15,213 - Utils.utils - INFO -  url: https://vidasafada.net/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:15,489 - Utils.utils - INFO -  url: https://vidasafada.net/videos/1, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:15,730 - Utils.utils - INFO -  url: https://vidasafada.net/videos/2, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:15,994 - Utils.utils - INFO -  url: https://vidasafada.net/videos/3, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:16,269 - Utils.utils - INFO -  url: https://vidasafada.net/videos/4, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:16,530 - Utils.utils - INFO -  url: https://vidasafada.net/videos/5, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:16,749 - Utils.utils - INFO -  url: https://vidasafada.net/videos/6, retornou com sucesso, Status Code: 200
+2022-04-04 21:42:16,790 - thots.thot_parse - INFO - vidasafada - Fim da lista de videos.
+2022-04-04 21:42:16,846 - __main__ - INFO - Todas as tarefas foram finalizadas
+2022-04-04 21:42:16,972 - __main__ - INFO - Salvando ID's da API localmente....
+2022-04-04 21:42:17,004 - Utils.utils - INFO - Tentando conexão com a url: https://getpantry.cloud/apiv1/pantry/69f3a55c-39b5-4137-b237-184953e4b45b/basket/id_config, tentativa 1 of 3
+2022-04-04 21:42:17,161 - Utils.utils - INFO - Requisição realizada com sucesso: 200
+2022-04-04 21:42:17,776 - Utils.utils - INFO - Backup realizado com sucesso, Status Code: 200
+2022-04-04 21:42:17,805 - Utils.utils - INFO - Tentando conexão com a url: https://getpantry.cloud/apiv1/pantry/69f3a55c-39b5-4137-b237-184953e4b45b/basket/id_config, tentativa 1 de 10
+2022-04-04 21:42:17,922 - Utils.utils - INFO - https://getpantry.cloud/apiv1/pantry/69f3a55c-39b5-4137-b237-184953e4b45b/basket/id_config retornou com sucesso, Status Code: 200
