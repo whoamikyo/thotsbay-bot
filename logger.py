@@ -97,6 +97,3 @@ def get_logger(logger_name):
     logger.propagate = False
     return logger
 
-
-if __name__ == "__main__":
-    logger = logging.getLogger(__name__)
