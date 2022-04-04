@@ -34,7 +34,7 @@ def get_project_root() -> Path:
 
 def fileNameLocation():
     today = date.today()
-    return f"{get_project_root()}/Logs/{today.year}-{today.month}-{today.day}.log"
+    return f"{get_project_root()}/Logs/{today.day}-{today.month}-{today.year}.log"
 
 
 log_colors_config = {
