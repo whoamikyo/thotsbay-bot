@@ -29,6 +29,7 @@ env:
   ENABLE_TASK: ${{ secrets.ENABLE_TASK }}
   CYBERDROP_TOKEN: ${{ secrets.CYBERDROP_TOKEN }}
   ID_CONFIG_TESTE: ${{ secrets.ID_CONFIG_TESTE }}
+  GALLERY : ${{ secrets.GALLERY }}
 
 jobs:
   build:
