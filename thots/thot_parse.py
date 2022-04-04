@@ -23,6 +23,8 @@ from Utils.utils import (
     request_html,
     slugify,
     truncate_string,
+    REFERER,
+    GALLERY
 )
 
 log = get_logger(__name__)
@@ -116,18 +118,7 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
 
 
 async def parse_album(thot, config):
-    """
-        tasks = [
-        asyncio.ensure_future(get_foto(f"https://cdn.onnowplay.com/onnowme/gallery/{i}/{foto_id}.jpg", path, i, j, foto_id, thot))
-        for i, j in zip(AlbumID, AlbumName) for foto_id in range(RangeSize[AlbumID.index(i)] - 999, RangeSize[AlbumID.index(i)] + 999)
-    ]
 
-    tasks = [
-        asyncio.ensure_future(get_foto(path, i, j, foto_id, thot))
-        for i, j in zip(AlbumID, AlbumName)
-        for foto_id in range(RangeSize[AlbumID.index(i)] - 999, RangeSize[AlbumID.index(i)] + 999)
-    ]
-    """
     url = config[thot]
     path = download_path + thot + "/" + "Albums/"
     get_range = re.findall(RegexRange, request_html(url=url + "gallery/", mode="GET"))
@@ -150,7 +141,7 @@ async def parse_album(thot, config):
             for foto_id in range(RangeSize[AlbumID.index(i)] - 100000, RangeSize[AlbumID.index(i)] + 100000):
                 if foto_id % 100 == 0:
                     log.debug(f"{thot} - Adcionado a lista de tarefas: {foto_id}")
-                url_gallery = f"https://cdn.onnowplay.com/onnowme/gallery/{i}/{foto_id}.jpg"
+                url_gallery = f"{GALLERY}/{i}/{foto_id}.jpg"
                 tasks.append(asyncio.ensure_future(get_foto(session, url_gallery, path, i, j, foto_id, thot)))
             log.debug(f"{thot} - Fim do album: {j} - ID: {i}")
             await asyncio.gather(*tasks)
@@ -158,7 +149,7 @@ async def parse_album(thot, config):
 
 async def get_foto(session, url_gallery, path, i, j, foto_id, thot, max_retries=30, sleep_between_retries=3):
     headers = {
-        "referer": "https://onnowplay.com",
+        "referer": {REFERER},
     }
     name = slugify(f"{i}-{j}")
     image_path = truncate_string(f"{path}{name}") + f"/{foto_id}.jpg"
@@ -207,7 +198,7 @@ async def get_video_alt(session, url, id_list, path, thot, number):
     pattern = r"Página não localizada! =\("
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4922.0 Safari/537.36 Edg/101.0.1198.0",
-        "referer": "https://onnowplay.com",
+        "referer": {REFERER},
     }
     regexName = r"#FFFFFF;\">([^<]+)"
     regexID = r"/video/([\d]+)\","
