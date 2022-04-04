@@ -109,7 +109,7 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
                 download_upload(
                     path, link, i, j, has_topic, folder_link, payload, thot, enable_posting, remaining, contador, max_posts_at_once
                 )
-    log.info(f"{thot} - Fim da lista de videos.")
+    log.warning(f"---------------| {thot} - Fim da lista de videos.")
 
 
 async def parse_album(thot, config):
