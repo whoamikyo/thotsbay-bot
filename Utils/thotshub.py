@@ -54,7 +54,7 @@ class Account:
             log.debug(f"Token: {self.token}")
 
     def authorize(self):
-        log.info("Authorization...")
+        log.info("Autorizando...")
         data = {
             "login": self.login,
             "password": self.password,

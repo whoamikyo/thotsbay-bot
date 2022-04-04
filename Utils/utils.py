@@ -114,16 +114,16 @@ def request_api_put(payload, api_url):
     while tries < 10:
         try:
             client = httpx.Client()
-            log.info(f"Tentando conexão com a url: {api_url}, tentativa {tries + 1} de 10")
+            log.debug(f"Tentando conexão com a url: {api_url}, tentativa {tries + 1} de 10")
             r = client.put(api_url, headers=headers, data=payload)
             time.sleep(1)
             log.debug(f"Status code: {r.status_code}")
             if r.status_code == 200:
-                log.info(f"{payload} atualizado com sucesso, Status Code: {r.status_code}")
+                log.debug(f"{payload} atualizado com sucesso, Status Code: {r.status_code}")
                 time.sleep(2)
                 break
             else:
-                log.warning(f"{api_url} não retornou com sucesso, tentando novamente...")
+                log.warning(f"A API não retornou com sucesso, tentando novamente...")
                 tries = tries + 1
                 log.info("Tentando novamente em 10 segundos")
                 time.sleep(10)
@@ -140,21 +140,20 @@ def request_api_get(url):
     while tries < 10:
         try:
             client = httpx.Client()
-            log.info(f"Tentando conexão com a url: {url}, tentativa {tries + 1} of 10")
+            log.debug(f"Tentando conexão com a url, tentativa {tries + 1} of 10")
             r = client.get(url)
             time.sleep(1)
             if r.status_code == 200:
-                log.info(f"{url} retornou com sucesso, Status Code: {r.status_code}")
+                log.debug(f"{url} retornou com sucesso, Status Code: {r.status_code}")
                 tries = 3
                 return r.json()
             else:
-                log.warning(f"{url} não retornou com sucesso, tentando novamente...")
                 log.warning(f"Status code: {r.status_code}")
                 tries = tries + 1
                 log.info("Tentando novamente em 10 segundos")
                 time.sleep(10)
                 if tries == 10:
-                    raise Exception(f"{url} não retornou com sucesso, tentativas esgotadas")
+                    raise Exception(f"A API não retornou com sucesso, tentativas esgotadas")
         except httpx.TimeoutException as err:
             log.error(f"{err}")
 
@@ -168,7 +167,7 @@ def request_api(url, headers=None, payload=None, mode=None, max_retries=10, slee
     while max_retries:
         try:
             client = httpx.Client(timeout=10.0)
-            log.info(f"Tentando conexão com a url: {url}, tentativa {tries + 1} de 10")
+            log.info(f"Tentando conexão com a url, tentativa {tries + 1} de 10")
             if mode == "GET":
                 r = client.get(url, headers=headers)
             else:
@@ -177,7 +176,6 @@ def request_api(url, headers=None, payload=None, mode=None, max_retries=10, slee
                 time.sleep(sleep_between_retries)
                 continue
             else:
-                log.info(f"{url} retornou com sucesso, Status Code: {r.status_code}")
                 return r.json()
         except httpx.TimeoutException as err:
             log.error(f"{err}")
@@ -198,17 +196,17 @@ def request_html(url, data=None, mode=None):
             client = requests.Session()
             if mode == "GET":
                 r = client.get(url)
-                log.info(f" url: {url}, retornou com sucesso, Status Code: {r.status_code}")
+                log.debug(f" url: {url}, retornou com sucesso, Status Code: {r.status_code}")
             else:
                 r = client.post(url, data=data)
-                log.info(f" url: {url}, retornou com sucesso, Status Code: {r.status_code}")
+                log.debug(f" url: {url}, retornou com sucesso, Status Code: {r.status_code}")
             if r.status_code != 200:
                 log.warning(f"Erro: {r.status_code}, tentando novamente...")
                 if i < tries - 1:  # i is zero indexed
                     i += 1
                     continue
                 else:
-                    log.warning(f"A url: {url} não está respondendo!\nErro: {r.status_code}")
+                    log.warning(f"A url não está respondendo!\nErro: {r.status_code}")
                     raise httpx.HTTPError
             else:
                 return r.text
@@ -239,14 +237,14 @@ async def make_request(session, url):
         try:
             async with session.get(url) as r:
                 if r.status != 200:
-                    print(f" Error: {r.status} - {url}")
+                    log.debug(f"Error: {r.status} - {url}")
                 if r.status != 200:
                     log.warning(f"Erro: {r.status}, tentando novamente...")
                     if i < tries - 1:  # i is zero indexed
                         i += 1
                         continue
                     else:
-                        log.warning(f"A url: {url} não está respondendo!\nErro: {r.status}")
+                        log.warning(f"A url não está respondendo!\nErro: {r.status}")
                         raise aiohttp.ServerTimeoutError
                 else:
                     return r.text()
@@ -263,7 +261,7 @@ def backup_id():
     for i in range(tries):
         try:
             client = httpx.Client()
-            log.info(f"Tentando conexão com a url: {ID_CONFIG}, tentativa {i + 1} of {tries}")
+            log.debug(f"Tentando conexão com a url: {ID_CONFIG}, tentativa {i + 1} of {tries}")
             r = client.get(ID_CONFIG)
             log.info(f"Requisição realizada com sucesso: {r.status_code}")
             if r.status_code != 200:

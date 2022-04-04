@@ -74,7 +74,6 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
         alt = True
         log.info("Usando método alternativo para encontrar a quantidade de videos.")
         videoID_alt = get_list_from_nested([re.findall(regexID, request_html(url=x, mode="GET")) for x in url_list])
-        log.debug(f"{thot} tmp list: {videoID_alt}")
         remaining = len(videoID_alt) - len(id_list)
         log.info(f"Foi encontrado um total de : {remaining} videos restantes.")
 
@@ -102,14 +101,10 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
                 if max_posts_at_once == 10:
                     log.info(f"{thot} - 10 videos foram baixados. Resetando contador.")
                     max_posts_at_once = 0
-                log.debug(f"Max posts at once: {max_posts_at_once}")
                 max_posts_at_once += 1
                 payload = json.dumps({f"{thot}ID": [i]})
-                log.debug(f"Payload: {payload}")
-                log.debug(f"{thot} - max_posts_at_once: {max_posts_at_once}")
                 log.info(f"Download: {contador} of {remaining}")
                 link = f"https://{CDN}/hls/{i}/playlist.m3u8"
-                log.debug(f"Link: {link}")
                 # call yt-dlp download
                 download_upload(
                     path, link, i, j, has_topic, folder_link, payload, thot, enable_posting, remaining, contador, max_posts_at_once
@@ -149,7 +144,7 @@ async def parse_album(thot, config):
 
 async def get_foto(session, url_gallery, path, i, j, foto_id, thot, max_retries=30, sleep_between_retries=3):
     headers = {
-        "referer": {REFERER},
+        "referer": {f"{REFERER}"},
     }
     name = slugify(f"{i}-{j}")
     image_path = truncate_string(f"{path}{name}") + f"/{foto_id}.jpg"
@@ -198,7 +193,7 @@ async def get_video_alt(session, url, id_list, path, thot, number):
     pattern = r"Página não localizada! =\("
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4922.0 Safari/537.36 Edg/101.0.1198.0",
-        "referer": {REFERER},
+        "referer": f"{REFERER}",
     }
     regexName = r"#FFFFFF;\">([^<]+)"
     regexID = r"/video/([\d]+)\","
