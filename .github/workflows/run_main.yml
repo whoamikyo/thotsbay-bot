@@ -46,6 +46,7 @@ jobs:
           mkdir -p ~/.config/rclone
           echo "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
       - name: Set up Python
+        id: setup-python
         uses: actions/setup-python@v2
         with:
           python-version: 3.10.4
