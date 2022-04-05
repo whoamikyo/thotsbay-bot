@@ -45,8 +45,8 @@ else:
     log.info("Ambiente de produção ativado")
 headers = {"Content-Type": "application/json"}
 headers_backup = {"Content-Type": "application/json", "X-Master-Key": API_KEY, "X-Bin-Meta": "false"}
-regexID = r"/video/([\d]+)\" title"
-regexName = r"<h2 class=\"text-left ml-1\">(.*?)</h2>"
+regexID = r"/video/([\d]+)\""
+regexName = r"<span\b[^>]*>(.*?)</span>"
 regexID_Album = r"album/([\d]+)\" class"
 regexName_Album = r"jpg\" alt=\"([\w\s\-?]+)"
 RegexRange = r"([\d]+)'\s*.class=\"page-link\">>></a></li>"
@@ -196,10 +196,8 @@ def request_html(url, data=None, mode=None):
             # client = requests.Session()
             if mode == "GET":
                 r = client.get(url)
-                log.debug(f" url: {url}, retornou com sucesso, Status Code: {r.status_code}")
             else:
                 r = client.post(url, data=data)
-                log.debug(f" url: {url}, retornou com sucesso, Status Code: {r.status_code}")
             if r.status_code != 200:
                 log.warning(f"Erro: {r.status_code}, tentando novamente...")
                 if i < tries - 1:  # i is zero indexed
@@ -209,6 +207,7 @@ def request_html(url, data=None, mode=None):
                     log.warning(f"A url não está respondendo!\nErro: {r.status_code}")
                     raise httpx.HTTPError
             else:
+                log.debug(f" url: {url}, retornou com sucesso, Status Code: {r.status_code}")
                 return r.text
         except httpx.TimeoutException as err:
             log.error(f"{err}")

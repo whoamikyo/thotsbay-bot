@@ -18,7 +18,6 @@ from Utils.utils import (
     regexGetRangeSize,
     regexID,
     regexID_Album,
-    regexName,
     regexName_Album,
     request_html,
     slugify,
@@ -46,6 +45,15 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
     #     url_list = [f"{url}videos/{categorias[i]}/" for i in range(len(categorias))]
     #     get_range = get_list_from_nested([re.findall(RegexRange, request_html(url=url_list[i], mode="GET")) for i in range(len(url_list))])
     #     print(get_range)
+
+    pattern = r"title=\""
+    log.info("Definindo o padrão de regex...")
+    if re.findall(pattern, request_html(f"{url}videos/", mode="GET")) == []:
+        regexName = r"<span\b[^>]*>(.*?)</span>"
+        log.info("Primeiro padrão de regex definido com sucesso!")
+    else:
+        log.info("Segundo padrão de regex definido com sucesso!")
+        regexName = r"<h2 class=\"text-left ml-1\">(.*?)</h2>"
 
     if categoria:
         path = f"Download/{thot}/{categoria}/"
@@ -87,9 +95,10 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
 
     videoName = get_list_from_nested([re.findall(regexName, request_html(url=x, mode="GET")) for x in url_list])
     videoID = list_to_int(videoID)
+    
     log.debug(f"VideoID: {videoID}")
     log.debug(f"VideoName: {videoName}")
-    
+
     contador = 0
     max_posts_at_once = 0
     while contador < remaining:
