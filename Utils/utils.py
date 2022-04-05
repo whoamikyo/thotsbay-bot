@@ -171,6 +171,7 @@ def request_api(url, headers=None, payload=None, mode=None, max_retries=10, slee
             if mode == "GET":
                 r = client.get(url, headers=headers)
             else:
+                log.debug(f"Url: {url}, Headers: {headers}, Payload: {payload}")
                 r = client.put(url, headers=headers, data=payload)
             if r.status_code != 200:
                 time.sleep(sleep_between_retries)

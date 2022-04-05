@@ -17,6 +17,7 @@ from Utils.utils import (
     REFERER,
     THOTSBAY_PW,
     THOTSBAY_USER,
+    headers,
     DateTimeEncoder,
     absolute_file_paths,
     clean_tmp,
@@ -74,7 +75,7 @@ def download_upload(path, link, i, j, has_topic, folder_link, payload, thot, ena
         if not_found_error:
             log.warning(f"Erro: {not_found_error}")
             # remaining = remaining - contador
-            request_api(ID_CONFIG, payload, mode="PUT")
+            request_api(ID_CONFIG, headers, payload, mode="PUT")
             log.warning(f"Arquivo não encontrado no servidor, ainda faltam {remaining} arquivos.")
     if not os.path.isfile(download_file):
         log.critical(f"Erro ao baixar o arquivo {i}, com o nome: {name}")
@@ -82,7 +83,7 @@ def download_upload(path, link, i, j, has_topic, folder_link, payload, thot, ena
         log.info(f"Arquivo {name} baixado com sucesso! Agora...Enviando...")
         subprocess.call(cmd, shell=True)
         remaining = remaining - contador
-        request_api(ID_CONFIG, payload, mode="PUT")
+        request_api(ID_CONFIG, headers, payload, mode="PUT")
         log.info(f"Arquivo {name} enviado com sucesso, ainda faltam: {remaining}")
 
     if has_topic > 0 and enable_posting:
@@ -102,7 +103,7 @@ def download_upload(path, link, i, j, has_topic, folder_link, payload, thot, ena
                 log.info("Atualizando tópico agora...")
                 thotsbay.Account.send_message_in_thread(has_topic, msg(imgur_list, folder_link, lista_nomes))
                 latest_post_payload = json.dumps({thot: datetime.datetime.utcnow()}, cls=DateTimeEncoder)
-                request_api(LATEST_POST_URL, latest_post_payload, mode="PUT")
+                request_api(LATEST_POST_URL, headers, latest_post_payload, mode="PUT")
                 # Pruning temporary files
                 clean_tmp(path)
                 clean_tmp(thumbnails_path)
@@ -119,7 +120,7 @@ def msg(lista_urls: list, folder_link: str, lista_nomes: list):
     {0}
     [HEADING=1][CENTER][COLOR=#2e6c80][COLOR=#ff6600]Link para a pasta: [URL='{folder_link}'][COLOR=#ff6600]Clicka aqui[/COLOR][/URL][/COLOR][/COLOR][/CENTER][/HEADING]
     [HEADING=2][CENTER][COLOR=#2e6c80][COLOR=#ff6600]Senha abaixo: [QUOTE][CODE]https://forum.thotsbay.com[/CODE][/COLOR][/CENTER][/QUOTE][/HEADING]
-    [CENTER][URL='https://github.com/whoamikyo/thotsbay-bot']Powered by: thotsbay-bot[/URL][/CENTER][/HEADING][COLOR=#2e6c80][/COLOR]
+    [HEADING=2][CENTER][URL='https://github.com/whoamikyo/thotsbay-bot']Powered by: thotsbay-bot[/URL][/CENTER][COLOR=#2e6c80][/COLOR][/HEADING]
     [TABLE]
     [TR]
     [TD][B][COLOR=#ff6600]Não esqueça do like.
@@ -158,12 +159,12 @@ def download_alt(path, link, i, j, payload, thot):
         if not_found_error:
             log.warning(f"Erro: {not_found_error}")
             # remaining = remaining - contador
-            request_api(ID_CONFIG, payload, mode="PUT")
+            request_api(ID_CONFIG, headers, payload, mode="PUT")
             log.warning("Arquivo não encontrado no servidor, ainda faltam arquivos.")
     if not os.path.isfile(download_file):
         log.critical(f"Erro ao baixar o arquivo {i}, com o nome: {name}")
     else:
         log.info(f"Arquivo {name} baixado com sucesso! Agora...Enviando...")
         subprocess.call(cmd, shell=True)
-        request_api(ID_CONFIG, payload, mode="PUT")
+        request_api(ID_CONFIG, headers, payload, mode="PUT")
         log.info(f"Arquivo {name} enviado com sucesso")
