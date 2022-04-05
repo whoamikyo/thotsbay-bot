@@ -110,7 +110,7 @@ def casaltopbessa(config, id_config, thot):
 
 
 def esposagulosinha(config, id_config, thot):
-    enable_posting = False
+    enable_posting = True
     has_topic = 22055
     folder_link = f"{URL_BASE}Es_tAJKWL_RHqxOYRPaqxBIBeeo0oAU2UdbnQZaLNc860g"
     categoria = ""
