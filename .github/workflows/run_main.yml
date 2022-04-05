@@ -62,7 +62,7 @@ jobs:
       #----------------------------------------------
       - name: Install dependencies
         run: |
-          poetry install --no-interaction
+          poetry install --no-interaction --no-dev
           sudo apt-get update
           sudo apt-get install -y ffmpeg
       - name: Run main.py
