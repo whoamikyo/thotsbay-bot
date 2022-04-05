@@ -45,10 +45,10 @@ else:
     log.info("Ambiente de produção ativado")
 headers = {"Content-Type": "application/json"}
 headers_backup = {"Content-Type": "application/json", "X-Master-Key": API_KEY, "X-Bin-Meta": "false"}
-regexID = r"/video/([\d]+)\" class"
+regexID = r"/video/([\d]+)\" title"
+regexName = r"<h2 class=\"text-left ml-1\">(.*?)</h2>"
 regexID_Album = r"album/([\d]+)\" class"
 regexName_Album = r"jpg\" alt=\"([\w\s\-?]+)"
-regexName = r"<span\b[^>]*>(.*?)</span>"
 RegexRange = r"([\d]+)'\s*.class=\"page-link\">>></a></li>"
 regexCount = r"data-to=\"([\d]+)"
 regexGetCategory = r"/videos/([-?A-Z]+)\">"
@@ -192,8 +192,8 @@ def request_html(url, data=None, mode=None):
     tries = 3
     for i in range(tries):
         try:
-            # client = httpx.Client()
-            client = requests.Session()
+            client = httpx.Client()
+            # client = requests.Session()
             if mode == "GET":
                 r = client.get(url)
                 log.debug(f" url: {url}, retornou com sucesso, Status Code: {r.status_code}")
