@@ -23,7 +23,7 @@ from Utils.utils import (
     slugify,
     truncate_string,
     REFERER,
-    GALLERY
+    GALLERY,
 )
 
 log = get_logger(__name__)
@@ -95,7 +95,7 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
 
     videoName = get_list_from_nested([re.findall(regexName, request_html(url=x, mode="GET")) for x in url_list])
     videoID = list_to_int(videoID)
-    
+
     log.debug(f"VideoID: {videoID}")
     log.debug(f"VideoName: {videoName}")
 

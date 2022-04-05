@@ -123,7 +123,7 @@ def request_api_put(payload, api_url):
                 time.sleep(2)
                 break
             else:
-                log.warning(f"A API não retornou com sucesso, tentando novamente...")
+                log.warning("A API não retornou com sucesso, tentando novamente...")
                 tries = tries + 1
                 log.info("Tentando novamente em 10 segundos")
                 time.sleep(10)
@@ -153,7 +153,7 @@ def request_api_get(url):
                 log.info("Tentando novamente em 10 segundos")
                 time.sleep(10)
                 if tries == 10:
-                    raise Exception(f"A API não retornou com sucesso, tentativas esgotadas")
+                    raise Exception("A API não retornou com sucesso, tentativas esgotadas")
         except httpx.TimeoutException as err:
             log.error(f"{err}")
 
