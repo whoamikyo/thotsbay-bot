@@ -25,7 +25,7 @@ cp /content/drive/MyDrive/conf/config /content/thotsbay-bot/.git/config
 # Run main.py
 cd ./thotsbay-bot/
 #pipenv shell
-poetry install --no-interaction --no-dev
+poetry install --no-interaction --without dev
 poetry run python main.py
 # Git commit
 git add -A
