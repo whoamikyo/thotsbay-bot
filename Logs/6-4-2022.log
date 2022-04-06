@@ -391,3 +391,109 @@
 2022-04-06 12:49:14,635 - Utils.utils - INFO - Requisição realizada com sucesso: 200
 2022-04-06 12:49:15,313 - Utils.utils - INFO - Backup realizado com sucesso, Status Code: 200
 2022-04-06 12:49:15,339 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 16:10:58,822 - Utils.utils - INFO - Ambiente de produção ativado
+2022-04-06 16:11:00,103 - Utils.thotshub - INFO - Autorizando...
+2022-04-06 16:11:01,055 - Utils.thotshub - INFO - Logado no thotsbay com sucesso.
+2022-04-06 16:11:01,078 - Utils.utils - INFO - Checking if its COLAB enviorement....
+2022-04-06 16:11:01,169 - Utils.utils - INFO - COLAB enviorement not detected
+2022-04-06 16:11:01,200 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 16:11:01,842 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 16:11:02,437 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 16:11:02,589 - thots.thots - INFO - Tarefa elaquer
+2022-04-06 16:11:02,665 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:11:03,051 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:11:04,883 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 16:11:04,911 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 16:11:06,941 - thots.thot_parse - WARNING - ---------------| elaquer - Fim da lista de videos.
+2022-04-06 16:11:06,965 - thots.thots - INFO - Tarefa tatycasadinha
+2022-04-06 16:11:07,199 - thots.thots - INFO - Tarefa afroditehotwife
+2022-04-06 16:11:07,223 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:11:07,572 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:11:08,745 - thots.thot_parse - INFO - Foi encontrado um total de : 1 videos restantes.
+2022-04-06 16:11:08,771 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 16:11:14,103 - thots.thot_parse - INFO - Download: 1 of 1
+2022-04-06 16:11:14,131 - Utils.download - INFO - Baixando Downloads/afroditehotwife/95390-dias-no-rio-de-janeiro-final.mp4
+2022-04-06 16:14:29,991 - Utils.download - INFO - Arquivo 95390-dias-no-rio-de-janeiro-final baixado com sucesso! Agora...Enviando...
+2022-04-06 16:14:50,359 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 16:14:50,587 - Utils.download - INFO - Arquivo 95390-dias-no-rio-de-janeiro-final enviado com sucesso, ainda faltam: 0
+2022-04-06 16:14:50,691 - Utils.download - INFO - Prosseguindo com a postagem...
+2022-04-06 16:14:50,766 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 16:14:50,959 - Utils.download - INFO - A última postagem foi em 2022-04-03 21:27:57.316379 a diferença é: 4007 minutos
+2022-04-06 16:14:51,499 - Utils.utils - INFO - Enviando arquivo 1 de 3 : Thumbnails/afroditehotwife000163.jpg
+2022-04-06 16:14:54,288 - Utils.utils - INFO - Thumbnails/afroditehotwife000163.jpg enviado com sucesso
+2022-04-06 16:14:54,315 - Utils.utils - INFO - Enviando arquivo 2 de 3 : Thumbnails/afroditehotwife000268.jpg
+2022-04-06 16:14:56,823 - Utils.utils - INFO - Thumbnails/afroditehotwife000268.jpg enviado com sucesso
+2022-04-06 16:14:56,858 - Utils.utils - INFO - Enviando arquivo 3 de 3 : Thumbnails/afroditehotwife000070.jpg
+2022-04-06 16:14:59,317 - Utils.utils - INFO - Thumbnails/afroditehotwife000070.jpg enviado com sucesso
+2022-04-06 16:14:59,341 - Utils.download - INFO - Atualizando tópico agora...
+2022-04-06 16:14:59,997 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 16:15:00,167 - thots.thot_parse - WARNING - ---------------| afroditehotwife - Fim da lista de videos.
+2022-04-06 16:15:00,288 - thots.thots - INFO - Tarefa agathalira
+2022-04-06 16:15:00,390 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:15:01,172 - thots.thot_parse - INFO - Primeiro padrão de regex definido com sucesso!
+2022-04-06 16:15:01,821 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-06 16:15:06,055 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 16:15:06,087 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-06 16:15:13,262 - thots.thot_parse - WARNING - ---------------| agathalira - Fim da lista de videos.
+2022-04-06 16:15:13,330 - thots.thots - INFO - Tarefa bellacasada
+2022-04-06 16:15:13,467 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:15:13,749 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:15:14,588 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 16:15:14,611 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 16:15:18,033 - thots.thot_parse - WARNING - ---------------| bellacasada - Fim da lista de videos.
+2022-04-06 16:15:18,060 - thots.thots - INFO - Tarefa casalruivaecornooficial
+2022-04-06 16:15:18,134 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:15:18,439 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:15:19,200 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 16:15:19,224 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 16:15:22,117 - thots.thot_parse - WARNING - ---------------| casalruivaecornooficial - Fim da lista de videos.
+2022-04-06 16:15:22,145 - thots.thots - INFO - Tarefa casaltopbessa
+2022-04-06 16:15:22,212 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:15:22,832 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:15:25,413 - thots.thot_parse - INFO - Foi encontrado um total de : -1 videos restantes.
+2022-04-06 16:15:25,491 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 16:15:26,525 - thots.thot_parse - WARNING - ---------------| casaltopbessa - Fim da lista de videos.
+2022-04-06 16:15:26,548 - thots.thots - INFO - Tarefa esposagulosinha
+2022-04-06 16:15:26,619 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:15:26,887 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:15:27,795 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 16:15:27,821 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 16:15:31,429 - thots.thot_parse - WARNING - ---------------| esposagulosinha - Fim da lista de videos.
+2022-04-06 16:15:31,505 - thots.thots - INFO - Tarefa fabioeanaes
+2022-04-06 16:15:31,689 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:15:32,064 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:15:32,898 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-06 16:15:33,989 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 16:15:34,055 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-06 16:15:35,174 - thots.thot_parse - WARNING - ---------------| fabioeanaes - Fim da lista de videos.
+2022-04-06 16:15:35,198 - thots.thots - INFO - Tarefa helenafilmes
+2022-04-06 16:15:35,275 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:15:35,619 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:15:36,167 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 16:15:36,231 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 16:15:37,130 - thots.thot_parse - WARNING - ---------------| helenafilmes - Fim da lista de videos.
+2022-04-06 16:15:37,155 - thots.thots - INFO - Tarefa melissadias
+2022-04-06 16:15:37,221 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:15:37,482 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:15:38,091 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-06 16:15:39,256 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 16:15:39,284 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-06 16:15:41,072 - thots.thot_parse - WARNING - ---------------| melissadias - Fim da lista de videos.
+2022-04-06 16:15:41,099 - thots.thots - INFO - Tarefa nikkecasada
+2022-04-06 16:15:41,167 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:15:41,499 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:15:41,932 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-06 16:15:42,701 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 16:15:42,723 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-06 16:15:43,662 - thots.thot_parse - WARNING - ---------------| nikkecasada - Fim da lista de videos.
+2022-04-06 16:15:43,685 - thots.thots - INFO - Tarefa vidasafada
+2022-04-06 16:15:43,760 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 16:15:44,133 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 16:15:45,364 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 16:15:45,386 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 16:15:48,105 - thots.thot_parse - WARNING - ---------------| vidasafada - Fim da lista de videos.
+2022-04-06 16:15:48,132 - __main__ - INFO - Todas as tarefas foram finalizadas
+2022-04-06 16:15:48,229 - __main__ - INFO - Salvando ID's da API localmente....
+2022-04-06 16:15:48,376 - Utils.utils - INFO - Requisição realizada com sucesso: 200
+2022-04-06 16:15:49,128 - Utils.utils - INFO - Backup realizado com sucesso, Status Code: 200
+2022-04-06 16:15:49,153 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
