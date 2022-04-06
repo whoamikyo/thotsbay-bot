@@ -269,3 +269,125 @@
 2022-04-06 08:12:50,618 - Utils.utils - INFO - Requisição realizada com sucesso: 200
 2022-04-06 08:12:51,320 - Utils.utils - INFO - Backup realizado com sucesso, Status Code: 200
 2022-04-06 08:12:51,382 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 12:15:06,543 - Utils.utils - INFO - Ambiente de produção ativado
+2022-04-06 12:15:07,910 - Utils.thotshub - INFO - Autorizando...
+2022-04-06 12:15:09,026 - Utils.thotshub - INFO - Logado no thotsbay com sucesso.
+2022-04-06 12:15:09,044 - Utils.utils - INFO - Checking if its COLAB enviorement....
+2022-04-06 12:15:09,130 - Utils.utils - INFO - COLAB enviorement not detected
+2022-04-06 12:15:09,159 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 12:15:09,515 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 12:15:10,122 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 12:15:10,246 - thots.thots - INFO - Tarefa elaquer
+2022-04-06 12:15:10,311 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:15:10,615 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:15:11,992 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:15:12,011 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 12:15:13,586 - thots.thot_parse - WARNING - ---------------| elaquer - Fim da lista de videos.
+2022-04-06 12:15:13,613 - thots.thots - INFO - Tarefa tatycasadinha
+2022-04-06 12:15:13,846 - thots.thots - INFO - Tarefa afroditehotwife
+2022-04-06 12:15:13,867 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:15:14,197 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:15:15,652 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:15:15,673 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 12:15:20,443 - thots.thot_parse - WARNING - ---------------| afroditehotwife - Fim da lista de videos.
+2022-04-06 12:15:20,469 - thots.thots - INFO - Tarefa agathalira
+2022-04-06 12:15:20,574 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:15:21,037 - thots.thot_parse - INFO - Primeiro padrão de regex definido com sucesso!
+2022-04-06 12:15:21,528 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-06 12:15:25,856 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:15:25,883 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-06 12:15:29,678 - thots.thot_parse - WARNING - ---------------| agathalira - Fim da lista de videos.
+2022-04-06 12:15:29,710 - thots.thots - INFO - Tarefa bellacasada
+2022-04-06 12:15:29,810 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:15:30,095 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:15:30,992 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:15:31,014 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 12:15:33,415 - thots.thot_parse - WARNING - ---------------| bellacasada - Fim da lista de videos.
+2022-04-06 12:15:33,444 - thots.thots - INFO - Tarefa casalruivaecornooficial
+2022-04-06 12:15:33,508 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:15:33,690 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:15:34,473 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:15:34,496 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 12:15:37,036 - thots.thot_parse - WARNING - ---------------| casalruivaecornooficial - Fim da lista de videos.
+2022-04-06 12:15:37,063 - thots.thots - INFO - Tarefa casaltopbessa
+2022-04-06 12:15:37,135 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:15:37,331 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:15:38,330 - thots.thot_parse - INFO - Foi encontrado um total de : 1 videos restantes.
+2022-04-06 12:15:38,353 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 12:15:39,092 - thots.thot_parse - INFO - Download: 1 of 1
+2022-04-06 12:15:39,121 - Utils.download - INFO - Baixando Downloads/casaltopbessa/95340-sai-com-dois-seguidores-do-meu-instagram.mp4
+2022-04-06 12:23:49,080 - Utils.download - INFO - Arquivo 95340-sai-com-dois-seguidores-do-meu-instagram baixado com sucesso! Agora...Enviando...
+2022-04-06 12:24:14,517 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 12:24:14,738 - Utils.download - INFO - Arquivo 95340-sai-com-dois-seguidores-do-meu-instagram enviado com sucesso, ainda faltam: 0
+2022-04-06 12:24:14,832 - Utils.download - INFO - Prosseguindo com a postagem...
+2022-04-06 12:24:14,863 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 12:24:15,798 - Utils.download - INFO - A última postagem foi em 2022-04-01 17:53:18.128573 a diferença é: 6871 minutos
+2022-04-06 12:24:16,441 - Utils.utils - INFO - Enviando arquivo 1 de 3 : Thumbnails/casaltopbessa000673.jpg
+2022-04-06 12:24:18,998 - Utils.utils - INFO - Thumbnails/casaltopbessa000673.jpg enviado com sucesso
+2022-04-06 12:24:19,024 - Utils.utils - INFO - Enviando arquivo 2 de 3 : Thumbnails/casaltopbessa000977.jpg
+2022-04-06 12:24:21,499 - Utils.utils - INFO - Thumbnails/casaltopbessa000977.jpg enviado com sucesso
+2022-04-06 12:24:21,536 - Utils.utils - INFO - Enviando arquivo 3 de 3 : Thumbnails/casaltopbessa000626.jpg
+2022-04-06 12:24:24,251 - Utils.utils - INFO - Thumbnails/casaltopbessa000626.jpg enviado com sucesso
+2022-04-06 12:24:24,273 - Utils.download - INFO - Atualizando tópico agora...
+2022-04-06 12:40:02,751 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 12:40:02,999 - thots.thot_parse - INFO - Download: 2 of 1
+2022-04-06 12:40:03,118 - Utils.download - INFO - Baixando Downloads/casaltopbessa/94751-dei-o-cuzinho-para-um-dos-caras-da-manutencao.mp4
+2022-04-06 12:48:29,540 - Utils.download - INFO - Arquivo 94751-dei-o-cuzinho-para-um-dos-caras-da-manutencao baixado com sucesso! Agora...Enviando...
+2022-04-06 12:48:47,782 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 12:48:48,023 - Utils.download - INFO - Arquivo 94751-dei-o-cuzinho-para-um-dos-caras-da-manutencao enviado com sucesso, ainda faltam: -1
+2022-04-06 12:48:48,110 - Utils.download - INFO - Prosseguindo com a postagem...
+2022-04-06 12:48:48,138 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 12:48:48,288 - Utils.download - INFO - A última postagem foi em 2022-04-06 12:40:02.744259 a diferença é: 9 minutos
+2022-04-06 12:48:48,893 - Utils.utils - INFO - Enviando arquivo 1 de 3 : Thumbnails/casaltopbessa000542.jpg
+2022-04-06 12:48:51,442 - Utils.utils - INFO - Thumbnails/casaltopbessa000542.jpg enviado com sucesso
+2022-04-06 12:48:51,467 - Utils.utils - INFO - Enviando arquivo 2 de 3 : Thumbnails/casaltopbessa000698.jpg
+2022-04-06 12:48:53,858 - Utils.utils - INFO - Thumbnails/casaltopbessa000698.jpg enviado com sucesso
+2022-04-06 12:48:53,885 - Utils.utils - INFO - Enviando arquivo 3 de 3 : Thumbnails/casaltopbessa000715.jpg
+2022-04-06 12:48:56,326 - Utils.utils - INFO - Thumbnails/casaltopbessa000715.jpg enviado com sucesso
+2022-04-06 12:48:56,351 - Utils.download - INFO - Atualizando tópico agora...
+2022-04-06 12:48:57,294 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
+2022-04-06 12:48:57,444 - thots.thot_parse - WARNING - ---------------| casaltopbessa - Fim da lista de videos.
+2022-04-06 12:48:57,516 - thots.thots - INFO - Tarefa esposagulosinha
+2022-04-06 12:48:57,601 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:48:57,818 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:48:58,741 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:48:58,759 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 12:49:00,908 - thots.thot_parse - WARNING - ---------------| esposagulosinha - Fim da lista de videos.
+2022-04-06 12:49:00,938 - thots.thots - INFO - Tarefa fabioeanaes
+2022-04-06 12:49:01,018 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:49:01,409 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:49:02,013 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-06 12:49:02,836 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:49:02,857 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-06 12:49:03,710 - thots.thot_parse - WARNING - ---------------| fabioeanaes - Fim da lista de videos.
+2022-04-06 12:49:03,730 - thots.thots - INFO - Tarefa helenafilmes
+2022-04-06 12:49:03,797 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:49:04,076 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:49:04,709 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:49:04,729 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 12:49:05,322 - thots.thot_parse - WARNING - ---------------| helenafilmes - Fim da lista de videos.
+2022-04-06 12:49:05,344 - thots.thots - INFO - Tarefa melissadias
+2022-04-06 12:49:05,390 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:49:05,618 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:49:06,019 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-06 12:49:07,391 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:49:07,416 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-06 12:49:08,766 - thots.thot_parse - WARNING - ---------------| melissadias - Fim da lista de videos.
+2022-04-06 12:49:08,786 - thots.thots - INFO - Tarefa nikkecasada
+2022-04-06 12:49:08,838 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:49:09,073 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:49:09,448 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-06 12:49:10,230 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:49:10,253 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-06 12:49:10,879 - thots.thot_parse - WARNING - ---------------| nikkecasada - Fim da lista de videos.
+2022-04-06 12:49:10,900 - thots.thots - INFO - Tarefa vidasafada
+2022-04-06 12:49:10,963 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-06 12:49:11,264 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-06 12:49:12,157 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-06 12:49:12,178 - thots.thot_parse - INFO - A lista de ID's ainda nao foi definida
+2022-04-06 12:49:14,396 - thots.thot_parse - WARNING - ---------------| vidasafada - Fim da lista de videos.
+2022-04-06 12:49:14,420 - __main__ - INFO - Todas as tarefas foram finalizadas
+2022-04-06 12:49:14,518 - __main__ - INFO - Salvando ID's da API localmente....
+2022-04-06 12:49:14,635 - Utils.utils - INFO - Requisição realizada com sucesso: 200
+2022-04-06 12:49:15,313 - Utils.utils - INFO - Backup realizado com sucesso, Status Code: 200
+2022-04-06 12:49:15,339 - Utils.utils - INFO - Tentando conexão com a url, tentativa 1 de 10
