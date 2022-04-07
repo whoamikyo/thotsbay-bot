@@ -25,4 +25,5 @@ if __name__ == "__main__":
     log.info("Fazendo backup dos IDs na API backup...")
     backup_id()
     log.info("Salvando ID's da API localmente....")
-    write_ids(api.get(ID_CONFIG).json())
+    write_ids(api.get(ID_CONFIG).json(), filename="json_files/ids_api.json")
+    write_ids(api.get(CONFIG).json(), filename="json_files/config_api.json")
