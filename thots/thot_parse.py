@@ -9,6 +9,7 @@ from logger import get_logger
 from Utils.download import download_alt, download_upload
 from Utils.utils import (
     CDN,
+    MakeRequest,
     RegexRange,
     convert_range,
     download_path,
@@ -19,11 +20,11 @@ from Utils.utils import (
     regexID,
     regexID_Album,
     regexName_Album,
-    request_html,
     slugify,
     truncate_string,
     REFERER,
     GALLERY,
+    compare_lists
 )
 
 log = get_logger(__name__)
@@ -35,9 +36,12 @@ if sys.platform.startswith("win") and sys.version_info[0] == 3 and sys.version_i
     asyncio.set_event_loop(loop)
 
 
+parse = MakeRequest()
+
+
 def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, categoria, get_category):
 
-    url = config[thot]
+    url = config[thot]["url"]
     id_list = id_config[f"{thot}ID"]
     # if get_category:
     #     categorias = re.findall(regexGetCategory, request_html(url=url + "videos/", mode="GET"), re.MULTILINE | re.IGNORECASE)
@@ -48,7 +52,7 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
 
     pattern = r"title=\""
     log.info("Definindo o padrão de regex...")
-    if re.findall(pattern, request_html(f"{url}videos/", mode="GET")) == []:
+    if re.findall(pattern, parse.get(f"{url}videos/").text) == []:
         regexName = r"<span\b[^>]*>(.*?)</span>"
         log.info("Primeiro padrão de regex definido com sucesso!")
     else:
@@ -57,12 +61,13 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
 
     if categoria:
         path = f"Download/{thot}/{categoria}/"
-        get_range = re.findall(RegexRange, request_html(url=f"{url}videos/{categoria}/", mode="GET"))
+        get_range = re.findall(RegexRange, parse.get(url=f"{url}videos/{categoria}/").text)
         total = False
     else:
         path = f"Downloads/{thot}/"
-        get_range = re.findall(RegexRange, request_html(url=f"{url}videos/", mode="GET"))
-        total = re.findall(regexCount, request_html(url=url, mode="GET"))
+        get_range = re.findall(RegexRange, parse.get(url=f"{url}videos/").text)
+        # total = re.findall(regexCount, parse.get(url=url).text)  # Disabled for now
+        total = False
     # max_download_at_once = 0
     if get_range:
         pass
@@ -74,6 +79,7 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
     else:
         url_list = [f"{url}videos/{x}" for x in range(1, convert_range(get_range) + 1)]
 
+    # apenas método alternativo por enquanto
     if total:
         alt = False
         remaining = int(total[0]) - len(id_list)
@@ -81,8 +87,12 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
     else:
         alt = True
         log.info("Usando método alternativo para encontrar a quantidade de videos.")
-        videoID_alt = get_list_from_nested([re.findall(regexID, request_html(url=x, mode="GET")) for x in url_list])
-        remaining = len(videoID_alt) - len(id_list)
+        videoID_alt = get_list_from_nested([re.findall(regexID, parse.get(url=x).text) for x in url_list])
+        log.debug(f"{thot} - videoID_alt: {list_to_int(videoID_alt)}")
+        log.debug(f"ID_list: {id_list}")
+        deleted_videos = compare_lists(id_list, list_to_int(videoID_alt))
+        remaining = len(videoID_alt) - (len(id_list) - len(deleted_videos))
+        log.debug(f"Lista de videos que não foram baixados: {deleted_videos}")
         log.info(f"Foi encontrado um total de : {remaining} videos restantes.")
 
     log.debug(f"Url List: {url_list}")
@@ -91,9 +101,9 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
         videoID = videoID_alt  # type: ignore
     else:
         log.info("A lista de ID's ainda nao foi definida")
-        videoID = get_list_from_nested([re.findall(regexID, request_html(url=x, mode="GET")) for x in url_list])
+        videoID = get_list_from_nested([re.findall(regexID, parse.get(url=x).text) for x in url_list])
 
-    videoName = get_list_from_nested([re.findall(regexName, request_html(url=x, mode="GET")) for x in url_list])
+    videoName = get_list_from_nested([re.findall(regexName, parse.get(url=x).text) for x in url_list])
     videoID = list_to_int(videoID)
 
     log.debug(f"VideoID: {videoID}")
@@ -127,11 +137,11 @@ async def parse_album(thot, config):
 
     url = config[thot]
     path = download_path + thot + "/" + "Albums/"
-    get_range = re.findall(RegexRange, request_html(url=url + "gallery/", mode="GET"))
+    get_range = re.findall(RegexRange, parse.get(url=url + "gallery/").text)
     url_list = [f"{url}gallery/{x}" for x in range(1, convert_range(get_range) + 1)]
-    AlbumID = get_list_from_nested([re.findall(regexID_Album, request_html(url=x, mode="GET")) for x in url_list])
-    AlbumName = get_list_from_nested([re.findall(regexName_Album, request_html(url=x, mode="GET")) for x in url_list])
-    RangeSize = get_list_from_nested([re.findall(regexGetRangeSize, request_html(url=x, mode="GET")) for x in url_list])
+    AlbumID = get_list_from_nested([re.findall(regexID_Album, parse.get(url=x).text) for x in url_list])
+    AlbumName = get_list_from_nested([re.findall(regexName_Album, parse.get(url=x).text) for x in url_list])
+    RangeSize = get_list_from_nested([re.findall(regexGetRangeSize, parse.get(url=x).text) for x in url_list])
     RangeSize = list_to_int(RangeSize)
     AlbumID = list_to_int(AlbumID)
 
@@ -213,7 +223,7 @@ async def get_video_alt(session, url, id_list, path, thot, number):
     try:
         async with session.get(url, headers=headers) as response:
 
-            resp = await response.text()
+            resp = await response.text
             if response.status != 200:
                 return {"error": f"server returned {response.status}"}
             if re.findall(pattern, resp) == [] and response.status == 200:

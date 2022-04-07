@@ -3,7 +3,7 @@ import traceback
 import requests
 from bs4 import BeautifulSoup as bs
 from logger import get_logger
-from Utils.utils import request_html
+from .utils import MakeRequest
 
 log = get_logger(__name__)
 
@@ -34,18 +34,18 @@ class Account:
         try:
             self.login = login
             self.password = password
-            self.url_login = "https://forum.thotsbay.com/login/login/"
             self.url_base = "https://forum.thotsbay.com/"
-            self.client = requests.Session()
+            self.url_login = f"{self.url_base}login/login"
+            # self.client = requests.Session()
+            self.request = MakeRequest()
             self.update_token()
         except requests.RequestException:
             traceback.print_exc()
             pass
 
     def update_token(self):
-        req = self.client.get(self.url_login)
-        html = req.text
-        soup = bs(html, "html.parser")
+        req = self.request.get(self.url_login).text
+        soup = bs(req, "html.parser")
         self.token = soup.find("input", {"name": "_xfToken"})
         if self.token is None:
             raise ParseTokenError
@@ -65,9 +65,8 @@ class Account:
         log.debug(f"Authorize data: {data}")
         try:
             self.update_token()
-            req = self.client.post(self.url_login, data=data)
-            log.debug(f"Authorize response: {req.status_code}")
-            if req.text.find("Incorrect password") == -1:
+            req = self.request.post(self.url_login, data=data).text
+            if req.find("Incorrect password") == -1:
                 return True
             else:
                 return False
@@ -79,7 +78,7 @@ class Account:
         try:
             self.update_token()
             cMessages = []
-            req = request_html(f"{self.url_base}threads/{thread}/", mode="GET")
+            req = self.request.get(f"{self.url_base}threads/{thread}/").text
             soup = bs(req, "html.parser")
             messages = soup.find_all("div", {"class": "message-inner"})
             for message in messages:
@@ -114,8 +113,7 @@ class Account:
         log.debug(f"Send message data: {data}")
         try:
             self.update_token()
-            req = self.client.post(f"{self.url_base}threads/{thread}/add-reply", data=data)
-            log.debug(f"Send message response: {req.status_code}")
+            self.request.post(f"{self.url_base}threads/{thread}/add-reply", data=data)
         except requests.RequestException:
             traceback.print_exc()
             pass

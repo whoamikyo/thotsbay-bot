@@ -1,0 +1,12 @@
+2022-04-07 11:09:38,426 - Utils.utils - INFO - Ambiente de produção ativado
+2022-04-07 11:09:38,618 - Utils.utils - INFO - Tentando requisição PUT na URL: ...et/config, 1/10
+2022-04-07 11:09:39,415 - Utils.utils - INFO - Requisição PUT realizada com sucesso, status code: 200
+2022-04-07 11:09:45,572 - Utils.utils - INFO - Ambiente de produção ativado
+2022-04-07 11:09:45,745 - Utils.utils - INFO - Tentando requisição PUT na URL: ...et/config, 1/10
+2022-04-07 11:09:46,459 - Utils.utils - INFO - Requisição PUT realizada com sucesso, status code: 200
+2022-04-07 11:09:52,447 - Utils.utils - INFO - Ambiente de produção ativado
+2022-04-07 11:09:52,620 - Utils.utils - INFO - Tentando requisição PUT na URL: ...et/config, 1/10
+2022-04-07 11:09:53,336 - Utils.utils - INFO - Requisição PUT realizada com sucesso, status code: 200
+2022-04-07 11:09:56,008 - Utils.utils - INFO - Ambiente de produção ativado
+2022-04-07 11:09:56,240 - Utils.utils - INFO - Tentando requisição PUT na URL: ...et/config, 1/10
+2022-04-07 11:09:57,231 - Utils.utils - INFO - Requisição PUT realizada com sucesso, status code: 200

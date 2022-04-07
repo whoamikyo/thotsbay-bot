@@ -67,17 +67,81 @@ if not os.path.exists(logs_path):
     os.makedirs(logs_path)
 
 
-def clean_tmp(path):
-    """
-    Delete all files in a directory
-    """
-    for file in os.listdir(path):
-        file_path = os.path.join(path, file)
+class MakeRequest:
+    def __init__(self):
+        # self.session = httpx.Client()
+        self.session = requests.Session()
+        self.max_retries = 10
+        self.sleep_between_retries = 1
+        self.tries = 0
+
+    def request(self, method, url, **kwargs):
         try:
-            if os.path.isfile(file_path):
-                os.unlink(file_path)
-        except Exception as err:
-            log.warning(f"Erro ao deletar arquivo: {err}")
+            # {url.split('/')[-1]}
+            log.info(f"Tentando requisição {method} na URL: ...{url[-9:]}, {self.tries + 1}/10")
+            response = self.session.request(method, url, **kwargs)
+            if response.status_code == 200:
+                print(response.text)
+                return response
+            else:
+                time.sleep(self.sleep_between_retries)
+                return {"error": f"server returned {response.status_code}"}
+        except httpx.TimeoutException as e:
+            self.max_retries -= 1
+            log.error(f"TimeoutError: {e}")
+            if self.max_retries == 0:
+                raise httpx.TimeoutException(f"TimeoutError: {e}")
+            return {"results": "timeout error on request"}
+
+    def get(self, url, **kwargs):
+        try:
+            log.info(f"Tentando requisição GET na URL: ...{url[-9:]}, {self.tries + 1}/10")
+            response = self.session.get(url, **kwargs)
+            if response.status_code == 200:
+                return response
+            else:
+                time.sleep(self.sleep_between_retries)
+                return {"error": f"server returned {response.status_code}"}
+        except httpx.TimeoutException as e:
+            self.max_retries -= 1
+            log.error(f"TimeoutError: {e}")
+            if self.max_retries == 0:
+                raise httpx.TimeoutException(f"TimeoutError: {e}")
+            return {"results": "timeout error on request"}
+
+    def put(self, url, **kwargs):
+        try:
+            log.info(f"Tentando requisição PUT na URL: ...{url[-9:]}, {self.tries + 1}/10")
+            response = self.session.put(url, **kwargs)
+            if response.status_code == 200:
+                log.info(f"Requisição PUT realizada com sucesso, status code: {response.status_code}")
+                return response
+            else:
+                time.sleep(self.sleep_between_retries)
+                return {"error": f"server returned {response.status_code}"}
+        except httpx.TimeoutException as e:
+            self.max_retries -= 1
+            log.error(f"TimeoutError: {e}")
+            if self.max_retries == 0:
+                raise httpx.TimeoutException(f"TimeoutError: {e}")
+            return {"results": "timeout error on request"}
+
+    def post(self, url, **kwargs):
+        try:
+            log.info(f"Tentando requisição POST na URL: ...{url}, {self.tries + 1}/10")
+            response = self.session.post(url, **kwargs)
+            if response.status_code == 200:
+                log.info(f"Requisição POST realizada com sucesso, status code: {response.status_code}")
+                return response
+            else:
+                time.sleep(self.sleep_between_retries)
+                return {"error": f"server returned {response.status_code}"}
+        except httpx.TimeoutException as e:
+            self.max_retries -= 1
+            log.error(f"TimeoutError: {e}")
+            if self.max_retries == 0:
+                raise httpx.TimeoutException(f"TimeoutError: {e}")
+            return {"results": "timeout error on request"}
 
 
 class DateTimeEncoder(JSONEncoder):
@@ -92,126 +156,29 @@ class DateTimeEncoder(JSONEncoder):
             return super(DateTimeEncoder, self).default(obj)
 
 
+def clean_tmp(path):
+    """
+    Delete all files in a directory
+    """
+    for file in os.listdir(path):
+        file_path = os.path.join(path, file)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        except Exception as err:
+            log.warning(f"Erro ao deletar arquivo: {err}")
+
+
 def check_colab():
     """
     Check colab enviorement
     """
-    log.info("Checking if its COLAB enviorement....")
     if "COLAB_GPU" in os.environ:
         log.info("COLAB enviorement detected")
         return True
     else:
         log.info("COLAB enviorement not detected")
         return False
-
-
-def request_api_put(payload, api_url):
-    """
-    Insere dados na api
-    """
-    log.info(f"atualizando ID com o payload {payload}")
-    tries = 0
-    while tries < 10:
-        try:
-            client = httpx.Client()
-            log.debug(f"Tentando conexão com a url: {api_url}, tentativa {tries + 1} de 10")
-            r = client.put(api_url, headers=headers, data=payload)
-            time.sleep(1)
-            log.debug(f"Status code: {r.status_code}")
-            if r.status_code == 200:
-                log.debug(f"{payload} atualizado com sucesso, Status Code: {r.status_code}")
-                time.sleep(2)
-                break
-            else:
-                log.warning("A API não retornou com sucesso, tentando novamente...")
-                tries = tries + 1
-                log.info("Tentando novamente em 10 segundos")
-                time.sleep(10)
-        except httpx.TimeoutException as err:
-            log.error(f"{err}")
-
-
-def request_api_get(url):
-    """
-    Return json from API
-    """
-
-    tries = 0
-    while tries < 10:
-        try:
-            client = httpx.Client()
-            log.debug(f"Tentando conexão com a url, tentativa {tries + 1} of 10")
-            r = client.get(url)
-            time.sleep(1)
-            if r.status_code == 200:
-                log.debug(f"{url} retornou com sucesso, Status Code: {r.status_code}")
-                tries = 3
-                return r.json()
-            else:
-                log.warning(f"Status code: {r.status_code}")
-                tries = tries + 1
-                log.info("Tentando novamente em 10 segundos")
-                time.sleep(10)
-                if tries == 10:
-                    raise Exception("A API não retornou com sucesso, tentativas esgotadas")
-        except httpx.TimeoutException as err:
-            log.error(f"{err}")
-
-
-def request_api(url, headers=None, payload=None, mode=None, max_retries=10, sleep_between_retries=1):
-    """
-    Return json from API
-    """
-
-    tries = 0
-    while max_retries:
-        try:
-            client = httpx.Client(timeout=10.0)
-            log.info(f"Tentando conexão com a url, tentativa {tries + 1} de 10")
-            if mode == "GET":
-                r = client.get(url, headers=headers)
-            else:
-                log.debug(f"Url: {url}, Headers: {headers}, Payload: {payload}")
-                r = client.put(url, headers=headers, data=payload)
-            if r.status_code != 200:
-                time.sleep(sleep_between_retries)
-                continue
-            else:
-                return r.json()
-        except httpx.TimeoutException as err:
-            log.error(f"{err}")
-            tries += 1
-            max_retries -= 1
-            if max_retries:
-                time.sleep(sleep_between_retries)
-
-
-def request_html(url, data=None, mode=None):
-    """
-    return html from url
-    """
-    tries = 3
-    for i in range(tries):
-        try:
-            client = httpx.Client()
-            # client = requests.Session()
-            if mode == "GET":
-                r = client.get(url)
-            else:
-                r = client.post(url, data=data)
-            if r.status_code != 200:
-                log.warning(f"Erro: {r.status_code}, tentando novamente...")
-                if i < tries - 1:  # i is zero indexed
-                    i += 1
-                    continue
-                else:
-                    log.warning(f"A url não está respondendo!\nErro: {r.status_code}")
-                    raise httpx.HTTPError
-            else:
-                log.debug(f" url: {url}, retornou com sucesso, Status Code: {r.status_code}")
-                return r.text
-        except httpx.TimeoutException as err:
-            log.error(f"{err}")
 
 
 async def async_request_main(url, data=None, mode=None):
@@ -221,35 +188,31 @@ async def async_request_main(url, data=None, mode=None):
     """
     async with aiohttp.ClientSession() as client:
 
-        tasks = []
-        tasks.append(asyncio.ensure_future(make_request(client, url)))
+        # tasks = []
+        tasks = [asyncio.ensure_future(make_request(client, url))]
+        # tasks.append(asyncio.ensure_future(make_request(client, url)))
 
-        retorno = await asyncio.gather(*tasks)
-        return retorno
+        await asyncio.gather(*tasks)
+        # return retorno
 
 
 async def make_request(session, url):
     # headers = {
     #     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4922.0 Safari/537.36 Edg/101.0.1198.0"
     # }
-    tries = 3
-    for i in range(tries):
-        try:
-            async with session.get(url) as r:
-                if r.status != 200:
-                    log.debug(f"Error: {r.status} - {url}")
-                if r.status != 200:
-                    log.warning(f"Erro: {r.status}, tentando novamente...")
-                    if i < tries - 1:  # i is zero indexed
-                        i += 1
-                        continue
-                    else:
-                        log.warning(f"A url não está respondendo!\nErro: {r.status}")
-                        raise aiohttp.ServerTimeoutError
-                else:
-                    return r.text()
-        except aiohttp.ServerTimeoutError as err:
-            log.error(f"{err}")
+
+    try:
+        async with session.get(url) as response:
+
+            response = await response.text()
+
+            if response.status != 200:
+                return {"error": f"server returned {response.status}"}
+            else:
+                return re.findall(regexID, response)
+    except asyncio.TimeoutError as e:
+        log.error(f" - TimeoutError: {e}")
+        return {"results": f"timeout error on {url}"}
 
 
 def backup_id():

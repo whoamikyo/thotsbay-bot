@@ -9,10 +9,9 @@ log = get_logger(__name__)
 
 
 class Thots:
-    def __init__(self, config, id_config, enable_task):
+    def __init__(self, config, id_config):
         self.config = config
         self.id_config = id_config
-        self.enable_task = enable_task
         self.thots = [
             angelhotoficial,
             bumbumgigante,  # has_topic
@@ -40,10 +39,11 @@ class Thots:
         ]
 
     def run(self):
-        for thot in self.thots:
-            if self.enable_task[thot.__name__]:
-                log.info(f"Tarefa {thot.__name__}")
-                thot(self.config, self.id_config, thot.__name__)
+        for i in range(len(self.thots)):
+            if self.config[f"{self.thots[i].__name__}"]["enable_task"]:
+                log.info(f"Iniciando tarefa {self.thots[i].__name__}, {i + 1} de {len(self.thots)}")
+                self.thots[i](self.config, self.id_config, self.thots[i].__name__)
+                log.info(f"Tarefa {self.thots[i].__name__} finalizada")
 
 
 def afroditehotwife(config, id_config, thot):

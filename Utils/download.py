@@ -12,18 +12,18 @@ from logger import get_logger
 import Utils.thotshub as thotsbay
 from Utils.thumb_maker import Thumbmaker
 from Utils.utils import (
+    CONFIG,
     ID_CONFIG,
-    LATEST_POST_URL,
     REFERER,
     THOTSBAY_PW,
     THOTSBAY_USER,
-    headers,
     DateTimeEncoder,
+    MakeRequest,
     absolute_file_paths,
     clean_tmp,
     get_files_in_path_without_extension,
     get_time_diff,
-    request_api,
+    headers,
     slugify,
     thumbnails_path,
     truncate_string,
@@ -34,6 +34,7 @@ load_dotenv()
 log = get_logger(__name__)
 
 thotsbay.Account = thotsbay.Account(THOTSBAY_USER, THOTSBAY_PW)
+api = MakeRequest()
 
 # YT-DLP referer
 youtube_dl.utils.std_headers["Referer"] = REFERER
@@ -75,7 +76,7 @@ def download_upload(path, link, i, j, has_topic, folder_link, payload, thot, ena
         if not_found_error:
             log.warning(f"Erro: {not_found_error}")
             # remaining = remaining - contador
-            request_api(ID_CONFIG, headers, payload, mode="PUT")
+            api.put(ID_CONFIG, headers=headers, data=payload)
             log.warning(f"Arquivo não encontrado no servidor, ainda faltam {remaining} arquivos.")
     if not os.path.isfile(download_file):
         log.critical(f"Erro ao baixar o arquivo {i}, com o nome: {name}")
@@ -83,7 +84,7 @@ def download_upload(path, link, i, j, has_topic, folder_link, payload, thot, ena
         log.info(f"Arquivo {name} baixado com sucesso! Agora...Enviando...")
         subprocess.call(cmd, shell=True)
         remaining = remaining - contador
-        request_api(ID_CONFIG, headers, payload, mode="PUT")
+        api.put(ID_CONFIG, headers=headers, data=payload)
         log.info(f"Arquivo {name} enviado com sucesso, ainda faltam: {remaining}")
 
     if has_topic > 0 and enable_posting:
@@ -91,7 +92,7 @@ def download_upload(path, link, i, j, has_topic, folder_link, payload, thot, ena
             log.info(f"Ainda faltam {remaining}, a postagem será feita depois para evitar flood...")
         else:
             log.info("Prosseguindo com a postagem...")
-            check_latest_post = request_api(LATEST_POST_URL, mode="GET")
+            check_latest_post = api.get(CONFIG)[thot]["latest_post"]
             latest_post = datetime.datetime.fromisoformat(check_latest_post[thot])  # type: ignore
             agora = datetime.datetime.utcnow()
             diff_minutes = get_time_diff(start=latest_post, end=agora)
@@ -102,8 +103,8 @@ def download_upload(path, link, i, j, has_topic, folder_link, payload, thot, ena
                 lista_nomes = get_files_in_path_without_extension(path)
                 log.info("Atualizando tópico agora...")
                 thotsbay.Account.send_message_in_thread(has_topic, msg(imgur_list, folder_link, lista_nomes))
-                latest_post_payload = json.dumps({thot: datetime.datetime.utcnow()}, cls=DateTimeEncoder)
-                request_api(LATEST_POST_URL, headers, latest_post_payload, mode="PUT")
+                latest_post_payload = json.dumps({thot: {"latest_post": datetime.datetime.utcnow()}}, cls=DateTimeEncoder)
+                api.put(ID_CONFIG, headers=headers, data=latest_post_payload)
                 # Pruning temporary files
                 clean_tmp(path)
                 clean_tmp(thumbnails_path)
@@ -159,12 +160,12 @@ def download_alt(path, link, i, j, payload, thot):
         if not_found_error:
             log.warning(f"Erro: {not_found_error}")
             # remaining = remaining - contador
-            request_api(ID_CONFIG, headers, payload, mode="PUT")
+            api.put(ID_CONFIG, headers=headers, data=payload)
             log.warning("Arquivo não encontrado no servidor, ainda faltam arquivos.")
     if not os.path.isfile(download_file):
         log.critical(f"Erro ao baixar o arquivo {i}, com o nome: {name}")
     else:
         log.info(f"Arquivo {name} baixado com sucesso! Agora...Enviando...")
         subprocess.call(cmd, shell=True)
-        request_api(ID_CONFIG, headers, payload, mode="PUT")
+        api.put(ID_CONFIG, headers=headers, data=payload)
         log.info(f"Arquivo {name} enviado com sucesso")
