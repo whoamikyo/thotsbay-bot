@@ -28,7 +28,7 @@ cd ./thotsbay-bot/
 poetry install --no-interaction --without dev
 poetry run python main.py
 # Git commit
-git add -A
-git commit -m "Auto-update"
+#git add -A
+#git commit -m "Auto-update"
 # finally push
-git push
+#git push
