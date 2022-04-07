@@ -26,9 +26,9 @@ class Thots:
             afroditehotwife,  # has_topic
             agathalira,  # has_topic
             barbaracastroo,  # has_topic
-            bellacasada,  # has_topic
+            bellacasada,  # has_topic # atencao
             casalruivaecornooficial,  # has_topic
-            casaltopbessa,  # has_topic
+            casaltopbessa,  # has_topic # atencao
             esposagulosinha,  # has_topic
             fabioeanaes,  # has topic
             helenafilmes,  # has_topic
@@ -42,14 +42,14 @@ class Thots:
         
     def run(self):
         for i in range(len(self.enable)):
-            log.info(f"Iniciando tarefa {self.enable[i]}, {i + 1} de {len(self.enable)}")
+            log.warning(f"---------------| Iniciando tarefa {self.enable[i]}, {i + 1} de {len(self.enable)}")
             self.thots[i](self.config, self.id_config, self.enable[i])
             log.warning(f"---------------| {self.enable[i]} - Fim da lista de videos.")
 
     # def run(self):
     #     for i in range(len(self.thots)):
     #         if self.config[f"{self.thots[i].__name__}"]["enable_task"]:
-    #             log.info(f"Iniciando tarefa {self.thots[i].__name__}, {i + 1} de {len(self.thots)}")
+    #             log.warning(f"---------------| Iniciando tarefa {self.thots[i].__name__}, {i + 1} de {len(self.thots)}")
     #             self.thots[i](self.config, self.id_config, self.thots[i].__name__)
     #             log.warning(f"---------------| {self.thots[i].__name__} - Fim da lista de videos.")
 
