@@ -55,7 +55,7 @@ cmd = f"""rclone --verbose \
         copy --ignore-existing {src} OneDrive_Edu:{dst}"""
 
 
-def download_upload(path, link, i, j, has_topic, folder_link, payload, thot, enable_posting, remaining, contador, max_posts_at_once):
+def download_upload(config, path, link, i, j, has_topic, folder_link, payload, thot, enable_posting, remaining, contador, max_posts_at_once):
 
     name = slugify(str(i) + "-" + j)
     download_file = truncate_string(path + name) + ".mp4"
@@ -92,8 +92,7 @@ def download_upload(path, link, i, j, has_topic, folder_link, payload, thot, ena
             log.info(f"Ainda faltam {remaining}, a postagem será feita depois para evitar flood...")
         else:
             log.info("Prosseguindo com a postagem...")
-            check_latest_post = api.get(CONFIG)[thot]["latest_post"]
-            latest_post = datetime.datetime.fromisoformat(check_latest_post[thot])  # type: ignore
+            latest_post = datetime.datetime.fromisoformat(config[thot]["latest_post"])  # type: ignore
             agora = datetime.datetime.utcnow()
             diff_minutes = get_time_diff(start=latest_post, end=agora)
             if diff_minutes > 1:

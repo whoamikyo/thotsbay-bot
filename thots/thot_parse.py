@@ -131,7 +131,7 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
                 link = f"https://{CDN}/hls/{i}/playlist.m3u8"
                 # call yt-dlp download
                 download_upload(
-                    path, link, i, j, has_topic, folder_link, payload, thot, enable_posting, remaining, contador, max_posts_at_once
+                    config, path, link, i, j, has_topic, folder_link, payload, thot, enable_posting, remaining, contador, max_posts_at_once
                 )
 
 

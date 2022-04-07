@@ -128,7 +128,7 @@ class MakeRequest:
 
     def post(self, url, **kwargs):
         try:
-            log.info(f"Tentando requisição POST na URL: ...{url}, {self.tries + 1}/10")
+            log.info(f"Tentando requisição POST na URL: {url}, {self.tries + 1}/10")
             response = self.session.post(url, **kwargs)
             if response.status_code == 200:
                 log.info(f"Requisição POST realizada com sucesso, status code: {response.status_code}")

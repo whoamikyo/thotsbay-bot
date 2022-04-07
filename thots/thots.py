@@ -38,13 +38,12 @@ class Thots:
             vidasafada,  # has_topic
         ]
         self.enable = [x.__name__ for x in self.thots if self.config[f"{x.__name__}"]["enable_task"]]
-        # time.sleep(10)
-
+        
     def run(self):
         for i in range(len(self.enable)):
             log.info(f"Iniciando tarefa {self.enable[i]}, {i + 1} de {len(self.enable)}")
             self.thots[i](self.config, self.id_config, self.enable[i])
-            log.warning(f"---------------| {self.thots[i].__name__} - Fim da lista de videos.")
+            log.warning(f"---------------| {self.enable[i]} - Fim da lista de videos.")
 
     # def run(self):
     #     for i in range(len(self.thots)):
