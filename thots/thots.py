@@ -196,7 +196,10 @@ def tatycasadinha(config, id_config, thot):
     get_category = False
     alternative = True
     if alternative:
-        asyncio.run(alt_thot_parse(thot, config, id_config))
+        loop = asyncio.get_event_loop()
+        future = asyncio.ensure_future(alt_thot_parse(thot, config, id_config))
+        loop.run_until_complete(future)
+        # asyncio.run(alt_thot_parse(thot, config, id_config))
     else:
         thot_parse(thot, folder_link, config, id_config, get_category)
 

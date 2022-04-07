@@ -106,7 +106,7 @@ def download_upload(path, link, i, j, folder_link, payload, thot, remaining, con
                 log.info("Atualizando tópico agora...")
                 thotsbay.Account.send_message_in_thread(has_topic, msg(imgur_list, folder_link, lista_nomes))
                 latest_post_payload = json.dumps({thot: {"latest_post": datetime.datetime.utcnow()}}, cls=DateTimeEncoder)
-                api.put(ID_CONFIG, headers=headers, data=latest_post_payload)
+                api.put(CONFIG, headers=headers, data=latest_post_payload)
                 # Pruning temporary files
                 clean_tmp(path)
                 clean_tmp(thumbnails_path)
