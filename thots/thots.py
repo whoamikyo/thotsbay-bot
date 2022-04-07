@@ -38,7 +38,6 @@ class Thots:
             vidasafada,  # has_topic
         ]
         self.enable = [x.__name__ for x in self.thots if self.config[f"{x.__name__}"]["enable_task"]]
-        print(self.enable)
         # time.sleep(10)
 
     def run(self):
