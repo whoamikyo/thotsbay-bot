@@ -44,14 +44,14 @@ class Thots:
         for i in range(len(self.enable)):
             log.info(f"Iniciando tarefa {self.enable[i]}, {i + 1} de {len(self.enable)}")
             self.thots[i](self.config, self.id_config, self.enable[i])
-            log.info(f"Tarefa {self.enable[i]} finalizada")
+            log.warning(f"---------------| {self.thots[i].__name__} - Fim da lista de videos.")
 
     # def run(self):
     #     for i in range(len(self.thots)):
     #         if self.config[f"{self.thots[i].__name__}"]["enable_task"]:
     #             log.info(f"Iniciando tarefa {self.thots[i].__name__}, {i + 1} de {len(self.thots)}")
     #             self.thots[i](self.config, self.id_config, self.thots[i].__name__)
-    #             log.info(f"Tarefa {self.thots[i].__name__} finalizada")
+    #             log.warning(f"---------------| {self.thots[i].__name__} - Fim da lista de videos.")
 
 
 def afroditehotwife(config, id_config, thot):

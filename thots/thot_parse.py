@@ -90,7 +90,10 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
         videoID_alt = get_list_from_nested([re.findall(regexID, parse.get(url=x).text) for x in url_list])
         log.debug(f"{thot} - videoID_alt: {list_to_int(videoID_alt)}")
         log.debug(f"ID_list: {id_list}")
-        deleted_videos = compare_lists(id_list, list_to_int(videoID_alt))
+        diff = compare_lists(id_list, list_to_int(videoID_alt))
+        log.debug(f"{thot} - diff: {diff}")
+        deleted_videos = [x for x in id_list if x not in list_to_int(videoID_alt)]
+        log.debug(f"{thot} - Deletados: {deleted_videos}")
         remaining = len(videoID_alt) - (len(id_list) - len(deleted_videos))
         log.debug(f"Lista de videos que não foram baixados: {deleted_videos}")
         log.info(f"Foi encontrado um total de : {remaining} videos restantes.")
@@ -130,7 +133,6 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
                 download_upload(
                     path, link, i, j, has_topic, folder_link, payload, thot, enable_posting, remaining, contador, max_posts_at_once
                 )
-    log.warning(f"---------------| {thot} - Fim da lista de videos.")
 
 
 async def parse_album(thot, config):
