@@ -39,10 +39,11 @@ if sys.platform.startswith("win") and sys.version_info[0] == 3 and sys.version_i
 parse = MakeRequest()
 
 
-def thot_parse(thot, folder_link, config, id_config, categoria, get_category):
+def thot_parse(thot, folder_link, config, id_config, get_category):
 
     url = config[thot]["url"]
     id_list = id_config[f"{thot}ID"]
+    categoria = config[thot]["categoria"]
     # if get_category:
     #     categorias = re.findall(regexGetCategory, request_html(url=url + "videos/", mode="GET"), re.MULTILINE | re.IGNORECASE)
     #     path_list = [download_path + thot + "/" + categorias[i] + "/" for i in range(len(categorias))]
