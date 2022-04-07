@@ -318,7 +318,7 @@ def imgur(file):
         return {"success": False, "error": f"{err}"}
 
 
-def write_ids(req, filename="json_files/ids_api.json"):
+def write_ids(req, filename):
     with open(filename, "w") as f:
         json.dump(req, f, sort_keys=True, indent=4)
 

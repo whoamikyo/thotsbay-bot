@@ -39,7 +39,7 @@ if sys.platform.startswith("win") and sys.version_info[0] == 3 and sys.version_i
 parse = MakeRequest()
 
 
-def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, categoria, get_category):
+def thot_parse(thot, folder_link, config, id_config, categoria, get_category):
 
     url = config[thot]["url"]
     id_list = id_config[f"{thot}ID"]
@@ -131,7 +131,7 @@ def thot_parse(thot, has_topic, folder_link, config, id_config, enable_posting, 
                 link = f"https://{CDN}/hls/{i}/playlist.m3u8"
                 # call yt-dlp download
                 download_upload(
-                    config, path, link, i, j, has_topic, folder_link, payload, thot, enable_posting, remaining, contador, max_posts_at_once
+                    path, link, i, j, folder_link, payload, thot, remaining, contador, max_posts_at_once, config
                 )
 
 
