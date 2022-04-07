@@ -2,7 +2,7 @@ import asyncio
 
 from logger import get_logger
 from Utils.utils import URL_BASE
-
+import time
 from thots.thot_parse import alt_thot_parse, parse_album, thot_parse
 
 log = get_logger(__name__)
@@ -37,13 +37,22 @@ class Thots:
             nikkecasada,  # has_topic
             vidasafada,  # has_topic
         ]
+        self.enable = [x.__name__ for x in self.thots if self.config[f"{x.__name__}"]["enable_task"]]
+        print(self.enable)
+        # time.sleep(10)
 
     def run(self):
-        for i in range(len(self.thots)):
-            if self.config[f"{self.thots[i].__name__}"]["enable_task"]:
-                log.info(f"Iniciando tarefa {self.thots[i].__name__}, {i + 1} de {len(self.thots)}")
-                self.thots[i](self.config, self.id_config, self.thots[i].__name__)
-                log.info(f"Tarefa {self.thots[i].__name__} finalizada")
+        for i in range(len(self.enable)):
+            log.info(f"Iniciando tarefa {self.enable[i]}, {i + 1} de {len(self.enable)}")
+            self.thots[i](self.config, self.id_config, self.enable[i])
+            log.info(f"Tarefa {self.enable[i]} finalizada")
+
+    # def run(self):
+    #     for i in range(len(self.thots)):
+    #         if self.config[f"{self.thots[i].__name__}"]["enable_task"]:
+    #             log.info(f"Iniciando tarefa {self.thots[i].__name__}, {i + 1} de {len(self.thots)}")
+    #             self.thots[i](self.config, self.id_config, self.thots[i].__name__)
+    #             log.info(f"Tarefa {self.thots[i].__name__} finalizada")
 
 
 def afroditehotwife(config, id_config, thot):

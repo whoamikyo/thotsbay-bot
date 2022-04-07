@@ -191,7 +191,7 @@ async def get_foto(session, url_gallery, path, i, j, foto_id, thot, max_retries=
 
 
 async def alt_thot_parse(thot, config, id_config):
-    url_base = config[thot]
+    url_base = config[thot]["url"]
     id_list = id_config[f"{thot}ID"]
     try:
         RangeInit = id_list[-1] - 1
