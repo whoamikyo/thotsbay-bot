@@ -226,7 +226,7 @@ async def get_video_alt(session, url, id_list, path, thot, number):
     try:
         async with session.get(url, headers=headers) as response:
 
-            resp = await response.text
+            resp = await response.text()
             if response.status != 200:
                 return {"error": f"server returned {response.status}"}
             if re.findall(pattern, resp) == [] and response.status == 200:
