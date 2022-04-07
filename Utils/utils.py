@@ -215,32 +215,6 @@ async def make_request(session, url):
         return {"results": f"timeout error on {url}"}
 
 
-def backup_id():
-    """
-    Backup ID's in another api
-    """
-
-    tries = 3
-    for i in range(tries):
-        try:
-            client = httpx.Client()
-            log.debug(f"Tentando conexão com a url: {ID_CONFIG}, tentativa {i + 1} of {tries}")
-            r = client.get(ID_CONFIG)
-            log.info(f"Requisição realizada com sucesso: {r.status_code}")
-            if r.status_code != 200:
-                log.warning(f"Erro: {r.status_code}, tentando novamente...")
-                if i < tries:
-                    i += 1
-                    log.debug(f"Tentativa {i} of {tries}")
-                    continue
-            else:
-                backup = client.put(ID_CONFIG_BACKUP, json=r.json(), headers=headers_backup)
-                log.info(f"Backup realizado com sucesso, Status Code: {backup.status_code}")
-                break
-        except requests.exceptions.RequestException as err:
-            raise RuntimeError(err)
-
-
 def image_uploader(filelist):
     imgur_url = "https://api.imgur.com/3/image"
     imgur_headers = {"Authorization": f"Client-ID {IMGUR_CLIENT_ID}"}
