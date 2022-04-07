@@ -2,7 +2,7 @@ from thots.thots import Thots
 from logger import get_logger
 import time
 from Utils.thotshub import Account
-from Utils.utils import CONFIG, ID_CONFIG, backup_id, check_colab, write_ids, MakeRequest
+from Utils.utils import CONFIG, ID_CONFIG, check_colab, write_ids, MakeRequest, ID_CONFIG_BACKUP, headers_backup
 
 log = get_logger(__name__)
 
@@ -23,7 +23,7 @@ if __name__ == "__main__":
     Thots(config, id_config).run()
 
     log.info("Fazendo backup dos IDs na API backup...")
-    backup_id()
+    api.put(ID_CONFIG_BACKUP, json=api.get(ID_CONFIG).json(), headers=headers_backup)
     log.info("Salvando ID's da API localmente....")
     write_ids(api.get(ID_CONFIG).json(), filename="json_files/ids_api.json")
     write_ids(api.get(CONFIG).json(), filename="json_files/config_api.json")
