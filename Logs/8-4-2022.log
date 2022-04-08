@@ -1,0 +1,335 @@
+2022-04-08 00:31:00,843 - Utils.utils - INFO - Ambiente de produção ativado
+2022-04-08 00:31:02,332 - Utils.utils - INFO - Tentando requisição GET na URL: ...gin/login, 1/10
+2022-04-08 00:31:03,436 - __main__ - INFO - Checando thotsbay forum...
+2022-04-08 00:31:03,498 - Utils.thotshub - INFO - Autorizando...
+2022-04-08 00:31:03,741 - Utils.utils - INFO - Tentando requisição GET na URL: ...gin/login, 1/10
+2022-04-08 00:31:04,223 - Utils.utils - INFO - Tentando requisição POST na URL: https://forum.thotsbay.com/login/login, 1/10
+2022-04-08 00:31:05,472 - Utils.utils - INFO - Requisição POST realizada com sucesso, status code: 200
+2022-04-08 00:31:05,532 - Utils.thotshub - INFO - Logado no thotsbay com sucesso.
+2022-04-08 00:31:05,768 - __main__ - INFO - Checando colab...
+2022-04-08 00:31:06,012 - Utils.utils - INFO - COLAB enviorement not detected
+2022-04-08 00:31:06,270 - __main__ - INFO - Checando config...
+2022-04-08 00:31:06,508 - Utils.utils - INFO - Tentando requisição GET na URL: ...et/config, 1/10
+2022-04-08 00:31:08,051 - __main__ - INFO - Checando ids...
+2022-04-08 00:31:08,285 - Utils.utils - INFO - Tentando requisição GET na URL: ...id_config, 1/10
+2022-04-08 00:31:08,711 - thots.thots - WARNING - ---------------| Iniciando tarefa afroditehotwife, 1 de 17
+2022-04-08 00:31:08,952 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:31:09,634 - Utils.utils - INFO - Tentando requisição GET na URL: ...m/videos/, 1/10
+2022-04-08 00:31:10,251 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:31:10,482 - Utils.utils - INFO - Tentando requisição GET na URL: ...m/videos/, 1/10
+2022-04-08 00:31:10,967 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:31:11,207 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:11,869 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:12,116 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:31:12,321 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:31:12,630 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:31:12,933 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:31:13,235 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/7, 1/10
+2022-04-08 00:31:13,644 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/8, 1/10
+2022-04-08 00:31:14,044 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/9, 1/10
+2022-04-08 00:31:14,507 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/10, 1/10
+2022-04-08 00:31:15,197 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/11, 1/10
+2022-04-08 00:31:15,876 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/12, 1/10
+2022-04-08 00:31:16,215 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/13, 1/10
+2022-04-08 00:31:16,501 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:31:16,736 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:31:16,793 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:17,330 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:17,783 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:31:18,057 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:31:18,321 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:31:18,521 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:31:18,824 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/7, 1/10
+2022-04-08 00:31:19,069 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/8, 1/10
+2022-04-08 00:31:19,300 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/9, 1/10
+2022-04-08 00:31:19,513 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/10, 1/10
+2022-04-08 00:31:19,769 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/11, 1/10
+2022-04-08 00:31:19,987 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/12, 1/10
+2022-04-08 00:31:20,259 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/13, 1/10
+2022-04-08 00:31:20,470 - thots.thots - WARNING - ---------------| afroditehotwife - Fim da lista de videos.
+2022-04-08 00:31:20,884 - thots.thots - WARNING - ---------------| Iniciando tarefa agathalira, 2 de 17
+2022-04-08 00:31:20,941 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:31:21,177 - Utils.utils - INFO - Tentando requisição GET na URL: ...r/videos/, 1/10
+2022-04-08 00:31:22,073 - thots.thot_parse - INFO - Primeiro padrão de regex definido com sucesso!
+2022-04-08 00:31:22,311 - Utils.utils - INFO - Tentando requisição GET na URL: ...r/videos/, 1/10
+2022-04-08 00:31:23,024 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:31:23,268 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:23,782 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:24,139 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:31:24,536 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:31:24,958 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:31:25,423 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:31:25,761 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/7, 1/10
+2022-04-08 00:31:26,258 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/8, 1/10
+2022-04-08 00:31:26,765 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/9, 1/10
+2022-04-08 00:31:27,088 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/10, 1/10
+2022-04-08 00:31:27,439 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/11, 1/10
+2022-04-08 00:31:27,778 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/12, 1/10
+2022-04-08 00:31:28,309 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/13, 1/10
+2022-04-08 00:31:28,555 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:31:28,806 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:31:28,860 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:29,826 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:30,575 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:31:31,173 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:31:31,953 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:31:32,800 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:31:33,424 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/7, 1/10
+2022-04-08 00:31:33,790 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/8, 1/10
+2022-04-08 00:31:34,649 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/9, 1/10
+2022-04-08 00:31:34,976 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/10, 1/10
+2022-04-08 00:31:35,293 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/11, 1/10
+2022-04-08 00:31:35,620 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/12, 1/10
+2022-04-08 00:31:35,978 - Utils.utils - INFO - Tentando requisição GET na URL: ...videos/13, 1/10
+2022-04-08 00:31:36,238 - thots.thots - WARNING - ---------------| agathalira - Fim da lista de videos.
+2022-04-08 00:31:36,612 - thots.thots - WARNING - ---------------| Iniciando tarefa barbaracastroo, 3 de 17
+2022-04-08 00:31:36,727 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:31:37,095 - Utils.utils - INFO - Tentando requisição GET na URL: ...o/videos/, 1/10
+2022-04-08 00:31:37,818 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:31:38,054 - Utils.utils - INFO - Tentando requisição GET na URL: ...o/videos/, 1/10
+2022-04-08 00:31:38,490 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:31:38,728 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:39,173 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:31:39,409 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:31:39,467 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:39,895 - thots.thots - WARNING - ---------------| barbaracastroo - Fim da lista de videos.
+2022-04-08 00:31:40,166 - thots.thots - WARNING - ---------------| Iniciando tarefa bellacasada, 4 de 17
+2022-04-08 00:31:40,221 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:31:40,461 - Utils.utils - INFO - Tentando requisição GET na URL: ...m/videos/, 1/10
+2022-04-08 00:31:41,075 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:31:41,345 - Utils.utils - INFO - Tentando requisição GET na URL: ...m/videos/, 1/10
+2022-04-08 00:31:41,777 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:31:42,013 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:42,522 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:42,772 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:31:42,979 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:31:43,205 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:31:43,487 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:31:43,848 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:31:44,088 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:31:44,143 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:44,540 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:44,791 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:31:45,024 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:31:45,244 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:31:45,460 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:31:45,695 - thots.thots - WARNING - ---------------| bellacasada - Fim da lista de videos.
+2022-04-08 00:31:45,942 - thots.thots - WARNING - ---------------| Iniciando tarefa casalruivaecornooficial, 5 de 17
+2022-04-08 00:31:46,001 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:31:46,237 - Utils.utils - INFO - Tentando requisição GET na URL: ...l/videos/, 1/10
+2022-04-08 00:31:46,776 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:31:47,142 - Utils.utils - INFO - Tentando requisição GET na URL: ...l/videos/, 1/10
+2022-04-08 00:31:47,681 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:31:47,924 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:48,474 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:48,775 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:31:49,133 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:31:49,397 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:31:49,659 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:31:49,925 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:31:50,165 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:31:50,225 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:50,689 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:50,997 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:31:51,310 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:31:51,608 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:31:52,047 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:31:52,469 - thots.thots - WARNING - ---------------| casalruivaecornooficial - Fim da lista de videos.
+2022-04-08 00:31:52,844 - thots.thots - WARNING - ---------------| Iniciando tarefa casaltopbessa, 6 de 17
+2022-04-08 00:31:52,900 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:31:53,138 - Utils.utils - INFO - Tentando requisição GET na URL: ...a/videos/, 1/10
+2022-04-08 00:31:53,645 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:31:53,882 - Utils.utils - INFO - Tentando requisição GET na URL: ...a/videos/, 1/10
+2022-04-08 00:31:54,584 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:31:54,823 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:55,411 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:55,818 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:31:56,044 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:31:56,100 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:56,673 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:56,927 - thots.thots - WARNING - ---------------| casaltopbessa - Fim da lista de videos.
+2022-04-08 00:31:57,176 - thots.thots - WARNING - ---------------| Iniciando tarefa elaquer, 7 de 17
+2022-04-08 00:31:57,239 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:31:57,483 - Utils.utils - INFO - Tentando requisição GET na URL: ...r/videos/, 1/10
+2022-04-08 00:31:58,049 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:31:58,276 - Utils.utils - INFO - Tentando requisição GET na URL: ...r/videos/, 1/10
+2022-04-08 00:31:58,818 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:31:59,058 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:31:59,544 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:31:59,851 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:00,176 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:00,508 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:32:00,747 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:32:00,806 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:01,676 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:02,090 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:02,367 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:02,667 - thots.thots - WARNING - ---------------| elaquer - Fim da lista de videos.
+2022-04-08 00:32:02,915 - thots.thots - WARNING - ---------------| Iniciando tarefa emilysales, 8 de 17
+2022-04-08 00:32:02,975 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:32:03,212 - Utils.utils - INFO - Tentando requisição GET na URL: ...s/videos/, 1/10
+2022-04-08 00:32:03,689 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:32:03,925 - Utils.utils - INFO - Tentando requisição GET na URL: ...s/videos/, 1/10
+2022-04-08 00:32:04,409 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:32:04,680 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:05,206 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:05,507 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:05,785 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:06,109 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:32:06,455 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:32:06,814 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:32:06,871 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:07,360 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:07,726 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:08,150 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:08,469 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:32:08,844 - thots.thots - WARNING - ---------------| emilysales - Fim da lista de videos.
+2022-04-08 00:32:09,133 - thots.thots - WARNING - ---------------| Iniciando tarefa esposagulosinha, 9 de 17
+2022-04-08 00:32:09,189 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:32:09,420 - Utils.utils - INFO - Tentando requisição GET na URL: ...m/videos/, 1/10
+2022-04-08 00:32:10,042 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:32:10,300 - Utils.utils - INFO - Tentando requisição GET na URL: ...m/videos/, 1/10
+2022-04-08 00:32:10,808 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:32:11,047 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:11,567 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:11,813 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:12,029 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:12,233 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:32:12,432 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:32:12,742 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/7, 1/10
+2022-04-08 00:32:13,024 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:32:13,257 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:32:13,312 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:13,868 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:14,249 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:14,458 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:14,667 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:32:15,004 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:32:15,470 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/7, 1/10
+2022-04-08 00:32:16,052 - thots.thots - WARNING - ---------------| esposagulosinha - Fim da lista de videos.
+2022-04-08 00:32:16,435 - thots.thots - WARNING - ---------------| Iniciando tarefa fabioeanaes, 10 de 17
+2022-04-08 00:32:16,491 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:32:16,725 - Utils.utils - INFO - Tentando requisição GET na URL: ...r/videos/, 1/10
+2022-04-08 00:32:17,645 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:32:17,875 - Utils.utils - INFO - Tentando requisição GET na URL: ...r/videos/, 1/10
+2022-04-08 00:32:18,350 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:32:18,584 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:19,124 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:19,428 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:19,664 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:19,910 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:32:20,178 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:32:20,408 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:32:20,463 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:20,895 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:21,104 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:21,301 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:21,563 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:32:21,792 - thots.thots - WARNING - ---------------| fabioeanaes - Fim da lista de videos.
+2022-04-08 00:32:22,026 - thots.thots - WARNING - ---------------| Iniciando tarefa helenafilmes, 11 de 17
+2022-04-08 00:32:22,084 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:32:22,315 - Utils.utils - INFO - Tentando requisição GET na URL: ...m/videos/, 1/10
+2022-04-08 00:32:23,094 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:32:23,397 - Utils.utils - INFO - Tentando requisição GET na URL: ...m/videos/, 1/10
+2022-04-08 00:32:23,887 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:32:24,123 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:24,616 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:24,917 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:32:25,151 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:32:25,205 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:25,716 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:25,960 - thots.thots - WARNING - ---------------| helenafilmes - Fim da lista de videos.
+2022-04-08 00:32:26,191 - thots.thots - WARNING - ---------------| Iniciando tarefa lualencar11, 12 de 17
+2022-04-08 00:32:26,248 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:32:26,480 - Utils.utils - INFO - Tentando requisição GET na URL: ...1/videos/, 1/10
+2022-04-08 00:32:26,932 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:32:27,169 - Utils.utils - INFO - Tentando requisição GET na URL: ...1/videos/, 1/10
+2022-04-08 00:32:27,650 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:32:27,876 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:28,397 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:32:28,625 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:32:28,680 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:29,146 - thots.thots - WARNING - ---------------| lualencar11 - Fim da lista de videos.
+2022-04-08 00:32:29,384 - thots.thots - WARNING - ---------------| Iniciando tarefa melissadias, 13 de 17
+2022-04-08 00:32:29,439 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:32:29,668 - Utils.utils - INFO - Tentando requisição GET na URL: ...s/videos/, 1/10
+2022-04-08 00:32:30,146 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:32:30,382 - Utils.utils - INFO - Tentando requisição GET na URL: ...s/videos/, 1/10
+2022-04-08 00:32:30,998 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:32:31,236 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:31,724 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:31,973 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:32,220 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:32,466 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:32:32,777 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:32:33,132 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/7, 1/10
+2022-04-08 00:32:33,572 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:32:33,808 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:32:33,864 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:34,426 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:34,690 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:34,946 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:35,207 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:32:35,459 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:32:35,754 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/7, 1/10
+2022-04-08 00:32:36,110 - thots.thots - WARNING - ---------------| melissadias - Fim da lista de videos.
+2022-04-08 00:32:36,476 - thots.thots - WARNING - ---------------| Iniciando tarefa nicoleballs_trans, 14 de 17
+2022-04-08 00:32:36,544 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:32:36,778 - Utils.utils - INFO - Tentando requisição GET na URL: ...s/videos/, 1/10
+2022-04-08 00:32:37,360 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:32:37,643 - Utils.utils - INFO - Tentando requisição GET na URL: ...s/videos/, 1/10
+2022-04-08 00:32:38,143 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:32:38,436 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:38,938 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:39,177 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:32:39,425 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:32:39,482 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:39,963 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:40,286 - thots.thots - WARNING - ---------------| nicoleballs_trans - Fim da lista de videos.
+2022-04-08 00:32:40,522 - thots.thots - WARNING - ---------------| Iniciando tarefa nikkecasada, 15 de 17
+2022-04-08 00:32:40,585 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:32:40,873 - Utils.utils - INFO - Tentando requisição GET na URL: ...p/videos/, 1/10
+2022-04-08 00:32:41,502 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:32:41,749 - Utils.utils - INFO - Tentando requisição GET na URL: ...p/videos/, 1/10
+2022-04-08 00:32:42,232 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:32:42,467 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:42,875 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:43,118 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:43,317 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:43,523 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:32:43,793 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:32:43,850 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:44,261 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:44,467 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:44,686 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:44,965 - thots.thots - WARNING - ---------------| nikkecasada - Fim da lista de videos.
+2022-04-08 00:32:45,252 - thots.thots - WARNING - ---------------| Iniciando tarefa tatycasadinha, 16 de 17
+2022-04-08 00:32:45,624 - thots.thots - WARNING - ---------------| tatycasadinha - Fim da lista de videos.
+2022-04-08 00:32:45,698 - thots.thots - WARNING - ---------------| Iniciando tarefa vidasafada, 17 de 17
+2022-04-08 00:32:45,769 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-08 00:32:46,022 - Utils.utils - INFO - Tentando requisição GET na URL: ...t/videos/, 1/10
+2022-04-08 00:32:46,700 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-08 00:32:46,938 - Utils.utils - INFO - Tentando requisição GET na URL: ...t/videos/, 1/10
+2022-04-08 00:32:47,568 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-08 00:32:47,799 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:48,223 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:48,535 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:48,761 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:49,012 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:32:49,226 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:32:49,450 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-08 00:32:49,682 - thots.thot_parse - INFO - A lista de ID's já foi definida
+2022-04-08 00:32:49,739 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/1, 1/10
+2022-04-08 00:32:50,303 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/2, 1/10
+2022-04-08 00:32:50,564 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/3, 1/10
+2022-04-08 00:32:50,805 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/4, 1/10
+2022-04-08 00:32:51,076 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/5, 1/10
+2022-04-08 00:32:51,358 - Utils.utils - INFO - Tentando requisição GET na URL: .../videos/6, 1/10
+2022-04-08 00:32:51,607 - thots.thots - WARNING - ---------------| vidasafada - Fim da lista de videos.
+2022-04-08 00:32:51,860 - __main__ - INFO - Fazendo backup dos IDs na API backup...
+2022-04-08 00:32:52,232 - Utils.utils - INFO - Tentando requisição GET na URL: ...id_config, 1/10
+2022-04-08 00:32:52,647 - Utils.utils - INFO - Tentando requisição PUT na URL: ...74932eedf, 1/10
+2022-04-08 00:32:53,308 - Utils.utils - INFO - Requisição PUT realizada com sucesso, status code: 200
+2022-04-08 00:32:53,365 - __main__ - INFO - Salvando ID's da API localmente....
+2022-04-08 00:32:53,597 - Utils.utils - INFO - Tentando requisição GET na URL: ...id_config, 1/10
+2022-04-08 00:32:54,029 - Utils.utils - INFO - Tentando requisição GET na URL: ...et/config, 1/10
