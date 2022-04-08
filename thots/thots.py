@@ -2,7 +2,6 @@ import asyncio
 import time
 
 from logger import get_logger
-from Utils.utils import URL_BASE
 
 from thots.thot_parse import alt_thot_parse, parse_album, thot_parse
 
@@ -39,7 +38,7 @@ class Thots:
             vidasafada,  # has_topic
         ]
         self.enable = [x.__name__ for x in self.thots if self.config[f"{x.__name__}"]["enable_task"]]
-        
+
     def run(self):
         for i in range(len(self.enable)):
             log.warning(f"---------------| Iniciando tarefa {self.enable[i]}, {i + 1} de {len(self.enable)}")
@@ -55,49 +54,41 @@ class Thots:
 
 
 def afroditehotwife(config, id_config, thot):
-    folder_link = f"{URL_BASE}EnpudB-I8hRGlkVjeIky0_cBXNzyDY-Ag_Dvm6Kqw1RQfQ"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def agathalira(config, id_config, thot):
-    folder_link = f"{URL_BASE}EgU0RTxc0thCoDWSHkFw8IwBwK-UZ_Okzyv725Qp6YuFLg"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def angelhotoficial(config, id_config, thot):
-    folder_link = f"{URL_BASE}Ethi7dzQ3kVApyHGlbJIfcUB97aLqQE3jaf0CtH5MqI0pA"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def bellacasada(config, id_config, thot):
-    folder_link = f"{URL_BASE}EjsE5AIRCgZOt2kWENHa7zsB3jylhwix9T_WTIvYMtl5Xg"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def casalblond(config, id_config, thot):
-    folder_link = f"{URL_BASE}EsclexMG9qdMuq4wTXGq2YIBfuDWESW_PEMncF0lGbZOEg"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def casalruivaecornooficial(config, id_config, thot):
-    folder_link = f"{URL_BASE}EhjQgaMMN5pIjdvY59gWhqkBPJSec0KZZLugbmb3BmcGjw"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def casaltopbessa(config, id_config, thot):
-    folder_link = f"{URL_BASE}EogbMUeaEpNKnGzJTLmxtpwBtNbFMbl8Cww7FCSuQ0B0GQ"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def esposagulosinha(config, id_config, thot):
-    folder_link = f"{URL_BASE}Es_tAJKWL_RHqxOYRPaqxBIBeeo0oAU2UdbnQZaLNc860g"
     get_category = False
     enable_gallery = False
     if enable_gallery:
@@ -106,93 +97,79 @@ def esposagulosinha(config, id_config, thot):
         loop.run_until_complete(future)
         # asyncio.run(parse_album(thot, config))
     else:
-        thot_parse(thot, folder_link, config, id_config, get_category)
+        thot_parse(thot, config, id_config, get_category)
 
 
 def fabioeanaes(config, id_config, thot):
-    folder_link = f"{URL_BASE}ErTYQ6Nk365NpJV08PagMQUBHC_A2PJMFCMoATNrgAj46A"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def helenafilmes(config, id_config, thot):
-    folder_link = f"{URL_BASE}EtCI1OHKu_5JmvM2xXUjAm4Bn7EpdWcfZydSEn96fQpCHA"
     get_category = False
     enable_gallery = False
     if enable_gallery:
         asyncio.run(parse_album(thot, config))
     else:
-        thot_parse(thot, folder_link, config, id_config, get_category)
+        thot_parse(thot, config, id_config, get_category)
 
 
 def melissadias(config, id_config, thot):
-    folder_link = f"{URL_BASE}ElXzKHYCqZxGvFM-zJvdnUkBDQ8KYDNWWmPUdkc2jYWVtA"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def nikkecasada(config, id_config, thot):
-    folder_link = f"{URL_BASE}EilrTuIWGGlBmQBjEBTsP8QB6aJJpMqQukV4JTP0AFSaSg"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def vidasafada(config, id_config, thot):
-    folder_link = f"{URL_BASE}EjGEHkeddblJlANFY_Bw5xQBYZtR5x_Da05pCLhXzlQJgg"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def elaquer(config, id_config, thot):
-    folder_link = f"{URL_BASE}EjSINnPKG7lIok9X7y8VHs4BnM0cvJ-jhT3gUuvN7AH5zA"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def bumbumgigante(config, id_config, thot):
-    folder_link = f"{URL_BASE}EprTVCvUlmJKvJNy3vIosDoBuemR3lsuAlSFdwg1u2_lWg"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def emilysales(config, id_config, thot):
-    folder_link = f"{URL_BASE}EgBbA6dE7lBDqlzg68tzc-IBkRNfIROauurZtSflO-1m5A"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def kemilyoliveira(config, id_config, thot):
-    folder_link = f"{URL_BASE}EskGVwYP_NZFg78mbAGamvsBRTeT5ZOxRz-puVxEWxzG1Q"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def barbaracastroo(config, id_config, thot):
-    folder_link = f"{URL_BASE}EqZtHltDAp9NjO25O3wzUl4Bw_6c3WBeL6R6acSM3hq65A"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def nicoleballs_trans(config, id_config, thot):
-    folder_link = f"{URL_BASE}EnJdthtnJt9Fv2xWnGeWZ8cB4pb1yqOuC2xfAZI3kY86xQ"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def lualencar11(config, id_config, thot):
-    folder_link = f"{URL_BASE}EtwI68PKnSBAq4cyGUIWXbgBQAsoXATcaLBw9eEiwSCTyA"
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def hannafallow(config, id_config, thot):
-    folder_link = ""
     get_category = False
-    thot_parse(thot, folder_link, config, id_config, get_category)
+    thot_parse(thot, config, id_config, get_category)
 
 
 def tatycasadinha(config, id_config, thot):
-    folder_link = ""
     get_category = False
     alternative = True
     if alternative:
@@ -201,14 +178,13 @@ def tatycasadinha(config, id_config, thot):
         loop.run_until_complete(future)
         # asyncio.run(alt_thot_parse(thot, config, id_config))
     else:
-        thot_parse(thot, folder_link, config, id_config, get_category)
+        thot_parse(thot, config, id_config, get_category)
 
 
 def ilovemymistress(config, id_config, thot):
-    folder_link = ""
     get_category = False
     alternative = True
     if alternative:
         asyncio.run(alt_thot_parse(thot, config, id_config))
     else:
-        thot_parse(thot, folder_link, config, id_config, get_category)
+        thot_parse(thot, config, id_config, get_category)

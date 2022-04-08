@@ -1,4 +1,3 @@
-from cgitb import enable
 import datetime
 import json
 import os
@@ -28,6 +27,7 @@ from Utils.utils import (
     slugify,
     thumbnails_path,
     truncate_string,
+    URL_BASE
 )
 
 load_dotenv()
@@ -56,10 +56,11 @@ cmd = f"""rclone --verbose \
         copy --ignore-existing {src} OneDrive_Edu:{dst}"""
 
 
-def download_upload(path, link, i, j, folder_link, payload, thot, remaining, contador, max_posts_at_once, config):
+def download_upload(path, link, i, j, payload, thot, remaining, contador, max_posts_at_once, config):
 
     has_topic = config[thot]["has_topic"]
     enable_posting = config[thot]["enable_posting"]
+    folder_link = f"{URL_BASE}{config[thot]['folder_link']}"
     name = slugify(str(i) + "-" + j)
     download_file = truncate_string(path + name) + ".mp4"
     log.info(f"Baixando {download_file}")
