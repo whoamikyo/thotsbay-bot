@@ -252,13 +252,13 @@ def image_uploader(filelist):
     for file in filelist:
         log.info(f"Enviando arquivo {file_index} de {total_file_number} : {file}")
         file_index = file_index + 1
-        # client = httpx.Client()
+        client = httpx.Client()
         tries = 0
         while tries < 10:
             try:
                 files = {"files[]": open(file, "rb")}
-                # url = json.loads(client.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).text)["files"][0]["url"]
-                url = json.loads(upload.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).text)["files"][0]["url"]
+                url = json.loads(client.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).text)["files"][0]["url"]
+                # url = json.loads(upload.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).text)["files"][0]["url"]
                 log.debug(f"URL: {url}")
                 success = url
                 if success:

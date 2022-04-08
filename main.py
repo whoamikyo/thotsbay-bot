@@ -1,4 +1,3 @@
-from wsgiref import headers
 from thots.thots import Thots
 from logger import get_logger
 import time
@@ -24,8 +23,8 @@ if __name__ == "__main__":
     Thots(config, id_config).run()
 
     log.info("Fazendo backup dos IDs na API backup...")
-    api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
-    api.put(CONFIG_READ, json=api.get(CONFIG_WRITE).json(), headers=headers_backup)
+    # api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
+    # api.put(CONFIG_READ, json=api.get(CONFIG_WRITE).json(), headers=headers_backup)
     log.info("Salvando ID's da API localmente....")
     write_ids(api.get(ID_CONFIG_READ, headers=headers_backup).json(), filename="json_files/ids_api.json")
     write_ids(api.get(CONFIG_READ, headers=headers_backup).json(), filename="json_files/config_api.json")
