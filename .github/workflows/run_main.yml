@@ -14,19 +14,17 @@ env:
   THOTSBAY_USER: ${{ secrets.THOTSBAY_USER }}
   THOTSBAY_PW: ${{ secrets.THOTSBAY_PW }}
   GH_TOKEN: ${{ secrets.GH_TOKEN }}
-  ID_CONFIG: ${{ secrets.ID_CONFIG }}
-  CONFIG: ${{ secrets.CONFIG }}
+  ID_CONFIG_WRITE: ${{ secrets.ID_CONFIG_WRITE }}
+  CONFIG_WRITE: ${{ secrets.CONFIG_WRITE }}
+  CONFIG_READ: ${{ secrets.CONFIG_READ }}
+  ID_CONFIG_READ: ${{ secrets.ID_CONFIG_READ }}
   IMGUR_CLIENT_ID: ${{ secrets.IMGUR_CLIENT_ID }}
   CDN: ${{ secrets.CDN }}
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   REFERER: ${{ secrets.REFERER }}
-  LATEST_POST: ${{ secrets.LATEST_POST }}
-  CONFIG_BACKUP: ${{ secrets.CONFIG_BACKUP }}
-  ID_CONFIG_BACKUP: ${{ secrets.ID_CONFIG_BACKUP }}
   API_KEY: ${{ secrets.API_KEY }}
   URL_BASE: ${{ secrets.URL_BASE }}
-  ENABLE_TASK: ${{ secrets.ENABLE_TASK }}
   CYBERDROP_TOKEN: ${{ secrets.CYBERDROP_TOKEN }}
   ID_CONFIG_TESTE: ${{ secrets.ID_CONFIG_TESTE }}
   GALLERY : ${{ secrets.GALLERY }}
