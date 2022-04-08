@@ -1,8 +1,9 @@
+from wsgiref import headers
 from thots.thots import Thots
 from logger import get_logger
 import time
 from Utils.thotshub import Account
-from Utils.utils import CONFIG, ID_CONFIG, check_colab, write_ids, MakeRequest, ID_CONFIG_BACKUP, headers_backup
+from Utils.utils import CONFIG_WRITE, ID_CONFIG_WRITE, check_colab, write_ids, MakeRequest, ID_CONFIG_READ, headers_backup, ID_CONFIG_READ, CONFIG_READ
 
 log = get_logger(__name__)
 
@@ -15,15 +16,16 @@ if __name__ == "__main__":
     log.info("Checando colab...")
     check_colab()
     log.info("Checando config...")
-    config = api.get(CONFIG).json()
+    config = api.get(CONFIG_READ, headers=headers_backup).json()
     time.sleep(1)
     log.info("Checando ids...")
-    id_config = api.get(ID_CONFIG).json()
+    id_config = api.get(ID_CONFIG_READ, headers=headers_backup).json()
 
     Thots(config, id_config).run()
 
     log.info("Fazendo backup dos IDs na API backup...")
-    api.put(ID_CONFIG_BACKUP, json=api.get(ID_CONFIG).json(), headers=headers_backup)
+    api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
+    api.put(CONFIG_READ, json=api.get(CONFIG_WRITE).json(), headers=headers_backup)
     log.info("Salvando ID's da API localmente....")
-    write_ids(api.get(ID_CONFIG).json(), filename="json_files/ids_api.json")
-    write_ids(api.get(CONFIG).json(), filename="json_files/config_api.json")
+    write_ids(api.get(ID_CONFIG_READ, headers=headers_backup).json(), filename="json_files/ids_api.json")
+    write_ids(api.get(CONFIG_READ, headers=headers_backup).json(), filename="json_files/config_api.json")

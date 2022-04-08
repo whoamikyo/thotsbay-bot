@@ -8,6 +8,7 @@ import re
 import subprocess
 import time
 import unicodedata
+from http.client import HTTPException, RemoteDisconnected
 from json import JSONEncoder
 
 import aiohttp
@@ -15,33 +16,42 @@ import httpx
 import requests
 from dotenv import load_dotenv
 from logger import get_logger
+from requests.exceptions import (
+    ConnectionError,
+    ConnectTimeout,
+    HTTPError,
+    JSONDecodeError,
+    ReadTimeout,
+    RequestException,
+    Timeout,
+    TooManyRedirects,
+)
+from urllib3.exceptions import ProtocolError
 
 log = get_logger(__name__)
 load_dotenv()
 THOTSBAY_USER = os.environ["THOTSBAY_USER"]
 THOTSBAY_PW = os.environ["THOTSBAY_PW"]
-ID_CONFIG = os.environ["ID_CONFIG"]
 API_KEY = os.environ["API_KEY"]
-ID_CONFIG_BACKUP = os.environ["ID_CONFIG_BACKUP"]
-CONFIG = os.environ["CONFIG"]
-CONFIG_BACKUP = os.environ["CONFIG_BACKUP"]
-ID_CONFIG_TESTE = os.environ["ID_CONFIG_TESTE"]
+ID_CONFIG_WRITE = os.environ["ID_CONFIG_WRITE"]
+ID_CONFIG_READ = os.environ["ID_CONFIG_READ"]
+CONFIG_READ = os.environ["CONFIG_READ"]
+CONFIG_WRITE = os.environ["CONFIG_WRITE"]
 IMGUR_CLIENT_ID = os.environ["IMGUR_CLIENT_ID"]
-ENABLE_TASK = os.environ["ENABLE_TASK"]
 CDN = os.environ["CDN"]
 URL_BASE = os.environ["URL_BASE"]
 CYBERDROP_TOKEN = os.environ["CYBERDROP_TOKEN"]
 REFERER = os.environ["REFERER"]
-LATEST_POST_URL = os.environ["LATEST_POST"]
 GALLERY = os.environ["GALLERY"]
+ID_CONFIG_TESTE = os.environ["ID_CONFIG_TESTE"]
 DEVELOPMENT = False
 if DEVELOPMENT:
-    ID_CONFIG = ID_CONFIG_TESTE
+    ID_CONFIG_WRITE = ID_CONFIG_TESTE
     log.info("Ambiente de desenvolvimento ativado")
-    log.info(f"URL da API: {ID_CONFIG}")
-    log.info(f"URL da API CONFIG: {CONFIG}")
+    log.info(f"URL da API: {ID_CONFIG_READ}")
+    log.info(f"URL da API CONFIG: {CONFIG_READ}")
 else:
-    ID_CONFIG = ID_CONFIG
+    ID_CONFIG_WRITE = ID_CONFIG_WRITE
     log.info("Ambiente de produção ativado")
 headers = {"Content-Type": "application/json"}
 headers_backup = {"Content-Type": "application/json", "X-Master-Key": API_KEY, "X-Bin-Meta": "false"}
@@ -69,79 +79,92 @@ if not os.path.exists(logs_path):
 
 class MakeRequest:
     def __init__(self):
-        # self.session = httpx.Client()
         self.session = requests.Session()
         self.max_retries = 10
         self.sleep_between_retries = 1
         self.tries = 0
 
     def request(self, method, url, **kwargs):
-        try:
-            # {url.split('/')[-1]}
-            log.info(f"Tentando requisição {method} na URL: ...{url[-9:]}, {self.tries + 1}/10")
-            response = self.session.request(method, url, **kwargs)
-            if response.status_code == 200:
-                print(response.text)
-                return response
-            else:
+        response = self.session.request(method, url, **kwargs)
+        while self.tries < self.max_retries:
+            try:
+                response.raise_for_status()
+                if response.status_code == 200:
+                    log.info(f"Requisição <<{method}>> realizada com sucesso, status code: {response.status_code}")
+                    return response
+                else:
+                    continue
+            except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
+                log.error(str(e))
+                self.tries += 1
+                log.warning(f"Tentando novamente, {self.tries}/10")
                 time.sleep(self.sleep_between_retries)
-                return {"error": f"server returned {response.status_code}"}
-        except httpx.TimeoutException as e:
-            self.max_retries -= 1
-            log.error(f"TimeoutError: {e}")
-            if self.max_retries == 0:
-                raise httpx.TimeoutException(f"TimeoutError: {e}")
-            return {"results": "timeout error on request"}
+                if self.tries == self.max_retries:
+                    log.critical(f"Critical error: {e}, saindo...")
+                    raise SystemExit(e)
+                continue
+        return response
 
     def get(self, url, **kwargs):
-        try:
-            log.info(f"Tentando requisição GET na URL: ...{url[-9:]}, {self.tries + 1}/10")
-            response = self.session.get(url, **kwargs)
-            if response.status_code == 200:
-                return response
-            else:
+        response = self.session.get(url, **kwargs)
+        while self.tries < self.max_retries:
+            try:
+                response.raise_for_status()
+                if response.status_code == 200:
+                    log.info(f"Requisição GET realizada com sucesso, status code: {response.status_code}")
+                    return response
+                else:
+                    continue
+            except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
+                log.error(str(e))
+                self.tries += 1
+                log.warning(f"Tentando novamente, {self.tries}/10")
                 time.sleep(self.sleep_between_retries)
-                return {"error": f"server returned {response.status_code}"}
-        except httpx.TimeoutException as e:
-            self.max_retries -= 1
-            log.error(f"TimeoutError: {e}")
-            if self.max_retries == 0:
-                raise httpx.TimeoutException(f"TimeoutError: {e}")
-            return {"results": "timeout error on request"}
+                if self.tries == self.max_retries:
+                    log.critical(f"Critical error: {e}, saindo...")
+                    raise SystemExit(e)
+                continue
+        return response
 
     def put(self, url, **kwargs):
-        try:
-            log.info(f"Tentando requisição PUT na URL: ...{url[-9:]}, {self.tries + 1}/10")
-            response = self.session.put(url, **kwargs)
-            if response.status_code == 200:
-                log.info(f"Requisição PUT realizada com sucesso, status code: {response.status_code}")
-                return response
-            else:
+        response = self.session.put(url, **kwargs)
+        while self.tries < self.max_retries:
+            try:
+                response.raise_for_status()
+                if response.status_code == 200:
+                    log.info(f"Requisição PUT realizada com sucesso, status code: {response.status_code}")
+                    return response
+                else:
+                    continue
+            except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
+                log.error(str(e))
+                self.tries += 1
+                log.warning(f"Tentando novamente, {self.tries}/10")
                 time.sleep(self.sleep_between_retries)
-                return {"error": f"server returned {response.status_code}"}
-        except httpx.TimeoutException as e:
-            self.max_retries -= 1
-            log.error(f"TimeoutError: {e}")
-            if self.max_retries == 0:
-                raise httpx.TimeoutException(f"TimeoutError: {e}")
-            return {"results": "timeout error on request"}
+                if self.tries == self.max_retries:
+                    raise RequestException(f"Tentativas esgotadas, {self.tries}/10")
+                continue
+        return response
 
     def post(self, url, **kwargs):
-        try:
-            log.info(f"Tentando requisição POST na URL: {url}, {self.tries + 1}/10")
-            response = self.session.post(url, **kwargs)
-            if response.status_code == 200:
-                log.info(f"Requisição POST realizada com sucesso, status code: {response.status_code}")
-                return response
-            else:
+        response = self.session.post(url, **kwargs)
+        while self.tries < self.max_retries:
+            try:
+                response.raise_for_status()
+                if response.status_code == 200:
+                    log.info(f"Requisição POST realizada com sucesso, status code: {response.status_code}")
+                    return response
+                else:
+                    continue
+            except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
+                log.error(str(e))
+                self.tries += 1
+                log.warning(f"Tentando novamente, {self.tries}/10")
                 time.sleep(self.sleep_between_retries)
-                return {"error": f"server returned {response.status_code}"}
-        except httpx.TimeoutException as e:
-            self.max_retries -= 1
-            log.error(f"TimeoutError: {e}")
-            if self.max_retries == 0:
-                raise httpx.TimeoutException(f"TimeoutError: {e}")
-            return {"results": "timeout error on request"}
+                if self.tries == self.max_retries:
+                    raise SystemExit(e)
+                continue
+        return response
 
 
 class DateTimeEncoder(JSONEncoder):
@@ -225,15 +248,17 @@ def image_uploader(filelist):
     failed = []
     url_list = []
     success_count = 0
+    upload = MakeRequest()
     for file in filelist:
         log.info(f"Enviando arquivo {file_index} de {total_file_number} : {file}")
         file_index = file_index + 1
-        client = httpx.Client()
+        # client = httpx.Client()
         tries = 0
         while tries < 10:
             try:
                 files = {"files[]": open(file, "rb")}
-                url = json.loads(client.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).text)["files"][0]["url"]
+                # url = json.loads(client.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).text)["files"][0]["url"]
+                url = json.loads(upload.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).text)["files"][0]["url"]
                 log.debug(f"URL: {url}")
                 success = url
                 if success:
@@ -244,7 +269,8 @@ def image_uploader(filelist):
                 else:
                     # fallback to imgur
                     files = {"image": convert_to_b64(file)}
-                    url = json.loads(requests.post(imgur_url, headers=imgur_headers, data=files).text)["data"]["link"]
+                    # url = json.loads(requests.post(imgur_url, headers=imgur_headers, data=files).text)["data"]["link"]
+                    url = json.loads(upload.post(imgur_url, headers=imgur_headers, data=files).text)["data"]["link"]
                     log.debug(f"URL: {url}")
                     success = url
                     if success:

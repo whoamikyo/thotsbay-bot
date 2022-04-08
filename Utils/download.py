@@ -12,11 +12,12 @@ from logger import get_logger
 import Utils.thotshub as thotsbay
 from Utils.thumb_maker import Thumbmaker
 from Utils.utils import (
-    CONFIG,
-    ID_CONFIG,
+    CONFIG_WRITE,
+    ID_CONFIG_WRITE,
     REFERER,
     THOTSBAY_PW,
     THOTSBAY_USER,
+    URL_BASE,
     DateTimeEncoder,
     MakeRequest,
     absolute_file_paths,
@@ -27,7 +28,9 @@ from Utils.utils import (
     slugify,
     thumbnails_path,
     truncate_string,
-    URL_BASE
+    ID_CONFIG_READ,
+    headers_backup,
+    CONFIG_READ
 )
 
 load_dotenv()
@@ -80,7 +83,8 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
         if not_found_error:
             log.warning(f"Erro: {not_found_error}")
             # remaining = remaining - contador
-            api.put(ID_CONFIG, headers=headers, data=payload)
+            api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
+            api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
             log.warning(f"Arquivo não encontrado no servidor, ainda faltam {remaining} arquivos.")
     if not os.path.isfile(download_file):
         log.critical(f"Erro ao baixar o arquivo {i}, com o nome: {name}")
@@ -88,7 +92,8 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
         log.info(f"Arquivo {name} baixado com sucesso! Agora...Enviando...")
         subprocess.call(cmd, shell=True)
         remaining = remaining - contador
-        api.put(ID_CONFIG, headers=headers, data=payload)
+        api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
+        api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
         log.info(f"Arquivo {name} enviado com sucesso, ainda faltam: {remaining}")
 
     if has_topic > 0 and enable_posting:
@@ -107,7 +112,7 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
                 log.info("Atualizando tópico agora...")
                 thotsbay.Account.send_message_in_thread(has_topic, msg(imgur_list, folder_link, lista_nomes))
                 latest_post_payload = json.dumps({thot: {"latest_post": datetime.datetime.utcnow()}}, cls=DateTimeEncoder)
-                api.put(CONFIG, headers=headers, data=latest_post_payload)
+                api.put(CONFIG_WRITE, headers=headers, data=latest_post_payload)
                 # Pruning temporary files
                 clean_tmp(path)
                 clean_tmp(thumbnails_path)
@@ -163,12 +168,12 @@ def download_alt(path, link, i, j, payload, thot):
         if not_found_error:
             log.warning(f"Erro: {not_found_error}")
             # remaining = remaining - contador
-            api.put(ID_CONFIG, headers=headers, data=payload)
+            api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
             log.warning("Arquivo não encontrado no servidor, ainda faltam arquivos.")
     if not os.path.isfile(download_file):
         log.critical(f"Erro ao baixar o arquivo {i}, com o nome: {name}")
     else:
         log.info(f"Arquivo {name} baixado com sucesso! Agora...Enviando...")
         subprocess.call(cmd, shell=True)
-        api.put(ID_CONFIG, headers=headers, data=payload)
+        api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
         log.info(f"Arquivo {name} enviado com sucesso")

@@ -1,5 +1,4 @@
 import asyncio
-import time
 
 from logger import get_logger
 

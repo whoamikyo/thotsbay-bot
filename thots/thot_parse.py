@@ -15,7 +15,6 @@ from Utils.utils import (
     download_path,
     get_list_from_nested,
     list_to_int,
-    regexCount,
     regexGetRangeSize,
     regexID,
     regexID_Album,
