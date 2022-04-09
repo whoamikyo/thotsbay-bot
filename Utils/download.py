@@ -3,6 +3,7 @@ import json
 import os
 import re
 import subprocess
+import time
 from concurrent.futures import ProcessPoolExecutor
 
 import yt_dlp as youtube_dl
@@ -13,6 +14,7 @@ import Utils.thotshub as thotsbay
 from Utils.thumb_maker import Thumbmaker
 from Utils.utils import (
     CONFIG_WRITE,
+    ID_CONFIG_READ,
     ID_CONFIG_WRITE,
     REFERER,
     THOTSBAY_PW,
@@ -25,11 +27,10 @@ from Utils.utils import (
     get_files_in_path_without_extension,
     get_time_diff,
     headers,
+    headers_backup,
     slugify,
     thumbnails_path,
     truncate_string,
-    ID_CONFIG_READ,
-    headers_backup,
 )
 
 load_dotenv()
@@ -61,7 +62,7 @@ cmd = f"""rclone --verbose \
 def download_upload(path, link, i, j, payload, thot, remaining, contador, max_posts_at_once, config):
 
     tries = 0
-    max_tries = 3
+    max_tries = 5
     has_topic = config[thot]["has_topic"]
     enable_posting = config[thot]["enable_posting"]
     folder_link = f"{URL_BASE}{config[thot]['folder_link']}"
@@ -83,16 +84,16 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
             reg = r"^.*(404)"
             not_found_error = re.findall(reg, e)
             if not_found_error:
-                log.warning(f"Erro: {not_found_error}")
+                log.error(f"Erro: {not_found_error}")
                 # remaining = remaining - contador
                 api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
                 api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
                 log.warning(f"Arquivo não encontrado no servidor, ainda faltam {remaining} arquivos.")
             else:
                 tries += 1
-                log.error(f"Erro ao baixar {download_file}")
                 log.error(err)
-                log.info(f"Tentando novamente {download_file}")
+                log.warning(f"Tentando novamente, {tries}/{max_tries}")
+                time.sleep(5)
                 if tries == max_tries:
                     log.error(f"Tentativas excedidas para baixar {download_file}")
                     log.warning(f"Pulando esse arquivo, ainda faltam {remaining} arquivos.")
