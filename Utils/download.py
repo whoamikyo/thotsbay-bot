@@ -60,40 +60,57 @@ cmd = f"""rclone --verbose \
 
 def download_upload(path, link, i, j, payload, thot, remaining, contador, max_posts_at_once, config):
 
+    tries = 0
+    max_tries = 3
     has_topic = config[thot]["has_topic"]
     enable_posting = config[thot]["enable_posting"]
     folder_link = f"{URL_BASE}{config[thot]['folder_link']}"
     name = slugify(str(i) + "-" + j)
     download_file = truncate_string(path + name) + ".mp4"
     log.info(f"Baixando {download_file}")
-    try:
-        ydl_opts = {
-            "outtmpl": download_file,
-            "ignoreerrors": False,
-            "verbose": False,
-            "nocheckcertificate": True,
-        }
-        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-            ydl.download(link)
-    except Exception as err:
-        e = getattr(err, "message", repr(err))
-        reg = r"^.*(404)"
-        not_found_error = re.findall(reg, e)
-        if not_found_error:
-            log.warning(f"Erro: {not_found_error}")
-            # remaining = remaining - contador
-            api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
-            api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
-            log.warning(f"Arquivo não encontrado no servidor, ainda faltam {remaining} arquivos.")
+    ydl_opts = {
+        "outtmpl": download_file,
+        "ignoreerrors": False,
+        "verbose": False,
+        "nocheckcertificate": True,
+    }
+    while tries < max_tries:
+        try:
+            with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                ydl.download(link)
+        except Exception as err:
+            e = getattr(err, "message", repr(err))
+            reg = r"^.*(404)"
+            not_found_error = re.findall(reg, e)
+            if not_found_error:
+                log.warning(f"Erro: {not_found_error}")
+                # remaining = remaining - contador
+                api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
+                api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
+                log.warning(f"Arquivo não encontrado no servidor, ainda faltam {remaining} arquivos.")
+            else:
+                tries += 1
+                log.error(f"Erro ao baixar {download_file}")
+                log.error(err)
+                log.info(f"Tentando novamente {download_file}")
+                if tries == max_tries:
+                    log.error(f"Tentativas excedidas para baixar {download_file}")
+                    log.warning(f"Pulando esse arquivo, ainda faltam {remaining} arquivos.")
+                continue
+
     if not os.path.isfile(download_file):
         log.critical(f"Erro ao baixar o arquivo {i}, com o nome: {name}")
+        failed = True
     else:
+        failed = False
         log.info(f"Arquivo {name} baixado com sucesso! Agora...Enviando...")
         subprocess.call(cmd, shell=True)
         remaining = remaining - contador
         log.info(f"Arquivo {name} enviado com sucesso, ainda faltam: {remaining}")
+        api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
+        api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
 
-    if has_topic > 0 and enable_posting:
+    if has_topic > 0 and enable_posting and not failed:
         if max_posts_at_once <= 9 and remaining > 0:
             log.info(f"Ainda faltam {remaining}, a postagem será feita depois para evitar flood...")
         else:
@@ -115,9 +132,6 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
                 clean_tmp(thumbnails_path)
             else:
                 log.info("A útlima postagem foi a menos de 1 hora, no FLOOD please!!!!")
-
-    api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
-    api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
 
 
 def msg(lista_urls: list, folder_link: str, lista_nomes: list):
