@@ -80,7 +80,7 @@ if not os.path.exists(logs_path):
 class MakeRequest:
     def __init__(self):
         self.session = requests.Session()
-        self.max_retries = 10
+        self.max_retries = 3
         self.sleep_between_retries = 1
         self.tries = 0
 
@@ -97,7 +97,7 @@ class MakeRequest:
             except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
                 log.error(str(e))
                 self.tries += 1
-                log.warning(f"Tentando novamente, {self.tries}/10")
+                log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
                 time.sleep(self.sleep_between_retries)
                 if self.tries == self.max_retries:
                     log.critical(f"Critical error: {e}, saindo...")
@@ -118,7 +118,7 @@ class MakeRequest:
             except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
                 log.error(str(e))
                 self.tries += 1
-                log.warning(f"Tentando novamente, {self.tries}/10")
+                log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
                 time.sleep(self.sleep_between_retries)
                 if self.tries == self.max_retries:
                     log.critical(f"Critical error: {e}, saindo...")
@@ -139,10 +139,10 @@ class MakeRequest:
             except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
                 log.error(str(e))
                 self.tries += 1
-                log.warning(f"Tentando novamente, {self.tries}/10")
+                log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
                 time.sleep(self.sleep_between_retries)
                 if self.tries == self.max_retries:
-                    raise RequestException(f"Tentativas esgotadas, {self.tries}/10")
+                    raise RequestException(f"Tentativas esgotadas, {self.tries}/{self.max_retries}")
                 continue
         return response
 
@@ -159,7 +159,7 @@ class MakeRequest:
             except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
                 log.error(str(e))
                 self.tries += 1
-                log.warning(f"Tentando novamente, {self.tries}/10")
+                log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
                 time.sleep(self.sleep_between_retries)
                 if self.tries == self.max_retries:
                     raise SystemExit(e)

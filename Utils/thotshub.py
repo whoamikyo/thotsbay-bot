@@ -36,7 +36,6 @@ class Account:
             self.password = password
             self.url_base = "https://forum.thotsbay.com/"
             self.url_login = f"{self.url_base}login/login"
-            # self.client = requests.Session()
             self.request = MakeRequest()
             self.update_token()
         except requests.RequestException:
@@ -50,7 +49,7 @@ class Account:
         if self.token is None:
             raise ParseTokenError
         else:
-            self.token = self.token["value"]  # type: ignore
+            self.token = self.token["value"]
             log.debug(f"Token: {self.token}")
 
     def authorize(self):
@@ -63,16 +62,12 @@ class Account:
             "_xfToken": self.token,
         }
         log.debug(f"Authorize data: {data}")
-        try:
-            self.update_token()
-            req = self.request.post(self.url_login, data=data).text
-            if req.find("Incorrect password") == -1:
-                return True
-            else:
-                return False
-        except requests.RequestException:
-            traceback.print_exc()
-            pass
+        self.update_token()
+        req = self.request.post(self.url_login, data=data).text
+        if req.find("Incorrect password") == -1:
+            return True
+        else:
+            return False
 
     def get_messages_in_thread(self, thread: int):
         try:
@@ -111,12 +106,8 @@ class Account:
             "_xfResponseType": "json",
         }
         log.debug(f"Send message data: {data}")
-        try:
-            self.update_token()
-            self.request.post(f"{self.url_base}threads/{thread}/add-reply", data=data)
-        except requests.RequestException:
-            traceback.print_exc()
-            pass
+        self.update_token()
+        self.request.post(f"{self.url_base}threads/{thread}/add-reply", data=data)
 
     @staticmethod
     def check_thotsbay():

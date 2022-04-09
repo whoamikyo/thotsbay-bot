@@ -30,7 +30,6 @@ from Utils.utils import (
     truncate_string,
     ID_CONFIG_READ,
     headers_backup,
-    CONFIG_READ,
 )
 
 load_dotenv()
