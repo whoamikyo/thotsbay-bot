@@ -79,6 +79,7 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
         try:
             with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                 ydl.download(link)
+            break
         except Exception as err:
             e = getattr(err, "message", repr(err))
             reg = r"^.*(404)"
