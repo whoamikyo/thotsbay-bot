@@ -111,7 +111,7 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
                 latest_post_payload = json.dumps({thot: {"latest_post": datetime.datetime.utcnow()}}, cls=DateTimeEncoder)
                 api.put(CONFIG_WRITE, headers=headers, data=latest_post_payload)
                 # Pruning temporary files
-                clean_tmp(path)
+                # clean_tmp(path)
                 clean_tmp(thumbnails_path)
             else:
                 log.info("A útlima postagem foi a menos de 1 hora, no FLOOD please!!!!")
