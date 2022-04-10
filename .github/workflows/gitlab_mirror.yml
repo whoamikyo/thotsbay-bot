@@ -1,6 +1,15 @@
 name: Gitlab mirroring
 
-on: [push, delete]
+on: 
+  push:
+    branches:
+    - '**'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Enter 'force' if you want to force a refresh"
+        required: false
+        default: ""
 
 jobs:
   to_gitlab:
