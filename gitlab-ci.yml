@@ -1,0 +1,18 @@
+image: python:3.10.4
+
+before_script:
+  - curl -sSL https://install.python-poetry.org | python3 -
+  - export PATH="$PATH:$HOME/.poetry/bin/" 
+  - source $HOME/.poetry/env 
+  - poetry install
+  - source `poetry env info --path`/bin/activate
+
+build:
+  stage: build
+  script:
+    - echo 123
+
+test:
+  stage: test
+  script:
+    - echo 123
