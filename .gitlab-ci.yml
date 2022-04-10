@@ -1,18 +1,23 @@
 image: python:3.10.4
 
+variables:
+  RCLONE_CONF: $RCLONE_CONF
+
 before_script:
+  - curl https://rclone.org/install.sh | sudo bash
+  - mkdir -p ~/.config/rclone
+  - echo "$RCLONE_CONF" > ~/.config/rclone/rclone.conf
+  - rclone listremotes
   - curl -sSL https://install.python-poetry.org | python3 -
   - export PATH="$PATH:$HOME/.poetry/bin/" 
   - source $HOME/.poetry/env 
-  - poetry install
+  - poetry install --no-interaction --no-dev
   - source `poetry env info --path`/bin/activate
+  - sudo apt-get update
+  - sudo apt-get install -y ffmpeg
 
 build:
   stage: build
   script:
-    - echo 123
-
-test:
-  stage: test
-  script:
-    - echo 123
+    - peotry --version
+    - poetry run python main.py
