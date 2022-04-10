@@ -81,57 +81,48 @@ def thot_parse(thot, config, id_config, get_category):
         url_list = [f"{url}videos/{x}" for x in range(1, convert_range(get_range) + 1)]
 
     # apenas método alternativo por enquanto
-    if total:
-        alt = False
-        remaining = int(total[0]) - len(id_list)
-        log.info(f"Foi encontrado um total de : {remaining} videos restantes.")
-    else:
-        alt = True
-        log.info("Usando método alternativo para encontrar a quantidade de videos.")
-        videoID_alt = get_list_from_nested([re.findall(regexID, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
-        log.debug(f"{thot} - videoID_alt: {list_to_int(videoID_alt)}")
-        log.debug(f"ID_list: {id_list}")
-        diff = compare_lists(id_list, list_to_int(videoID_alt))
-        log.debug(f"{thot} - diff: {diff}")
-        deleted_videos = [x for x in id_list if x not in list_to_int(videoID_alt)]
-        log.debug(f"{thot} - Deletados: {deleted_videos}")
-        remaining = len(videoID_alt) - (len(id_list) - len(deleted_videos))
-        log.debug(f"Lista de videos que não foram baixados: {deleted_videos}")
-        log.info(f"Foi encontrado um total de : {remaining} videos restantes.")
+    log.info("Usando método alternativo para encontrar a quantidade de videos.")
+    videoID_alt = get_list_from_nested([re.findall(regexID, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
+    log.debug(f"{thot} - videoID_alt: {list_to_int(videoID_alt)}")
+    log.debug(f"ID_list: {id_list}")
+    diff = compare_lists(id_list, list_to_int(videoID_alt))
+    log.debug(f"{thot} - diff: {diff}")
+    deleted_videos = [x for x in id_list if x not in list_to_int(videoID_alt)]
+    log.debug(f"{thot} - Deletados: {deleted_videos}")
+    remaining = len(videoID_alt) - (len(id_list) - len(deleted_videos))
+    log.debug(f"Lista de videos que não foram baixados: {deleted_videos}")
+    log.info(f"Foi encontrado um total de : {remaining} videos restantes.")
 
-    log.debug(f"Url List: {url_list}")
-    if alt:
+    if remaining > 0:
+        log.debug(f"Url List: {url_list}")
         log.info("A lista de ID's já foi definida")
         videoID = videoID_alt  # type: ignore
-    else:
-        log.info("A lista de ID's ainda nao foi definida")
-        videoID = get_list_from_nested([re.findall(regexID, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
 
-    videoName = get_list_from_nested([re.findall(regexName, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
-    videoID = list_to_int(videoID)
+        videoName = get_list_from_nested([re.findall(regexName, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
+        videoID = list_to_int(videoID)
 
-    log.debug(f"VideoID: {videoID}")
-    log.debug(f"VideoName: {videoName}")
+        log.debug(f"VideoID: {videoID}")
+        log.debug(f"VideoName: {videoName}")
 
-    contador = 0
-    max_posts_at_once = 0
-    while contador < remaining:
-        for i, j in zip(videoID, videoName):
-            log.debug(f"Contador: {contador}, Remaining: {remaining}")
-            log.debug(f"i: {i}, j: {j}")
-            if int(i) not in id_list:
-                contador += 1
-                log.debug(f"{thot} - Baixando video: {j}")
-                # max_download_at_once += 1
-                if max_posts_at_once == 10:
-                    log.info(f"{thot} - 10 videos foram baixados. Resetando contador.")
-                    max_posts_at_once = 0
-                max_posts_at_once += 1
-                payload = json.dumps({f"{thot}ID": [i]})
-                log.info(f"Download: {contador} of {remaining}")
-                link = f"https://{CDN}/hls/{i}/playlist.m3u8"
-                # call yt-dlp download
-                download_upload(path, link, i, j, payload, thot, remaining, contador, max_posts_at_once, config)
+        contador = 0
+        max_posts_at_once = 0
+        while contador < remaining:
+            for i, j in zip(videoID, videoName):
+                log.debug(f"Contador: {contador}, Remaining: {remaining}")
+                log.debug(f"i: {i}, j: {j}")
+                if int(i) not in id_list:
+                    contador += 1
+                    log.debug(f"{thot} - Baixando video: {j}")
+                    # max_download_at_once += 1
+                    if max_posts_at_once == 10:
+                        log.info(f"{thot} - 10 videos foram baixados. Resetando contador.")
+                        max_posts_at_once = 0
+                    max_posts_at_once += 1
+                    payload = json.dumps({f"{thot}ID": [i]})
+                    log.info(f"Download: {contador} of {remaining}")
+                    link = f"https://{CDN}/hls/{i}/playlist.m3u8"
+                    # call yt-dlp download
+                    download_upload(path, link, i, j, payload, thot, remaining, contador, max_posts_at_once, config)
 
 
 async def parse_album(thot, config):
