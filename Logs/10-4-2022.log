@@ -1,0 +1,314 @@
+2022-04-10 03:11:32,343 - Utils.utils - INFO - Ambiente de produção ativado
+2022-04-10 03:11:32,664 - Utils.thotshub - DEBUG - Token: 1649560292,dca9a02cc94e9872ee7d3d0ec19f058e
+2022-04-10 03:11:32,671 - __main__ - INFO - Checando thotsbay forum...
+2022-04-10 03:11:32,672 - Utils.thotshub - INFO - Autorizando...
+2022-04-10 03:11:32,672 - Utils.thotshub - DEBUG - Authorize data: {'login': 'whoami', 'password': "tR67'F1Y", 'remember': 1, '_xfRedirect': 'https://forum.thotsbay.com/', '_xfToken': '1649560292,dca9a02cc94e9872ee7d3d0ec19f058e'}
+2022-04-10 03:11:32,928 - Utils.thotshub - DEBUG - Token: 1649560292,dca9a02cc94e9872ee7d3d0ec19f058e
+2022-04-10 03:11:33,927 - Utils.thotshub - INFO - Logado no thotsbay com sucesso.
+2022-04-10 03:11:33,928 - __main__ - INFO - Checando colab...
+2022-04-10 03:11:33,928 - Utils.utils - INFO - COLAB enviorement not detected
+2022-04-10 03:11:33,928 - __main__ - INFO - Checando config...
+2022-04-10 03:11:34,387 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:35,389 - __main__ - INFO - Checando ids...
+2022-04-10 03:11:35,607 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:35,608 - thots.thots - WARNING - ---------------| Iniciando tarefa afroditehotwife, 1 de 17
+2022-04-10 03:11:35,608 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:36,031 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:36,032 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:36,213 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:36,215 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:36,391 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:36,561 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:36,733 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:36,900 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:37,071 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:37,245 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:37,425 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:37,594 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:37,792 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:37,977 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:38,182 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:38,351 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:38,574 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:38,575 - thots.thot_parse - DEBUG - afroditehotwife - videoID_alt: [95390, 94633, 93977, 93407, 92139, 91856, 90684, 90206, 89252, 88864, 88146, 87180, 85467, 84952, 84536, 83967, 83530, 82963, 82492, 81901, 81583, 81109, 80823, 80554, 80118, 79746, 79108, 78660, 78397, 77261, 76951, 76597, 76306, 75860, 75856, 75843, 75602, 75330, 75143, 74063, 73900, 73582, 72911, 71423, 71237, 70793, 70761, 70516, 69755, 69541, 69289, 69107, 68894, 68893, 68890, 68888, 68887, 68885, 68218, 67992, 67838, 67653, 66957, 66695, 66201, 65162, 64314, 63962, 63659, 63485, 62944, 62627, 62072, 61565, 61318, 60886, 60590, 60118, 59649, 59617, 59389, 58588, 58451, 57989, 57974, 57519, 57092, 57007, 53984, 53584, 52734, 51974, 51781, 51776, 51752, 51751, 51504, 51326, 51120, 50959, 50812, 50443, 50299, 49634, 49408, 49285, 49134, 49132, 48806, 48557, 48365, 48363, 47987, 47863, 47765, 47393, 47392, 47391, 47390, 47389, 47299, 46959, 46712, 46119, 45292, 44898, 43811, 43804, 43606, 43436, 43251, 42978, 42887, 42820, 42498, 42363, 42099, 42078, 41921, 41851, 41663, 41432, 41298, 41297, 41128, 40900, 40835, 40586, 40547, 40401, 40206, 40201, 40197, 40196, 40195, 40193, 40191, 40190, 40189, 40187, 40186, 40183, 40180, 40176, 40175, 40172, 40004, 39757, 39714, 39711, 39686, 39622, 39349, 39224, 39041, 38930, 38701, 38481, 38331, 38152, 37982, 37929, 37780, 37609, 37511, 37323, 37138, 37070, 37069, 36802, 36200, 35759, 35515, 35359, 35195, 35066, 34884, 34718, 34595, 34240, 33860, 33793, 33689, 33629, 33516, 33409, 33142, 32979, 32751, 32651, 32296, 32076, 31893, 31625, 30577, 30354, 30353, 29944, 29833, 29759, 29569, 29511, 29443, 29433, 29400, 29233, 29052, 28842, 28778, 28222, 28003, 28002, 27492, 27199]
+2022-04-10 03:11:38,575 - thots.thot_parse - DEBUG - ID_list: [89252, 88864, 88146, 87180, 85467, 84952, 84536, 83967, 83530, 82963, 82492, 81901, 81583, 81109, 80823, 80554, 80118, 79746, 79108, 78660, 78397, 77261, 76951, 76597, 76306, 75602, 75330, 75143, 74063, 73900, 73582, 72911, 71423, 71237, 70793, 70761, 70516, 69755, 69541, 69289, 69107, 68894, 68893, 68890, 68888, 68887, 68885, 68218, 67992, 67838, 67653, 66957, 66695, 66201, 65162, 64314, 63962, 63485, 62944, 62627, 62072, 61565, 61318, 60886, 60590, 60118, 59649, 59617, 59389, 58588, 58451, 75860, 75856, 75843, 63659, 57989, 57974, 57519, 57092, 57007, 53984, 51974, 51781, 51776, 51752, 51504, 51326, 51120, 50812, 49634, 49285, 49134, 49132, 48365, 47393, 47392, 47391, 47390, 46959, 46712, 52734, 51751, 50959, 50443, 50299, 49408, 48806, 48557, 48363, 47987, 47863, 47765, 47389, 47299, 46119, 45292, 44898, 43811, 43804, 43606, 43436, 43251, 42978, 42887, 42820, 42498, 42363, 42099, 42078, 41921, 41851, 41663, 41432, 41297, 41128, 40900, 40835, 40586, 40547, 40401, 40206, 40201, 40197, 40196, 40195, 40193, 40191, 40190, 40189, 40187, 40186, 40183, 40180, 40176, 40175, 40172, 40004, 39757, 39714, 39711, 39686, 39622, 39349, 39224, 39041, 38930, 38701, 38481, 38331, 38152, 37982, 37929, 37780, 37609, 37511, 37323, 37138, 37070, 37069, 36200, 35759, 35515, 35359, 35195, 35066, 34884, 34718, 34595, 34240, 33860, 33793, 33689, 33629, 33516, 33409, 33142, 32979, 32751, 32651, 32296, 32076, 31893, 31625, 30577, 30354, 30353, 29944, 29833, 29759, 29569, 29511, 29443, 29433, 29400, 29233, 29052, 28842, 28778, 28222, 28003, 28002, 27492, 27199, 53584, 41298, 36802, 90684, 90206, 92139, 91856, 93407, 93977, 94633, 95390]
+2022-04-10 03:11:38,577 - thots.thot_parse - DEBUG - afroditehotwife - diff: []
+2022-04-10 03:11:38,587 - thots.thot_parse - DEBUG - afroditehotwife - Deletados: []
+2022-04-10 03:11:38,587 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:38,587 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:38,588 - thots.thots - WARNING - ---------------| afroditehotwife - Fim da lista de videos.
+2022-04-10 03:11:38,588 - thots.thots - WARNING - ---------------| Iniciando tarefa agathalira, 2 de 17
+2022-04-10 03:11:38,588 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:39,224 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:39,225 - thots.thot_parse - INFO - Primeiro padrão de regex definido com sucesso!
+2022-04-10 03:11:39,612 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:39,614 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:39,889 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:40,202 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:40,481 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:40,847 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:41,143 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:41,433 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:41,724 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:42,035 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:42,363 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:42,749 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:43,021 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:43,365 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:43,594 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:43,595 - thots.thot_parse - DEBUG - agathalira - videoID_alt: [94143, 92039, 88032, 85284, 83595, 82034, 80566, 78645, 75895, 69843, 68226, 64582, 62751, 59301, 55964, 54498, 52102, 50792, 50791, 50381, 49735, 47758, 47505, 45669, 41903, 40002, 39242, 37922, 37087, 35815, 34672, 33810, 32582, 31874, 30057, 29378, 27645, 26423, 25232, 24059, 22883, 21905, 20842, 19523, 19074, 17455, 16655, 16649, 16646, 15928, 15040, 14259, 13574, 13007, 12499, 11913, 11279, 11261, 10899, 10730, 10247, 9989, 7991, 7377, 6968, 6941, 6815, 6566, 6222, 6107, 5890, 5781, 5074, 4416, 4047, 3754, 3335, 3153, 2911, 2644, 2531, 2440, 2160, 2027, 1803, 1674, 1590, 1473, 1384, 1363, 1292, 1285, 1252, 1188, 1164, 1105, 1061, 1032, 1014, 972, 964, 945, 917, 900, 894, 879, 852, 846, 832, 614, 600, 594, 589, 557, 541, 533, 532, 512, 507, 506, 505, 504, 502, 499, 493, 492, 489, 488, 487, 485, 483, 482, 480, 461, 459, 452, 435, 422, 411, 387, 383, 382, 369, 364, 353, 340, 330, 329, 270, 268, 258, 222, 198, 182, 181, 180, 116, 110, 88, 60, 61, 67, 59, 56, 58, 84, 57, 101, 97, 108, 68, 98, 71, 106, 107, 89, 94, 86, 99, 92, 70, 83, 105, 75, 78, 41, 91, 40, 65, 42, 90, 93, 69, 100, 102, 104, 103, 72, 85, 96, 95, 66, 39, 76, 37, 38, 36, 81, 79, 80, 82, 73, 77, 62, 63, 87, 74, 64]
+2022-04-10 03:11:43,595 - thots.thot_parse - DEBUG - ID_list: [88032, 85284, 83595, 82034, 80566, 78645, 75895, 69843, 68226, 64582, 62751, 59301, 55964, 54498, 52102, 50792, 50791, 50381, 49735, 47758, 47505, 45669, 41903, 40002, 39242, 37922, 37087, 35815, 34672, 33810, 32582, 31874, 30057, 29378, 27645, 26423, 25232, 24059, 22883, 21905, 20842, 19523, 19074, 17455, 16655, 16649, 16646, 15928, 15040, 14259, 13574, 13007, 12499, 11913, 11279, 11261, 10899, 10730, 10247, 9989, 7991, 7377, 6968, 6941, 6815, 6566, 6222, 6107, 5890, 5781, 5074, 4416, 4047, 3754, 3335, 3153, 2911, 2644, 2531, 2440, 2160, 2027, 1803, 1674, 1590, 1473, 1384, 1363, 1292, 1285, 1252, 1188, 1164, 1105, 1061, 1032, 1014, 972, 964, 945, 917, 900, 894, 879, 852, 846, 832, 614, 600, 594, 589, 557, 541, 533, 532, 512, 507, 506, 505, 504, 502, 499, 493, 492, 489, 488, 487, 485, 483, 482, 480, 461, 459, 452, 435, 422, 411, 387, 383, 382, 369, 364, 353, 340, 330, 329, 270, 268, 258, 222, 198, 182, 181, 180, 116, 110, 88, 60, 61, 67, 59, 56, 58, 84, 57, 101, 97, 108, 68, 98, 71, 106, 107, 89, 94, 86, 99, 92, 70, 83, 105, 75, 78, 41, 91, 40, 65, 42, 90, 93, 69, 100, 102, 104, 103, 72, 85, 96, 95, 39, 76, 37, 38, 36, 66, 81, 79, 80, 82, 73, 77, 62, 63, 87, 74, 64, 92039, 94143]
+2022-04-10 03:11:43,596 - thots.thot_parse - DEBUG - agathalira - diff: []
+2022-04-10 03:11:43,605 - thots.thot_parse - DEBUG - agathalira - Deletados: []
+2022-04-10 03:11:43,606 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:43,606 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:43,606 - thots.thots - WARNING - ---------------| agathalira - Fim da lista de videos.
+2022-04-10 03:11:43,606 - thots.thots - WARNING - ---------------| Iniciando tarefa barbaracastroo, 3 de 17
+2022-04-10 03:11:43,606 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:44,037 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:44,037 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:44,228 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:44,230 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:44,465 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:44,465 - thots.thot_parse - DEBUG - barbaracastroo - videoID_alt: [94759, 92949, 90062, 66824, 66820, 66814, 62590, 61780, 61779, 61404, 61183, 61178]
+2022-04-10 03:11:44,466 - thots.thot_parse - DEBUG - ID_list: [90062, 66824, 66820, 66814, 62590, 61780, 61779, 61408, 61404, 61183, 61178, 92949, 94759]
+2022-04-10 03:11:44,466 - thots.thot_parse - DEBUG - barbaracastroo - diff: [61408]
+2022-04-10 03:11:44,466 - thots.thot_parse - DEBUG - barbaracastroo - Deletados: [61408]
+2022-04-10 03:11:44,467 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: [61408]
+2022-04-10 03:11:44,467 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:44,467 - thots.thots - WARNING - ---------------| barbaracastroo - Fim da lista de videos.
+2022-04-10 03:11:44,468 - thots.thots - WARNING - ---------------| Iniciando tarefa bellacasada, 4 de 17
+2022-04-10 03:11:44,468 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:44,901 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:44,902 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:45,080 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:45,082 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:45,253 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:45,424 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:45,595 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:45,773 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:45,949 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:46,147 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:46,148 - thots.thot_parse - DEBUG - bellacasada - videoID_alt: [95143, 94784, 94780, 94139, 93838, 93254, 93145, 93075, 92368, 92265, 91800, 91003, 90603, 90075, 89834, 89850, 89775, 89503, 89282, 88702, 88498, 88427, 88254, 87546, 86498, 86489, 86199, 86197, 85930, 85047, 85042, 84821, 84531, 83420, 82807, 81068, 80685, 80030, 79650, 79238, 78674, 78080, 78077, 78073, 78023, 76727, 76554, 75659, 75300, 74490, 73285, 73283, 73147, 72824, 72148, 72124, 71932, 71182, 68995, 68903, 68035, 67667, 66386, 66384, 66379, 66378, 66376, 66373, 66371, 66369, 66086, 66073, 65839, 65834, 65828, 65826, 65825, 65820, 65818, 65551, 65550, 65546, 65543, 65427, 65424, 65422, 65420, 65418, 65414, 65413, 64943, 64938, 64937, 64934, 64933, 64932, 64930, 64928, 64768, 64757, 64309, 64300]
+2022-04-10 03:11:46,148 - thots.thot_parse - DEBUG - ID_list: [89503, 89282, 88702, 88498, 88427, 88254, 87546, 86498, 86489, 86199, 86197, 85930, 85047, 85042, 84821, 84531, 83420, 82807, 81068, 80685, 80030, 79650, 79238, 78674, 78080, 78077, 78073, 78023, 76727, 76554, 75659, 75300, 74490, 73285, 73283, 73147, 72824, 72148, 72124, 71932, 71182, 68995, 68903, 68035, 67667, 66386, 66384, 66379, 66378, 66376, 66373, 66371, 66369, 66086, 66073, 65839, 65834, 65828, 65826, 65825, 65820, 65818, 65551, 65550, 65546, 65543, 65427, 65424, 65422, 65420, 65418, 65414, 65413, 64943, 64938, 64937, 64934, 64933, 64932, 64930, 64928, 64768, 64757, 64309, 64300, 89850, 89775, 91003, 90603, 90075, 89834, 92368, 92265, 91800, 93254, 93145, 93075, 93838, 94139, 94784, 94780, 95143]
+2022-04-10 03:11:46,149 - thots.thot_parse - DEBUG - bellacasada - diff: []
+2022-04-10 03:11:46,152 - thots.thot_parse - DEBUG - bellacasada - Deletados: []
+2022-04-10 03:11:46,152 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:46,152 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:46,153 - thots.thots - WARNING - ---------------| bellacasada - Fim da lista de videos.
+2022-04-10 03:11:46,153 - thots.thots - WARNING - ---------------| Iniciando tarefa casalruivaecornooficial, 5 de 17
+2022-04-10 03:11:46,153 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:46,413 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:46,414 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:46,604 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:46,606 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:46,823 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:47,040 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:47,238 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:47,417 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:47,594 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:47,782 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:47,782 - thots.thot_parse - DEBUG - casalruivaecornooficial - videoID_alt: [92750, 90630, 89588, 88693, 87015, 85281, 83747, 82123, 80487, 78327, 75389, 74013, 73328, 71802, 70442, 69076, 68215, 67209, 66644, 65594, 64725, 64530, 63108, 61700, 60043, 58391, 57086, 55560, 54579, 53838, 53675, 53645, 53356, 53140, 52950, 52704, 52698, 52695, 52664, 52089, 51121, 50753, 49942, 49638, 49503, 48979, 48558, 48145, 47836, 47701, 47466, 47287, 47270, 47267, 47266, 47263, 47261, 47258, 47255, 47254, 47253, 47249, 47174, 47102, 46949, 46744, 46683, 46670, 46661, 46655, 46644, 46484, 46472, 46469, 46466, 46426, 46347, 46343, 46342, 45626, 45620, 45617, 44621, 44601, 44553, 44547, 44546, 44543, 44539, 44521, 44516, 44510, 44501, 44497, 44492, 44491, 44487, 44485, 44484, 44483, 44481, 44480]
+2022-04-10 03:11:47,783 - thots.thot_parse - DEBUG - ID_list: [89588, 88693, 87015, 85281, 83747, 82123, 80487, 78327, 75389, 74013, 73328, 71802, 70442, 69076, 68215, 67209, 66644, 65594, 64725, 64530, 63108, 61700, 60043, 58391, 57086, 55560, 54579, 53838, 53675, 53645, 53356, 53140, 52950, 52704, 52698, 52695, 52664, 52089, 50753, 49942, 49638, 49503, 48979, 48558, 48145, 47836, 47701, 47466, 47287, 47270, 47267, 47266, 47263, 47261, 47258, 47255, 47254, 47253, 47249, 47174, 47102, 46949, 46744, 46683, 46670, 46661, 46655, 46644, 46484, 46472, 46469, 46466, 46426, 46347, 46343, 46342, 45626, 45620, 45617, 44621, 44553, 44547, 44546, 44543, 44539, 44521, 44516, 44510, 44501, 44497, 44492, 44491, 44487, 44485, 44484, 44483, 44481, 44480, 51121, 44601, 90630, 92750]
+2022-04-10 03:11:47,783 - thots.thot_parse - DEBUG - casalruivaecornooficial - diff: []
+2022-04-10 03:11:47,786 - thots.thot_parse - DEBUG - casalruivaecornooficial - Deletados: []
+2022-04-10 03:11:47,786 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:47,786 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:47,787 - thots.thots - WARNING - ---------------| casalruivaecornooficial - Fim da lista de videos.
+2022-04-10 03:11:47,787 - thots.thots - WARNING - ---------------| Iniciando tarefa casaltopbessa, 6 de 17
+2022-04-10 03:11:47,787 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:47,999 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:47,999 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:48,231 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:48,232 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:48,472 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:48,679 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:48,679 - thots.thot_parse - DEBUG - casaltopbessa - videoID_alt: [95733, 95340, 94751, 93933, 93131, 92875, 92604, 92350, 91945, 91718, 91540, 91530, 91083, 90627, 90340, 89260, 88691, 87245, 86548, 86026, 85608, 85412, 85404]
+2022-04-10 03:11:48,679 - thots.thot_parse - DEBUG - ID_list: [90627, 90340, 89260, 88691, 87245, 86548, 86026, 85608, 85412, 85404, 84497, 91083, 91718, 91540, 91530, 92350, 91945, 93131, 92875, 92604, 93933, 95340, 94751, 95733]
+2022-04-10 03:11:48,680 - thots.thot_parse - DEBUG - casaltopbessa - diff: [84497]
+2022-04-10 03:11:48,680 - thots.thot_parse - DEBUG - casaltopbessa - Deletados: [84497]
+2022-04-10 03:11:48,680 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: [84497]
+2022-04-10 03:11:48,680 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:48,681 - thots.thots - WARNING - ---------------| casaltopbessa - Fim da lista de videos.
+2022-04-10 03:11:48,681 - thots.thots - WARNING - ---------------| Iniciando tarefa elaquer, 7 de 17
+2022-04-10 03:11:48,681 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:48,853 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:48,853 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:49,027 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:49,028 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:49,218 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:49,395 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:49,580 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:49,762 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:49,762 - thots.thot_parse - DEBUG - elaquer - videoID_alt: [84506, 84354, 84327, 84322, 84085, 75061, 74732, 74706, 72379, 72378, 72377, 72374, 72366, 70672, 69461, 67311, 67306, 67304, 67302, 67301, 67300, 64200, 63017, 63016, 62926, 62924, 62920, 62724, 62709, 61043, 61042, 60130, 60062, 60057, 60055, 60039, 58854, 58853, 58851, 58850, 58849, 58847, 58846, 58319, 57876, 57551, 56933, 56932, 56929, 56928, 56926, 56924, 56923, 56919, 56906, 56900, 56899, 56100, 56096, 55401, 55161, 55155, 55126, 54654, 54299, 53005, 53004, 53000, 52997, 52994, 52983, 52976]
+2022-04-10 03:11:49,762 - thots.thot_parse - DEBUG - ID_list: [84506, 84354, 84327, 84322, 84085, 75061, 74732, 74706, 72379, 72378, 72377, 72374, 72366, 70672, 69461, 67311, 67306, 67304, 67302, 67301, 67300, 64200, 63017, 63016, 62926, 62924, 62920, 62724, 62709, 61043, 61042, 60130, 60062, 60057, 60055, 60039, 58854, 58853, 58851, 58850, 58849, 58847, 58846, 58319, 57876, 57551, 56933, 56932, 56929, 56928, 56926, 56924, 56923, 56919, 56906, 56900, 56899, 56100, 56096, 55401, 55161, 55155, 55126, 54654, 54299, 53005, 53004, 53000, 52997, 52994, 52983, 52976]
+2022-04-10 03:11:49,763 - thots.thot_parse - DEBUG - elaquer - diff: []
+2022-04-10 03:11:49,764 - thots.thot_parse - DEBUG - elaquer - Deletados: []
+2022-04-10 03:11:49,764 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:49,764 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:49,765 - thots.thots - WARNING - ---------------| elaquer - Fim da lista de videos.
+2022-04-10 03:11:49,765 - thots.thots - WARNING - ---------------| Iniciando tarefa emilysales, 8 de 17
+2022-04-10 03:11:49,765 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:49,941 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:49,942 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:50,138 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:50,140 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:50,334 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:50,630 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:50,823 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:51,067 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:51,297 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:51,297 - thots.thot_parse - DEBUG - emilysales - videoID_alt: [94654, 94653, 90475, 90474, 90473, 90471, 90470, 90469, 90468, 90467, 90466, 90464, 90462, 90451, 88858, 88856, 88857, 87699, 87698, 87697, 87696, 87695, 86849, 85563, 81664, 81659, 81655, 81648, 81645, 80834, 80833, 80832, 80825, 79166, 78431, 74784, 74751, 74743, 72107, 71765, 71764, 71725, 69919, 69871, 69870, 69867, 69865, 68674, 68472, 67440, 66891, 66890, 66321, 66114, 66101, 64570, 63367, 63365, 63362, 63360, 63358, 63180, 62840, 62410, 61776, 60953, 58767, 58765, 49500, 46202, 44230, 43481, 42374, 42372, 42370, 42369, 22157, 22155]
+2022-04-10 03:11:51,298 - thots.thot_parse - DEBUG - ID_list: [90475, 90474, 90473, 90471, 90470, 90469, 90468, 90467, 90466, 90464, 90462, 90451, 88858, 88856, 88857, 87699, 87698, 87697, 87696, 87695, 86849, 85563, 81664, 81659, 81655, 81648, 81645, 80834, 80833, 80832, 80825, 79166, 78431, 74784, 74751, 74743, 72107, 71765, 71764, 71725, 69919, 69871, 69870, 69867, 69865, 68674, 68472, 67440, 66891, 66890, 66321, 66114, 66101, 64570, 63367, 63365, 63362, 63360, 63358, 63180, 62840, 62410, 61776, 60953, 58767, 58765, 49500, 46202, 44230, 43481, 42374, 42372, 42370, 42369, 22157, 22155, 94654, 94653]
+2022-04-10 03:11:51,298 - thots.thot_parse - DEBUG - emilysales - diff: []
+2022-04-10 03:11:51,299 - thots.thot_parse - DEBUG - emilysales - Deletados: []
+2022-04-10 03:11:51,300 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:51,300 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:51,300 - thots.thots - WARNING - ---------------| emilysales - Fim da lista de videos.
+2022-04-10 03:11:51,300 - thots.thots - WARNING - ---------------| Iniciando tarefa esposagulosinha, 9 de 17
+2022-04-10 03:11:51,301 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:51,687 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:51,687 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:51,869 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:51,871 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:52,037 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:52,206 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:52,378 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:52,636 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:52,893 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:53,149 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:53,398 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:53,568 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:53,569 - thots.thot_parse - DEBUG - esposagulosinha - videoID_alt: [95772, 95137, 88020, 84058, 76993, 73334, 70563, 70562, 70561, 69569, 65607, 59935, 55279, 53348, 50863, 50716, 47689, 47311, 42874, 40797, 37602, 36412, 32946, 29971, 29101, 28324, 23464, 22843, 16754, 15081, 11761, 11107, 10468, 10426, 8646, 6809, 5765, 4988, 4558, 3548, 3120, 2808, 2518, 2402, 2013, 1358, 1215, 1194, 825, 827, 826, 824, 821, 823, 822, 820, 817, 818, 816, 815, 814, 813, 812, 810, 807, 809, 806, 805, 801, 800, 802, 799, 798, 797, 796, 795, 792, 791, 790, 787, 785, 786, 776, 773, 771, 772, 770, 769, 768, 767, 766, 765, 763, 764, 762, 761, 760, 758, 759, 756, 755, 754, 753, 750, 751, 749, 748, 747, 746, 745, 742, 743, 744, 741, 740, 739, 738, 737, 736, 735, 734, 733, 732, 731, 730, 728, 727]
+2022-04-10 03:11:53,569 - thots.thot_parse - DEBUG - ID_list: [88020, 84058, 76993, 73334, 70563, 70562, 70561, 69569, 65607, 59935, 55279, 53348, 50863, 50716, 47689, 47311, 42874, 40797, 37602, 36412, 32946, 29971, 29101, 28324, 23464, 22843, 16754, 15081, 11761, 11107, 10468, 10426, 8646, 6809, 5765, 4988, 4558, 3548, 3120, 2808, 2518, 2402, 2013, 1358, 1215, 1194, 825, 827, 826, 824, 821, 823, 822, 820, 817, 818, 816, 815, 814, 813, 812, 810, 807, 809, 806, 805, 801, 800, 802, 799, 798, 797, 796, 795, 792, 791, 790, 787, 785, 786, 776, 773, 771, 772, 770, 769, 768, 767, 766, 765, 763, 764, 762, 761, 760, 758, 759, 756, 755, 754, 753, 750, 751, 749, 748, 747, 746, 745, 742, 743, 744, 741, 740, 739, 738, 737, 736, 735, 734, 733, 732, 731, 730, 728, 727, 95137, 95772]
+2022-04-10 03:11:53,570 - thots.thot_parse - DEBUG - esposagulosinha - diff: []
+2022-04-10 03:11:53,573 - thots.thot_parse - DEBUG - esposagulosinha - Deletados: []
+2022-04-10 03:11:53,573 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:53,574 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:53,574 - thots.thots - WARNING - ---------------| esposagulosinha - Fim da lista de videos.
+2022-04-10 03:11:53,574 - thots.thots - WARNING - ---------------| Iniciando tarefa fabioeanaes, 10 de 17
+2022-04-10 03:11:53,574 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:54,163 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:54,164 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:54,343 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:54,345 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:54,536 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:54,751 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:54,993 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:55,267 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:55,443 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:55,444 - thots.thot_parse - DEBUG - fabioeanaes - videoID_alt: [94276, 93807, 93600, 92906, 88286, 88278, 87297, 87273, 85143, 85141, 80567, 78561, 77878, 76774, 75445, 75447, 73343, 72948, 72153, 69995, 67982, 63939, 63926, 59768, 58043, 55011, 50844, 49785, 46277, 46255, 44344, 42277, 40906, 39778, 36364, 36363, 34031, 33030, 29229, 27685, 27008, 24927, 23484, 22733, 22031, 21294, 20236, 20234, 19403, 19394, 19392, 18894, 15428, 15388, 14867, 13931, 13816, 13726, 13620, 13340, 13338, 13121, 12872, 12493, 12371, 12302, 11885, 11628, 11627, 11310, 11308, 11303, 11059, 11033, 11032, 11031, 10879, 10872, 10856, 10848, 10754, 10058, 10053, 10048, 10041]
+2022-04-10 03:11:55,444 - thots.thot_parse - DEBUG - ID_list: [88278, 87297, 87273, 85143, 85141, 80567, 78561, 77878, 76774, 75445, 75447, 73343, 72948, 72153, 69995, 67982, 63939, 63926, 59768, 58043, 55011, 50844, 49785, 46277, 46255, 44344, 42277, 40906, 39778, 36364, 36363, 34031, 33030, 29229, 27685, 27008, 24927, 23484, 22733, 22031, 21294, 20236, 20234, 19394, 19392, 18894, 15428, 15388, 14867, 13931, 13816, 13726, 13620, 12493, 12371, 12302, 11885, 11628, 11627, 11310, 11308, 11303, 11059, 11033, 11032, 11031, 10879, 10872, 10856, 10848, 10754, 10058, 10053, 10048, 10041, 19403, 13340, 13338, 13121, 12872, 88286, 92906, 93807, 93600, 94276]
+2022-04-10 03:11:55,444 - thots.thot_parse - DEBUG - fabioeanaes - diff: []
+2022-04-10 03:11:55,446 - thots.thot_parse - DEBUG - fabioeanaes - Deletados: []
+2022-04-10 03:11:55,446 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:55,446 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:55,446 - thots.thots - WARNING - ---------------| fabioeanaes - Fim da lista de videos.
+2022-04-10 03:11:55,447 - thots.thots - WARNING - ---------------| Iniciando tarefa helenafilmes, 11 de 17
+2022-04-10 03:11:55,447 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:55,893 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:55,893 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:56,116 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:56,118 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:56,370 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:56,630 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:56,631 - thots.thot_parse - DEBUG - helenafilmes - videoID_alt: [95467, 94205, 93247, 84767, 77805, 72936, 68718, 60937, 49593, 41848, 37307, 36543, 13435, 11887, 10128, 6734, 6317, 2890, 2170, 1649, 1563, 1522, 1513, 1486, 1485, 1484, 1459, 1441, 1440, 1392, 1379, 1378, 1368]
+2022-04-10 03:11:56,632 - thots.thot_parse - DEBUG - ID_list: [84767, 77805, 72936, 68718, 60937, 49593, 41848, 37307, 36543, 13435, 11887, 10128, 6734, 6317, 2890, 2170, 1649, 1563, 1522, 1513, 1486, 1485, 1484, 1459, 1441, 1440, 1392, 1379, 1378, 1368, 93247, 94205, 95467]
+2022-04-10 03:11:56,632 - thots.thot_parse - DEBUG - helenafilmes - diff: []
+2022-04-10 03:11:56,633 - thots.thot_parse - DEBUG - helenafilmes - Deletados: []
+2022-04-10 03:11:56,633 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:56,634 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:56,635 - thots.thots - WARNING - ---------------| helenafilmes - Fim da lista de videos.
+2022-04-10 03:11:56,635 - thots.thots - WARNING - ---------------| Iniciando tarefa lualencar11, 12 de 17
+2022-04-10 03:11:56,635 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:56,914 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:56,914 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:57,151 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:57,153 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:57,398 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:57,399 - thots.thot_parse - DEBUG - lualencar11 - videoID_alt: [91419, 91417, 90694, 90692, 90691, 90690, 90114, 90113, 90112, 90111, 90110, 90098]
+2022-04-10 03:11:57,400 - thots.thot_parse - DEBUG - ID_list: [91419, 91417, 90694, 90692, 90691, 90690, 90114, 90113, 90112, 90111, 90110, 90098]
+2022-04-10 03:11:57,400 - thots.thot_parse - DEBUG - lualencar11 - diff: []
+2022-04-10 03:11:57,401 - thots.thot_parse - DEBUG - lualencar11 - Deletados: []
+2022-04-10 03:11:57,401 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:57,402 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:57,402 - thots.thots - WARNING - ---------------| lualencar11 - Fim da lista de videos.
+2022-04-10 03:11:57,403 - thots.thots - WARNING - ---------------| Iniciando tarefa melissadias, 13 de 17
+2022-04-10 03:11:57,403 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:57,640 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:57,641 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:57,872 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:57,874 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:58,102 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:58,296 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:58,467 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:58,653 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:58,831 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:59,012 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:59,188 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:59,189 - thots.thot_parse - DEBUG - melissadias - videoID_alt: [95771, 93904, 91302, 90006, 84385, 84384, 84383, 83340, 83337, 79793, 79787, 76846, 76122, 73910, 72737, 72736, 69453, 69452, 67853, 67852, 67849, 66650, 66649, 66648, 65941, 65940, 65939, 65115, 63620, 63619, 63618, 63617, 63616, 62544, 62543, 61752, 61751, 61750, 61748, 61349, 61348, 59688, 59687, 59685, 59683, 59682, 58495, 58494, 58493, 57890, 57889, 57887, 57888, 57807, 57490, 57482, 57481, 57476, 57473, 57472, 57042, 57041, 57040, 57038, 57037, 57036, 56705, 56698, 56694, 56675, 56665, 56663, 56588, 56584, 56554, 56550, 56549, 56548, 56547, 56540, 56537, 56528, 56527, 56380, 56377, 56375, 56353, 56352, 56350, 56348, 56342, 56338, 56334, 56328, 56327, 56325, 56324, 56323, 56320, 56318, 56317, 56316, 56315, 56314, 56312, 56311, 56291, 56279, 56272, 56263]
+2022-04-10 03:11:59,190 - thots.thot_parse - DEBUG - ID_list: [84384, 84383, 83340, 83337, 79793, 79787, 76846, 76122, 73910, 72737, 72736, 69453, 69452, 67853, 67852, 67849, 66650, 66649, 66648, 65941, 65940, 65939, 65115, 63620, 63619, 63618, 63617, 63616, 62544, 62543, 61752, 61751, 61750, 61748, 61349, 61348, 59688, 59687, 59685, 59683, 59682, 58495, 58494, 58493, 57890, 57889, 57887, 57888, 57807, 57490, 57482, 57481, 57476, 57473, 57472, 57042, 57041, 57040, 57038, 57037, 57036, 56705, 56698, 56694, 56675, 56665, 56663, 56588, 56584, 56554, 56550, 56549, 56548, 56547, 56540, 56537, 56528, 56527, 56380, 56377, 56375, 56353, 56352, 56350, 56348, 56342, 56338, 56334, 56328, 56327, 56325, 56324, 56323, 56320, 56318, 56317, 56316, 56315, 56314, 56312, 56311, 56291, 56279, 56272, 56263, 90006, 84385, 91302, 93904, 95771]
+2022-04-10 03:11:59,191 - thots.thot_parse - DEBUG - melissadias - diff: []
+2022-04-10 03:11:59,193 - thots.thot_parse - DEBUG - melissadias - Deletados: []
+2022-04-10 03:11:59,194 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:59,194 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:59,195 - thots.thots - WARNING - ---------------| melissadias - Fim da lista de videos.
+2022-04-10 03:11:59,195 - thots.thots - WARNING - ---------------| Iniciando tarefa nicoleballs_trans, 14 de 17
+2022-04-10 03:11:59,196 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:11:59,371 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:59,372 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:11:59,574 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:59,576 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:11:59,772 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:59,973 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:11:59,973 - thots.thot_parse - DEBUG - nicoleballs_trans - videoID_alt: [83848, 77558, 75768, 74782, 73926, 71020, 70942, 69978, 67900, 62917, 62289, 52701, 48756, 47575, 47356, 46379, 45633, 44978, 43800, 43257, 43062, 43059, 39989, 39620, 39006, 39000, 38999, 26394, 26364, 26355, 26354]
+2022-04-10 03:11:59,973 - thots.thot_parse - DEBUG - ID_list: [83848, 77558, 75768, 74782, 73926, 71020, 70942, 69978, 67900, 62917, 62289, 52701, 48756, 47575, 47356, 46379, 45633, 44978, 43800, 43257, 43062, 43059, 39989, 39620, 39006, 39000, 38999, 26394, 26364, 26355, 26354]
+2022-04-10 03:11:59,974 - thots.thot_parse - DEBUG - nicoleballs_trans - diff: []
+2022-04-10 03:11:59,974 - thots.thot_parse - DEBUG - nicoleballs_trans - Deletados: []
+2022-04-10 03:11:59,974 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:11:59,975 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:11:59,975 - thots.thots - WARNING - ---------------| nicoleballs_trans - Fim da lista de videos.
+2022-04-10 03:11:59,975 - thots.thots - WARNING - ---------------| Iniciando tarefa nikkecasada, 15 de 17
+2022-04-10 03:11:59,976 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:12:00,372 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:00,373 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:12:00,551 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:00,553 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:12:00,736 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:00,912 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:01,081 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:01,254 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:01,255 - thots.thot_parse - DEBUG - nikkecasada - videoID_alt: [58054, 48271, 28515, 28237, 26126, 25758, 25748, 25747, 25576, 24201, 24114, 23975, 22289, 20171, 20169, 19459, 19169, 18793, 18376, 18027, 15828, 13237, 12984, 12461, 12430, 11232, 11154, 11151, 10354, 9760, 9249, 7597, 7373, 7346, 7345, 7003, 6447, 6445, 6444, 6443, 5452, 5451, 5354, 5353, 5296, 5286, 5279, 5278, 4903, 4597, 4460, 4304, 4272, 4210, 4208, 4207, 4206, 4205, 4204, 4186, 3804, 3637, 3632, 3505, 3504, 3501, 3499, 3473, 3471, 3469, 3456, 3453]
+2022-04-10 03:12:01,256 - thots.thot_parse - DEBUG - ID_list: [58054, 28515, 28237, 48271, 26126, 25758, 25748, 25747, 25576, 24201, 24114, 23975, 22289, 20171, 20169, 19459, 19169, 18793, 18376, 18027, 15828, 13237, 12984, 12461, 12430, 11232, 11154, 11151, 10354, 9760, 9249, 7597, 7373, 7346, 7345, 6447, 6445, 6444, 6443, 5452, 5451, 5354, 5353, 5296, 5286, 5279, 5278, 4903, 4597, 4460, 4304, 4272, 4210, 4208, 4207, 4206, 4205, 4204, 4186, 3804, 3637, 3632, 3505, 3504, 3501, 3499, 3473, 3471, 3469, 3456, 3453, 7003]
+2022-04-10 03:12:01,256 - thots.thot_parse - DEBUG - nikkecasada - diff: []
+2022-04-10 03:12:01,258 - thots.thot_parse - DEBUG - nikkecasada - Deletados: []
+2022-04-10 03:12:01,258 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:12:01,259 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:12:01,259 - thots.thots - WARNING - ---------------| nikkecasada - Fim da lista de videos.
+2022-04-10 03:12:01,260 - thots.thots - WARNING - ---------------| Iniciando tarefa tatycasadinha, 16 de 17
+2022-04-10 03:12:01,261 - thots.thot_parse - DEBUG - tatycasadinha - Baixando video: 86799
+2022-04-10 03:12:01,641 - thots.thot_parse - DEBUG - i: 86799, j: Escapadinha rápida com o macho, enquanto meus pais me esperavam em casa.
+2022-04-10 03:12:01,646 - thots.thots - WARNING - ---------------| tatycasadinha - Fim da lista de videos.
+2022-04-10 03:12:01,647 - thots.thots - WARNING - ---------------| Iniciando tarefa vidasafada, 17 de 17
+2022-04-10 03:12:01,647 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-04-10 03:12:02,081 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:02,082 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-04-10 03:12:02,271 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:02,272 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-04-10 03:12:02,451 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:02,636 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:02,807 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:03,029 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:03,223 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:03,402 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:03,403 - thots.thot_parse - DEBUG - vidasafada - videoID_alt: [95795, 95104, 94253, 94210, 92787, 91308, 90381, 89730, 89183, 87970, 86996, 86793, 86721, 86187, 84224, 84216, 83612, 81367, 80074, 79786, 79461, 78385, 77545, 77209, 76923, 76734, 74057, 73923, 73648, 73163, 73140, 72549, 72426, 72303, 72300, 72299, 72295, 71860, 71856, 71688, 71679, 71676, 71674, 71673, 71412, 71370, 71359, 71348, 70693, 70470, 70445, 70298, 70296, 70295, 70288, 70285, 70284, 70188, 70183, 70179, 70174, 70162, 70069, 70061, 70023, 70010, 70006, 69990, 69973, 69962, 69790, 69788, 69357, 69329, 69324, 69253, 69240, 69158, 69141, 69136, 69097, 69089, 69088, 69079, 69031, 69027, 69025, 69023, 69015, 69012, 69009, 69008, 69006, 69005, 69004, 69003, 69002, 69001, 68960, 68959, 68958, 68957, 68956, 68951]
+2022-04-10 03:12:03,403 - thots.thot_parse - DEBUG - ID_list: [90381, 89730, 89183, 87970, 86996, 86793, 86721, 86187, 84224, 84216, 83612, 81367, 80074, 79786, 79461, 78385, 77545, 77209, 76923, 76734, 74057, 73923, 73648, 73163, 73140, 72549, 72426, 72303, 72300, 72299, 72295, 71860, 71856, 71688, 71679, 71676, 71674, 71673, 71412, 71370, 71359, 71348, 70693, 70470, 70445, 70298, 70296, 70295, 70288, 70285, 70284, 70188, 70183, 70179, 70174, 70162, 70069, 70061, 70023, 70010, 70006, 69990, 69973, 69962, 69790, 69788, 69357, 69329, 69324, 69253, 69240, 69158, 69141, 69136, 69097, 69089, 69088, 69079, 69031, 69027, 69025, 69023, 69015, 69012, 69009, 69008, 69006, 69005, 69004, 69003, 69002, 69001, 68960, 68959, 68958, 68957, 68956, 68951, 91308, 92787, 94253, 94210, 95104, 95795]
+2022-04-10 03:12:03,403 - thots.thot_parse - DEBUG - vidasafada - diff: []
+2022-04-10 03:12:03,406 - thots.thot_parse - DEBUG - vidasafada - Deletados: []
+2022-04-10 03:12:03,406 - thots.thot_parse - DEBUG - Lista de videos que não foram baixados: []
+2022-04-10 03:12:03,406 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-04-10 03:12:03,406 - thots.thots - WARNING - ---------------| vidasafada - Fim da lista de videos.
+2022-04-10 03:12:03,406 - __main__ - INFO - Fazendo backup dos IDs na API backup...
+2022-04-10 03:12:03,406 - __main__ - INFO - Salvando ID's da API localmente....
+2022-04-10 03:12:03,616 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
+2022-04-10 03:12:04,218 - Utils.utils - INFO - Requisição GET realizada com sucesso, status code: 200
