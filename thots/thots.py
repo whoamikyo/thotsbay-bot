@@ -44,13 +44,6 @@ class Thots:
             self.thots[i](self.config, self.id_config, self.enable[i])
             log.warning(f"---------------| {self.enable[i]} - Fim da lista de videos.")
 
-    # def run(self):
-    #     for i in range(len(self.thots)):
-    #         if self.config[f"{self.thots[i].__name__}"]["enable_task"]:
-    #             log.warning(f"---------------| Iniciando tarefa {self.thots[i].__name__}, {i + 1} de {len(self.thots)}")
-    #             self.thots[i](self.config, self.id_config, self.thots[i].__name__)
-    #             log.warning(f"---------------| {self.thots[i].__name__} - Fim da lista de videos.")
-
 
 def afroditehotwife(config, id_config, thot):
     get_category = False
