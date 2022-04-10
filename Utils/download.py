@@ -128,6 +128,7 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
                 path_list = absolute_file_paths(path)
                 imgur_list = [Thumbmaker().get_thumb_upload(path, name=thot) for path in path_list]
                 lista_nomes = get_files_in_path_without_extension(path)
+                thotsbay.Account.check_thotsbay()
                 log.info("Atualizando tópico agora...")
                 thotsbay.Account.send_message_in_thread(has_topic, msg(imgur_list, folder_link, lista_nomes))
                 latest_post_payload = json.dumps({thot: {"latest_post": datetime.datetime.utcnow()}}, cls=DateTimeEncoder)
