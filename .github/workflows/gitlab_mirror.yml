@@ -16,3 +16,4 @@ jobs:
         REMOTE: "https://gitlab.com/whoamikyo/thotsbay-bot.git"
         GIT_USERNAME: whoamikyo
         GIT_PASSWORD: ${{ secrets.GITLAB_PASSWORD }}
+        DEBUG: "true"
