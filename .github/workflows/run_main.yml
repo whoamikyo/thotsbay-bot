@@ -26,6 +26,7 @@ env:
   API_KEY: ${{ secrets.API_KEY }}
   URL_BASE: ${{ secrets.URL_BASE }}
   CYBERDROP_TOKEN: ${{ secrets.CYBERDROP_TOKEN }}
+  IMGUR_BEARER: ${{ secrets.IMGUR_BEARER }}
   ID_CONFIG_TESTE: ${{ secrets.ID_CONFIG_TESTE }}
   GALLERY : ${{ secrets.GALLERY }}
 
