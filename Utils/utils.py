@@ -109,7 +109,7 @@ class MakeRequest:
         return response
 
     def get(self, url, **kwargs):
-        response = self.session.get(url, **kwargs)
+        response = self.session.get(url, **kwargs, timeout=30)
         while self.tries < self.max_retries:
             try:
                 response.raise_for_status()
@@ -130,7 +130,7 @@ class MakeRequest:
         return response
 
     def put(self, url, **kwargs):
-        response = self.session.put(url, **kwargs)
+        response = self.session.put(url, **kwargs, timeout=30)
         while self.tries < self.max_retries:
             try:
                 response.raise_for_status()
@@ -150,7 +150,7 @@ class MakeRequest:
         return response
 
     def post(self, url, **kwargs):
-        response = self.session.post(url, **kwargs)
+        response = self.session.post(url, **kwargs, timeout=30)
         while self.tries < self.max_retries:
             try:
                 response.raise_for_status()

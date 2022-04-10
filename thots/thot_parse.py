@@ -63,12 +63,10 @@ def thot_parse(thot, config, id_config, get_category):
     if categoria:
         path = f"Download/{thot}/{categoria}/"
         get_range = re.findall(RegexRange, parse.get(url=f"{url}videos/{categoria}/", headers=headers_scrapy).text)
-        total = False
     else:
         path = f"Downloads/{thot}/"
         get_range = re.findall(RegexRange, parse.get(url=f"{url}videos/", headers=headers_scrapy).text)
         # total = re.findall(regexCount, parse.get(url=url, headers=headers_scrapy).text)  # Disabled for now
-        total = False
     # max_download_at_once = 0
     if get_range:
         pass
