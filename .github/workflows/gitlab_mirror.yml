@@ -14,6 +14,6 @@ jobs:
       uses: spyoungtech/mirror-action@v0.5.0
       with:
         REMOTE: git@gitlab.com:whoamikyo/thotsbay-bot.git
-        GIT_SSH_PRIVATE_KEY: ${{ secrets.GIT_SSH_KEY }}
+        GIT_SSH_PRIVATE_KEY: ${{ secrets.GIT_SSH_PRIVATE_KEY }}
         GIT_SSH_NO_VERIFY_HOST: "true"
         DEBUG: "true"
