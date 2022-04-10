@@ -39,6 +39,7 @@ class Account:
             self.password = password
             self.url_base = "https://forum.thotsbay.com/"
             self.url_login = f"{self.url_base}login/login"
+            self.client = requests.Session()
             self.request = MakeRequest()
             self.update_token()
         except requests.RequestException:
@@ -110,7 +111,7 @@ class Account:
         }
         log.debug(f"Send message data: {data}")
         self.update_token()
-        self.request.post(f"{self.url_base}threads/{thread}/add-reply", headers=self.user_agent, data=data)
+        self.client.post(f"{self.url_base}threads/{thread}/add-reply", headers=self.user_agent, data=data)
 
     @staticmethod
     def check_thotsbay():
