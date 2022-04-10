@@ -38,23 +38,18 @@ class Account:
         self.password = password
         self.url_base = "https://forum.thotsbay.com/"
         self.url_login = f"{self.url_base}login/login"
-        self.request = requests.Session()
+        self.request = MakeRequest()
         self.update_token()
 
     def update_token(self):
         req = self.request.get(self.url_login, headers=self.user_agent)
-        try:
-            req.raise_for_status()
-            soup = bs(req.text, "html.parser")
-            self.token = soup.find("input", {"name": "_xfToken"})
-            if self.token is None:
-                raise ParseTokenError
-            else:
-                self.token = self.token["value"]
-                log.debug(f"Token: {self.token}")
-        except requests.RequestException:
-            traceback.print_exc()
-            pass
+        soup = bs(req.text, "html.parser")
+        self.token = soup.find("input", {"name": "_xfToken"})
+        if self.token is None:
+            raise ParseTokenError
+        else:
+            self.token = self.token["value"]
+            log.debug(f"Token: {self.token}")
 
     def authorize(self):
         log.info("Autorizando...")
@@ -66,16 +61,12 @@ class Account:
             "_xfToken": self.token,
         }
         log.debug(f"Authorize data: {data}")
-        try:
-            self.update_token()
-            req = self.request.post(self.url_login, headers=self.user_agent, data=data).text
-            if req.find("Incorrect password") == -1:
-                return True
-            else:
-                return False
-        except requests.RequestException:
-            traceback.print_exc()
-            pass
+        self.update_token()
+        req = self.request.post(self.url_login, headers=self.user_agent, data=data).text
+        if req.find("Incorrect password") == -1:
+            return True
+        else:
+            return False
 
     def get_messages_in_thread(self, thread: int):
         try:
@@ -115,11 +106,7 @@ class Account:
         }
         log.debug(f"Send message data: {data}")
         self.update_token()
-        try:
-            self.request.post(f"{self.url_base}threads/{thread}/add-reply", headers=self.user_agent, data=data)
-        except requests.RequestException:
-            traceback.print_exc()
-            pass
+        self.request.post(f"{self.url_base}threads/{thread}/add-reply", headers=self.user_agent, data=data)
 
     @staticmethod
     def check_thotsbay():
