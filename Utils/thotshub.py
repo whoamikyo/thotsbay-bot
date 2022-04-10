@@ -39,7 +39,6 @@ class Account:
             self.password = password
             self.url_base = "https://forum.thotsbay.com/"
             self.url_login = f"{self.url_base}login/login"
-            self.client = requests.Session()
             self.request = MakeRequest()
             self.update_token()
         except requests.RequestException:
@@ -47,7 +46,7 @@ class Account:
             pass
 
     def update_token(self):
-        req = self.client.get(self.url_login, headers=self.user_agent).text
+        req = self.request.get(self.url_login, headers=self.user_agent).text
         soup = bs(req, "html.parser")
         self.token = soup.find("input", {"name": "_xfToken"})
         if self.token is None:
@@ -67,7 +66,7 @@ class Account:
         }
         log.debug(f"Authorize data: {data}")
         self.update_token()
-        req = self.client.post(self.url_login, headers=self.user_agent, data=data).text
+        req = self.request.post(self.url_login, headers=self.user_agent, data=data).text
         if req.find("Incorrect password") == -1:
             return True
         else:
@@ -77,7 +76,7 @@ class Account:
         try:
             self.update_token()
             cMessages = []
-            req = self.client.get(f"{self.url_base}threads/{thread}/", headers=self.user_agent).text
+            req = self.request.get(f"{self.url_base}threads/{thread}/", headers=self.user_agent).text
             soup = bs(req, "html.parser")
             messages = soup.find_all("div", {"class": "message-inner"})
             for message in messages:
@@ -111,7 +110,7 @@ class Account:
         }
         log.debug(f"Send message data: {data}")
         self.update_token()
-        self.client.post(f"{self.url_base}threads/{thread}/add-reply", headers=self.user_agent, data=data)
+        self.request.post(f"{self.url_base}threads/{thread}/add-reply", headers=self.user_agent, data=data)
 
     @staticmethod
     def check_thotsbay():
