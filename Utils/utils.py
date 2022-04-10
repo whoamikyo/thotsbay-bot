@@ -12,7 +12,6 @@ from http.client import HTTPException, RemoteDisconnected
 from json import JSONEncoder
 
 import aiohttp
-import httpx
 import requests
 from dotenv import load_dotenv
 from logger import get_logger
@@ -38,6 +37,7 @@ ID_CONFIG_READ = os.environ["ID_CONFIG_READ"]
 CONFIG_READ = os.environ["CONFIG_READ"]
 CONFIG_WRITE = os.environ["CONFIG_WRITE"]
 IMGUR_CLIENT_ID = os.environ["IMGUR_CLIENT_ID"]
+IMGUR_BEARER = os.environ["IMGUR_BEARER"]
 CDN = os.environ["CDN"]
 URL_BASE = os.environ["URL_BASE"]
 CYBERDROP_TOKEN = os.environ["CYBERDROP_TOKEN"]
@@ -53,8 +53,11 @@ if DEVELOPMENT:
 else:
     ID_CONFIG_WRITE = ID_CONFIG_WRITE
     log.info("Ambiente de produção ativado")
-headers = {"Content-Type": "application/json"}
-headers_backup = {"Content-Type": "application/json", "X-Master-Key": API_KEY, "X-Bin-Meta": "false"}
+headers = {"Content-Type": "application/json", "X-Master-Key": API_KEY, "X-Bin-Meta": "false"}
+headers_scrapy = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4922.0 Safari/537.36 Edg/101.0.1198.0",
+    "referer": f"{REFERER}",
+}
 regexID = r"/video/([\d]+)\""
 regexName = r"<span\b[^>]*>(.*?)</span>"
 regexID_Album = r"album/([\d]+)\" class"
@@ -240,51 +243,33 @@ async def make_request(session, url):
 
 def image_uploader(filelist):
     imgur_url = "https://api.imgur.com/3/image"
-    imgur_headers = {"Authorization": f"Client-ID {IMGUR_CLIENT_ID}"}
+    imgur_headers = {"Authorization": f"Bearer {IMGUR_BEARER}"}
     cyberdrop_upload_url = "https://cyberdrop.me/api/upload"
     cyberdrop_header = {"token": f"{CYBERDROP_TOKEN}", "albumid": "90539"}
     total_file_number = len(filelist)
     file_index = 1
-    failed = []
-    url_list = []
-    success_count = 0
     upload = MakeRequest()
+    # url_list = [upload.post(imgur_url, headers=imgur_headers, data={"image": convert_to_b64(file), "album": "0S5j3ML"}) for file in filelist]
+    url_list = []
     for file in filelist:
-        log.info(f"Enviando arquivo {file_index} de {total_file_number} : {file}")
+        log.info(f"Enviando imagem {file_index} de {total_file_number} : {file}")
         file_index = file_index + 1
-        client = httpx.Client()
-        tries = 0
-        while tries < 10:
-            try:
-                files = {"files[]": open(file, "rb")}
-                url = json.loads(client.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).text)["files"][0]["url"]
-                # url = json.loads(upload.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).text)["files"][0]["url"]
-                log.debug(f"URL: {url}")
-                success = url
-                if success:
-                    url_list.append(url)
-                    success_count = success_count + 1
-                    log.info(f"{file} enviado com sucesso")
-                    tries = 11
-                else:
-                    # fallback to imgur
-                    files = {"image": convert_to_b64(file)}
-                    # url = json.loads(requests.post(imgur_url, headers=imgur_headers, data=files).text)["data"]["link"]
-                    url = json.loads(upload.post(imgur_url, headers=imgur_headers, data=files).text)["data"]["link"]
-                    log.debug(f"URL: {url}")
-                    success = url
-                    if success:
-                        url_list.append(url)
-                        success_count = success_count + 1
-                        log.info(f"{file} enviado com sucesso")
-                        tries = 11
-            except Exception as e:
-                tries = tries + 1
-                log.error(f"Falha no envio do arquivo: {file}")
-                log.error(f"{e}")
-                failed.append(file)
-                log.info("Tentando novamente em 3 segundos...")
-                time.sleep(3)
+        files = {"image": convert_to_b64(file), "album": "0S5j3ML"}
+        url = upload.post(imgur_url, headers=imgur_headers, data=files).json()["data"]["link"]
+        log.debug(f"URL: {url}")
+        success = url
+        if success:
+            log.info(f"{file} enviado com sucesso")
+            url_list.append(url)
+        else:
+            # fallback to cyberdrop
+            files = {"files[]": open(file, "rb")}
+            url = upload.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).json()["files"][0]["url"]
+            log.debug(f"URL: {url}")
+            success = url
+            if success:
+                log.info(f"{file} enviado com sucesso")
+                url_list.append(url)
     return url_list
 
 

@@ -24,6 +24,7 @@ from Utils.utils import (
     REFERER,
     GALLERY,
     compare_lists,
+    headers_scrapy
 )
 
 log = get_logger(__name__)
@@ -52,7 +53,7 @@ def thot_parse(thot, config, id_config, get_category):
 
     pattern = r"title=\""
     log.info("Definindo o padrão de regex...")
-    if re.findall(pattern, parse.get(f"{url}videos/").text) == []:
+    if re.findall(pattern, parse.get(f"{url}videos/", headers=headers_scrapy).text) == []:
         regexName = r"<span\b[^>]*>(.*?)</span>"
         log.info("Primeiro padrão de regex definido com sucesso!")
     else:
@@ -61,12 +62,12 @@ def thot_parse(thot, config, id_config, get_category):
 
     if categoria:
         path = f"Download/{thot}/{categoria}/"
-        get_range = re.findall(RegexRange, parse.get(url=f"{url}videos/{categoria}/").text)
+        get_range = re.findall(RegexRange, parse.get(url=f"{url}videos/{categoria}/", headers=headers_scrapy).text)
         total = False
     else:
         path = f"Downloads/{thot}/"
-        get_range = re.findall(RegexRange, parse.get(url=f"{url}videos/").text)
-        # total = re.findall(regexCount, parse.get(url=url).text)  # Disabled for now
+        get_range = re.findall(RegexRange, parse.get(url=f"{url}videos/", headers=headers_scrapy).text)
+        # total = re.findall(regexCount, parse.get(url=url, headers=headers_scrapy).text)  # Disabled for now
         total = False
     # max_download_at_once = 0
     if get_range:
@@ -87,7 +88,7 @@ def thot_parse(thot, config, id_config, get_category):
     else:
         alt = True
         log.info("Usando método alternativo para encontrar a quantidade de videos.")
-        videoID_alt = get_list_from_nested([re.findall(regexID, parse.get(url=x).text) for x in url_list])
+        videoID_alt = get_list_from_nested([re.findall(regexID, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
         log.debug(f"{thot} - videoID_alt: {list_to_int(videoID_alt)}")
         log.debug(f"ID_list: {id_list}")
         diff = compare_lists(id_list, list_to_int(videoID_alt))
@@ -104,9 +105,9 @@ def thot_parse(thot, config, id_config, get_category):
         videoID = videoID_alt  # type: ignore
     else:
         log.info("A lista de ID's ainda nao foi definida")
-        videoID = get_list_from_nested([re.findall(regexID, parse.get(url=x).text) for x in url_list])
+        videoID = get_list_from_nested([re.findall(regexID, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
 
-    videoName = get_list_from_nested([re.findall(regexName, parse.get(url=x).text) for x in url_list])
+    videoName = get_list_from_nested([re.findall(regexName, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
     videoID = list_to_int(videoID)
 
     log.debug(f"VideoID: {videoID}")
@@ -137,11 +138,11 @@ async def parse_album(thot, config):
 
     url = config[thot]
     path = download_path + thot + "/" + "Albums/"
-    get_range = re.findall(RegexRange, parse.get(url=url + "gallery/").text)
+    get_range = re.findall(RegexRange, parse.get(url=url + "gallery/", headers=headers_scrapy).text)
     url_list = [f"{url}gallery/{x}" for x in range(1, convert_range(get_range) + 1)]
-    AlbumID = get_list_from_nested([re.findall(regexID_Album, parse.get(url=x).text) for x in url_list])
-    AlbumName = get_list_from_nested([re.findall(regexName_Album, parse.get(url=x).text) for x in url_list])
-    RangeSize = get_list_from_nested([re.findall(regexGetRangeSize, parse.get(url=x).text) for x in url_list])
+    AlbumID = get_list_from_nested([re.findall(regexID_Album, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
+    AlbumName = get_list_from_nested([re.findall(regexName_Album, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
+    RangeSize = get_list_from_nested([re.findall(regexGetRangeSize, parse.get(url=x, headers=headers_scrapy).text) for x in url_list])
     RangeSize = list_to_int(RangeSize)
     AlbumID = list_to_int(AlbumID)
 

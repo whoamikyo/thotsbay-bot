@@ -27,7 +27,7 @@ from Utils.utils import (
     get_files_in_path_without_extension,
     get_time_diff,
     headers,
-    headers_backup,
+    headers_scrapy,
     slugify,
     thumbnails_path,
     truncate_string,
@@ -42,6 +42,9 @@ api = MakeRequest()
 
 # YT-DLP referer
 youtube_dl.utils.std_headers["Referer"] = REFERER
+youtube_dl.utils.std_headers[
+    "User-Agent"
+] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4922.0 Safari/537.36 Edg/101.0.1198.0"
 
 PPE = ProcessPoolExecutor()
 
@@ -88,7 +91,7 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
                 log.error(f"Erro: {not_found_error}")
                 # remaining = remaining - contador
                 api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
-                api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
+                api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers)
                 log.warning(f"Arquivo não encontrado no servidor, ainda faltam {remaining} arquivos.")
             else:
                 tries += 1
@@ -110,14 +113,14 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
         remaining = remaining - contador
         log.info(f"Arquivo {name} enviado com sucesso, ainda faltam: {remaining}")
         api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
-        api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
+        api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers)
 
     if has_topic > 0 and enable_posting and not failed:
         if max_posts_at_once <= 9 and remaining > 0:
             log.info(f"Ainda faltam {remaining}, a postagem será feita depois para evitar flood...")
         else:
             log.info("Prosseguindo com a postagem...")
-            latest_post = datetime.datetime.fromisoformat(config[thot]["latest_post"])  # type: ignore
+            latest_post = datetime.datetime.fromisoformat(config[thot]["latest_post"])
             agora = datetime.datetime.utcnow()
             diff_minutes = get_time_diff(start=latest_post, end=agora)
             if diff_minutes > 1:

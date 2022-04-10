@@ -53,4 +53,5 @@ class Thumbmaker:
             )
             if len(shotlist) > 2:
                 imgur_urls = image_uploader(shotlist)
+                log.debug(f"Imgur urls: {imgur_urls}")
                 return imgur_urls
