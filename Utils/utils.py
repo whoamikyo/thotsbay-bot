@@ -7,8 +7,9 @@ import os
 import re
 import subprocess
 import time
+import httpx
 import unicodedata
-from http.client import HTTPException, RemoteDisconnected
+from http.client import RemoteDisconnected
 from json import JSONEncoder
 
 import aiohttp
@@ -16,13 +17,8 @@ import requests
 from dotenv import load_dotenv
 from requests.exceptions import (
     ConnectionError,
-    ConnectTimeout,
-    HTTPError,
-    JSONDecodeError,
-    ReadTimeout,
     RequestException,
     Timeout,
-    TooManyRedirects,
 )
 from urllib3.exceptions import ProtocolError
 
@@ -87,13 +83,14 @@ if not os.path.exists(logs_path):
 
 class MakeRequest:
     def __init__(self):
-        self.session = requests.Session()
+        # self.session = requests.Session()
+        self.session = httpx.Client()
         self.max_retries = 3
         self.sleep_between_retries = 1
         self.tries = 0
 
     def request(self, method, url, **kwargs):
-        response = self.session.request(method, url, **kwargs)
+        response = self.session.request(method, url, **kwargs, follow_redirects=True)
         while self.tries < self.max_retries:
             try:
                 response.raise_for_status()
@@ -105,12 +102,14 @@ class MakeRequest:
                 else:
                     continue
             except (
-                ConnectionError,
-                Timeout,
-                RequestException,
-                AttributeError,
-                RemoteDisconnected,
-                ProtocolError,
+                httpx.HTTPError,
+                httpx.NetworkError,
+                httpx.RequestError,
+                httpx.InvalidURL,
+                httpx.StreamError,
+                httpx.TimeoutException,
+                httpx.TooManyRedirects,
+                httpx.HTTPStatusError,
             ) as e:
                 log.error(str(e))
                 self.tries += 1
@@ -123,7 +122,7 @@ class MakeRequest:
         return response
 
     def get(self, url, **kwargs):
-        response = self.session.get(url, **kwargs, timeout=30)
+        response = self.session.get(url, **kwargs, follow_redirects=True)
         while self.tries < self.max_retries:
             try:
                 response.raise_for_status()
@@ -135,12 +134,14 @@ class MakeRequest:
                 else:
                     continue
             except (
-                ConnectionError,
-                Timeout,
-                RequestException,
-                AttributeError,
-                RemoteDisconnected,
-                ProtocolError,
+                httpx.HTTPError,
+                httpx.NetworkError,
+                httpx.RequestError,
+                httpx.InvalidURL,
+                httpx.StreamError,
+                httpx.TimeoutException,
+                httpx.TooManyRedirects,
+                httpx.HTTPStatusError,
             ) as e:
                 log.error(str(e))
                 self.tries += 1
@@ -165,26 +166,28 @@ class MakeRequest:
                 else:
                     continue
             except (
-                ConnectionError,
-                Timeout,
-                RequestException,
-                AttributeError,
-                RemoteDisconnected,
-                ProtocolError,
+                httpx.HTTPError,
+                httpx.NetworkError,
+                httpx.RequestError,
+                httpx.InvalidURL,
+                httpx.StreamError,
+                httpx.TimeoutException,
+                httpx.TooManyRedirects,
+                httpx.HTTPStatusError,
             ) as e:
                 log.error(str(e))
                 self.tries += 1
                 log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
                 time.sleep(self.sleep_between_retries)
                 if self.tries == self.max_retries:
-                    raise RequestException(
+                    raise httpx.HTTPError(
                         f"Tentativas esgotadas, {self.tries}/{self.max_retries}"
                     )
                 continue
         return response
 
     def post(self, url, **kwargs):
-        response = self.session.post(url, **kwargs, timeout=30)
+        response = self.session.post(url, **kwargs, follow_redirects=True)
         while self.tries < self.max_retries:
             try:
                 response.raise_for_status()
@@ -202,6 +205,7 @@ class MakeRequest:
                 AttributeError,
                 RemoteDisconnected,
                 ProtocolError,
+                httpx.HTTPStatusError
             ) as e:
                 log.error(str(e))
                 self.tries += 1
