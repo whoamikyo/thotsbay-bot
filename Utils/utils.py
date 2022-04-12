@@ -8,15 +8,12 @@ import re
 import subprocess
 import time
 import unicodedata
-from http.client import RemoteDisconnected
 from json import JSONEncoder
 
 import aiohttp
-import httpx
-import requests
+from httpx import Client, ReadTimeout, HTTPError, HTTPStatusError, TooManyRedirects, NetworkError, RequestError, InvalidURL, StreamError, TimeoutException
 from dotenv import load_dotenv
-from requests.exceptions import ConnectionError, RequestException, Timeout
-from urllib3.exceptions import ProtocolError
+import httpcore
 
 from logger import get_logger
 
@@ -76,8 +73,7 @@ if not os.path.exists(thumbnails_path):
 
 class MakeRequest:
     def __init__(self):
-        # self.session = requests.Session()
-        self.session = httpx.Client()
+        self.session = Client()
         self.max_retries = 3
         self.sleep_between_retries = 1
         self.tries = 0
@@ -95,15 +91,17 @@ class MakeRequest:
                 else:
                     continue
             except (
-                httpx.HTTPError,
-                httpx.NetworkError,
-                httpx.RequestError,
-                httpx.InvalidURL,
-                httpx.StreamError,
-                httpx.TimeoutException,
-                httpx.TooManyRedirects,
-                httpx.HTTPStatusError,
-                httpx.ReadTimeout,
+                HTTPError,
+                NetworkError,
+                RequestError,
+                InvalidURL,
+                StreamError,
+                TimeoutException,
+                TooManyRedirects,
+                HTTPStatusError,
+                ReadTimeout,
+                TimeoutError,
+                httpcore.ReadTimeout
             ) as e:
                 log.error(str(e))
                 self.tries += 1
@@ -111,105 +109,6 @@ class MakeRequest:
                 time.sleep(self.sleep_between_retries)
                 if self.tries == self.max_retries:
                     log.critical(f"Critical error: {e}, saindo...")
-                    raise SystemExit(e)
-                continue
-        return response
-
-    def get(self, url, **kwargs):
-        response = self.session.get(url, **kwargs, follow_redirects=True)
-        while self.tries < self.max_retries:
-            try:
-                response.raise_for_status()
-                if response.status_code == 200:
-                    log.info(
-                        f"Requisição GET realizada com sucesso, status code: {response.status_code}"
-                    )
-                    return response
-                else:
-                    continue
-            except (
-                httpx.HTTPError,
-                httpx.NetworkError,
-                httpx.RequestError,
-                httpx.InvalidURL,
-                httpx.StreamError,
-                httpx.TimeoutException,
-                httpx.TooManyRedirects,
-                httpx.HTTPStatusError,
-                httpx.ReadTimeout,
-            ) as e:
-                log.error(str(e))
-                self.tries += 1
-                log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
-                time.sleep(self.sleep_between_retries)
-                if self.tries == self.max_retries:
-                    log.critical(f"Critical error: {e}, saindo...")
-                    raise SystemExit(e)
-                continue
-        return response
-
-    def put(self, url, **kwargs):
-        response = self.session.put(url, **kwargs, timeout=30)
-        while self.tries < self.max_retries:
-            try:
-                response.raise_for_status()
-                if response.status_code == 200:
-                    log.info(
-                        f"Requisição PUT realizada com sucesso, status code: {response.status_code}"
-                    )
-                    return response
-                else:
-                    continue
-            except (
-                httpx.HTTPError,
-                httpx.NetworkError,
-                httpx.RequestError,
-                httpx.InvalidURL,
-                httpx.StreamError,
-                httpx.TimeoutException,
-                httpx.TooManyRedirects,
-                httpx.HTTPStatusError,
-                httpx.ReadTimeout,
-            ) as e:
-                log.error(str(e))
-                self.tries += 1
-                log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
-                time.sleep(self.sleep_between_retries)
-                if self.tries == self.max_retries:
-                    raise httpx.HTTPError(
-                        f"Tentativas esgotadas, {self.tries}/{self.max_retries}"
-                    )
-                continue
-        return response
-
-    def post(self, url, **kwargs):
-        response = self.session.post(url, **kwargs, follow_redirects=True)
-        while self.tries < self.max_retries:
-            try:
-                response.raise_for_status()
-                if response.status_code == 200:
-                    log.info(
-                        f"Requisição POST realizada com sucesso, status code: {response.status_code}"
-                    )
-                    return response
-                else:
-                    continue
-            except (
-                httpx.HTTPError,
-                httpx.NetworkError,
-                httpx.RequestError,
-                httpx.InvalidURL,
-                httpx.StreamError,
-                httpx.TimeoutException,
-                httpx.TooManyRedirects,
-                httpx.HTTPStatusError,
-                httpx.ReadTimeout,
-            ) as e:
-                log.error(str(e))
-                self.tries += 1
-                log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
-                time.sleep(self.sleep_between_retries)
-                if self.tries == self.max_retries:
                     raise SystemExit(e)
                 continue
         return response
@@ -294,13 +193,13 @@ def image_uploader(filelist):
     total_file_number = len(filelist)
     file_index = 1
     upload = MakeRequest()
-    # url_list = [upload.post(imgur_url, headers=imgur_headers, data={"image": convert_to_b64(file), "album": "0S5j3ML"}) for file in filelist]
+    # url_list = [upload.request("POST", imgur_url, headers=imgur_headers, data={"image": convert_to_b64(file), "album": "0S5j3ML"}) for file in filelist]
     url_list = []
     for file in filelist:
         log.info(f"Enviando imagem {file_index} de {total_file_number} : {file}")
         file_index = file_index + 1
         files = {"image": convert_to_b64(file), "album": "0S5j3ML"}
-        url = upload.post(imgur_url, headers=imgur_headers, data=files).json()["data"][
+        url = upload.request("POST", imgur_url, headers=imgur_headers, data=files).json()["data"][
             "link"
         ]
         log.debug(f"URL: {url}")
@@ -311,7 +210,7 @@ def image_uploader(filelist):
         else:
             # fallback to cyberdrop
             files = {"files[]": open(file, "rb")}
-            url = upload.post(
+            url = upload.request("POST", 
                 cyberdrop_upload_url, headers=cyberdrop_header, files=files
             ).json()["files"][0]["url"]
             log.debug(f"URL: {url}")
@@ -347,7 +246,7 @@ def imgur(file):
     imgur = "https://api.imgur.com/3/image"
     try:
         # ["data"]["link"]
-        return json.loads(requests.post(imgur, headers=headers, data=data).text)[
+        return json.loads(requests.request("POST", imgur, headers=headers, data=data).text)[
             "data"
         ]["link"]
     except Exception as err:

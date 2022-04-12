@@ -25,22 +25,22 @@ if __name__ == "__main__":
     log.info("Checando colab...")
     check_colab()
     log.info("Checando config...")
-    config = api.get(CONFIG_READ, headers=headers).json()
+    config = api.request("GET", CONFIG_READ, headers=headers).json()
     time.sleep(1)
     log.info("Checando ids...")
-    id_config = api.get(ID_CONFIG_READ, headers=headers).json()
+    id_config = api.request("GET", ID_CONFIG_READ, headers=headers).json()
 
     Thots(config, id_config).run()
 
     log.info("Fazendo backup dos IDs na API backup...")
-    # api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers_backup)
-    # api.put(CONFIG_READ, json=api.get(CONFIG_WRITE).json(), headers=headers_backup)
+    # api.request("PUT", ID_CONFIG_READ, json=api.request("GET", ID_CONFIG_WRITE).json(), headers=headers_backup)
+    # api.request("PUT", CONFIG_READ, json=api.request("GET", CONFIG_WRITE).json(), headers=headers_backup)
     log.info("Salvando ID's da API localmente....")
     write_ids(
-        api.get(ID_CONFIG_READ, headers=headers).json(),
+        api.request("GET", ID_CONFIG_READ, headers=headers).json(),
         filename="json_files/ids_api.json",
     )
     write_ids(
-        api.get(CONFIG_READ, headers=headers).json(),
+        api.request("GET", CONFIG_READ, headers=headers).json(),
         filename="json_files/config_api.json",
     )

@@ -92,10 +92,10 @@ def download_upload(
             if not_found_error:
                 log.error(f"Erro: {not_found_error}")
                 # remaining = remaining - contador
-                api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
-                api.put(
+                api.request("PUT", ID_CONFIG_WRITE, headers=headers, data=payload)
+                api.request("PUT", 
                     ID_CONFIG_READ,
-                    json=api.get(ID_CONFIG_WRITE).json(),
+                    json=api.request("GET", ID_CONFIG_WRITE).json(),
                     headers=headers,
                 )
                 log.warning(
@@ -122,8 +122,8 @@ def download_upload(
         subprocess.call(cmd, shell=True)
         remaining = remaining - contador
         log.info(f"Arquivo {name} enviado com sucesso, ainda faltam: {remaining}")
-        api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
-        api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers)
+        api.request("PUT", ID_CONFIG_WRITE, headers=headers, data=payload)
+        api.request("PUT", ID_CONFIG_READ, json=api.request("GET", ID_CONFIG_WRITE).json(), headers=headers)
 
     if has_topic > 0 and enable_posting and not failed:
         if max_posts_at_once <= 9 and remaining > 0:
@@ -153,7 +153,7 @@ def download_upload(
                     {thot: {"latest_post": datetime.datetime.utcnow()}},
                     cls=DateTimeEncoder,
                 )
-                api.put(CONFIG_WRITE, headers=headers, data=latest_post_payload)
+                api.request("PUT", CONFIG_WRITE, headers=headers, data=latest_post_payload)
                 # Pruning temporary files
                 # clean_tmp(path)
                 clean_tmp(thumbnails_path)
@@ -213,12 +213,12 @@ def download_alt(path, link, i, j, payload, thot):
         if not_found_error:
             log.warning(f"Erro: {not_found_error}")
             # remaining = remaining - contador
-            api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
+            api.request("PUT", ID_CONFIG_WRITE, headers=headers, data=payload)
             log.warning("Arquivo não encontrado no servidor, ainda faltam arquivos.")
     if not os.path.isfile(download_file):
         log.critical(f"Erro ao baixar o arquivo {i}, com o nome: {name}")
     else:
         log.info(f"Arquivo {name} baixado com sucesso! Agora...Enviando...")
         subprocess.call(cmd, shell=True)
-        api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
+        api.request("PUT", ID_CONFIG_WRITE, headers=headers, data=payload)
         log.info(f"Arquivo {name} enviado com sucesso")

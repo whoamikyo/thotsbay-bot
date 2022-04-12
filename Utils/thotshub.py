@@ -1,8 +1,8 @@
 import re
 import traceback
 
-import requests
 from bs4 import BeautifulSoup as bs
+from httpx import HTTPError
 
 from logger import get_logger
 
@@ -24,9 +24,7 @@ class ParseTokenError(Error):
 
 
 class ThreadMessage:
-    def __init__(
-        self, userId: int, nickname: str, message: str, fullMessage, messageId
-    ):
+    def __init__(self, userId: int, nickname: str, message: str, fullMessage, messageId):
         self.messageId = messageId
         self.userId = userId
         self.nickname = nickname
@@ -47,7 +45,7 @@ class Account:
         self.update_token()
 
     def update_token(self):
-        req = self.request.get(self.url_login, headers=self.user_agent)
+        req = self.request.request("GET", self.url_login, headers=self.user_agent)
         soup = bs(req.text, "html.parser")
         self.token = soup.find("input", {"name": "_xfToken"})
         if self.token is None:
@@ -67,7 +65,7 @@ class Account:
         }
         log.debug(f"Authorize data: {data}")
         self.update_token()
-        req = self.request.post(self.url_login, headers=self.user_agent, data=data).text
+        req = self.request.request("POST", self.url_login, headers=self.user_agent, data=data).text
         if not re.findall("Incorrect password", req):
             log.info("Autorizado")
             return True
@@ -79,40 +77,27 @@ class Account:
         try:
             self.update_token()
             cMessages = []
-            req = self.request.get(
-                f"{self.url_base}threads/{thread}/", headers=self.user_agent
-            ).text
+            req = self.request.request("GET", f"{self.url_base}threads/{thread}/", headers=self.user_agent).text
             soup = bs(req, "html.parser")
             messages = soup.find_all("div", {"class": "message-inner"})
             for message in messages:
                 nickname = message.find("h4")
                 if nickname is not None:
-                    messageId = message.find(
-                        "div",
-                        {"class": "message-userContent lbContainer js-lbContainer"},
-                    )["data-lb-id"].split("-")
+                    messageId = message.find("div", {"class": "message-userContent lbContainer js-lbContainer"},)[
+                        "data-lb-id"
+                    ].split("-")
                     messageId = int(messageId[len(messageId) - 1])
-                    nickname = (
-                        nickname.text.replace("\n", "")
-                        .replace("\t", "")
-                        .replace("\r", "")
-                    )
-                    userId = int(
-                        message.find("a", {"class": "username"})["data-user-id"]
-                    )
+                    nickname = nickname.text.replace("\n", "").replace("\t", "").replace("\r", "")
+                    userId = int(message.find("a", {"class": "username"})["data-user-id"])
                     text = message.find("div", {"class": "bbWrapper"})
                     msg = str(text)
                     if msg.rfind("</blockquote>") != -1:
-                        text = msg[
-                            msg.rfind("</blockquote>") + len("</blockquote>") : len(msg)
-                        ]
+                        text = msg[msg.rfind("</blockquote>") + len("</blockquote>") : len(msg)]
                     else:
                         text = text.text
-                    cMessages.append(
-                        ThreadMessage(userId, nickname, text, msg, messageId)
-                    )
+                    cMessages.append(ThreadMessage(userId, nickname, text, msg, messageId))
             return cMessages
-        except requests.RequestException:
+        except HTTPError:
             traceback.print_exc()
             pass
 
@@ -126,7 +111,8 @@ class Account:
         }
         log.debug(f"Send message data: {data}")
         self.update_token()
-        self.request.post(
+        self.request.request(
+            "POST",
             f"{self.url_base}threads/{thread}/add-reply",
             headers=self.user_agent,
             data=data,

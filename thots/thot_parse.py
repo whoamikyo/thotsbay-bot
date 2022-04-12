@@ -59,7 +59,7 @@ def thot_parse(thot, config, id_config, get_category):
     pattern = r"title=\""
     log.info("Definindo o padrão de regex...")
     if (
-        re.findall(pattern, parse.get(f"{url}videos/", headers=headers_scrapy).text)
+        re.findall(pattern, parse.request("GET", f"{url}videos/", headers=headers_scrapy).text)
         == []
     ):
         regexName = r"<span\b[^>]*>(.*?)</span>"
@@ -72,14 +72,14 @@ def thot_parse(thot, config, id_config, get_category):
         path = f"Download/{thot}/{categoria}/"
         get_range = re.findall(
             RegexRange,
-            parse.get(url=f"{url}videos/{categoria}/", headers=headers_scrapy).text,
+            parse.request("GET", url=f"{url}videos/{categoria}/", headers=headers_scrapy).text,
         )
     else:
         path = f"Downloads/{thot}/"
         get_range = re.findall(
-            RegexRange, parse.get(url=f"{url}videos/", headers=headers_scrapy).text
+            RegexRange, parse.request("GET", url=f"{url}videos/", headers=headers_scrapy).text
         )
-        # total = re.findall(regexCount, parse.get(url=url, headers=headers_scrapy).text)  # Disabled for now
+        # total = re.findall(regexCount, parse.request("GET", url=url, headers=headers_scrapy).text)  # Disabled for now
     # max_download_at_once = 0
     if get_range:
         pass
@@ -98,7 +98,7 @@ def thot_parse(thot, config, id_config, get_category):
     log.info("Usando método alternativo para encontrar a quantidade de videos.")
     videoID_alt = get_list_from_nested(
         [
-            re.findall(regexID, parse.get(url=x, headers=headers_scrapy).text)
+            re.findall(regexID, parse.request("GET", url=x, headers=headers_scrapy).text)
             for x in url_list
         ]
     )
@@ -119,7 +119,7 @@ def thot_parse(thot, config, id_config, get_category):
 
         videoName = get_list_from_nested(
             [
-                re.findall(regexName, parse.get(url=x, headers=headers_scrapy).text)
+                re.findall(regexName, parse.request("GET", url=x, headers=headers_scrapy).text)
                 for x in url_list
             ]
         )
@@ -167,24 +167,24 @@ async def parse_album(thot, config):
     url = config[thot]
     path = download_path + thot + "/" + "Albums/"
     get_range = re.findall(
-        RegexRange, parse.get(url=url + "gallery/", headers=headers_scrapy).text
+        RegexRange, parse.request("GET", url=url + "gallery/", headers=headers_scrapy).text
     )
     url_list = [f"{url}gallery/{x}" for x in range(1, convert_range(get_range) + 1)]
     AlbumID = get_list_from_nested(
         [
-            re.findall(regexID_Album, parse.get(url=x, headers=headers_scrapy).text)
+            re.findall(regexID_Album, parse.request("GET", url=x, headers=headers_scrapy).text)
             for x in url_list
         ]
     )
     AlbumName = get_list_from_nested(
         [
-            re.findall(regexName_Album, parse.get(url=x, headers=headers_scrapy).text)
+            re.findall(regexName_Album, parse.request("GET", url=x, headers=headers_scrapy).text)
             for x in url_list
         ]
     )
     RangeSize = get_list_from_nested(
         [
-            re.findall(regexGetRangeSize, parse.get(url=x, headers=headers_scrapy).text)
+            re.findall(regexGetRangeSize, parse.request("GET", url=x, headers=headers_scrapy).text)
             for x in url_list
         ]
     )
@@ -237,7 +237,7 @@ async def get_foto(
 
     resp = None
     try:
-        async with session.get(url_gallery, headers=headers) as response:
+        async with session.request("GET", url_gallery, headers=headers) as response:
             resp = await response.read()
             if response.status != 200:
                 return {"error": f"server returned {response.status}"}
@@ -290,7 +290,7 @@ async def get_video_alt(session, url, id_list, path, thot, number):
 
     # resp = None
     try:
-        async with session.get(url, headers=headers) as response:
+        async with session.request("GET", url, headers=headers) as response:
 
             resp = await response.text()
             if response.status != 200:
