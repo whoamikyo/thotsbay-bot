@@ -103,6 +103,7 @@ class MakeRequest:
                 httpx.TimeoutException,
                 httpx.TooManyRedirects,
                 httpx.HTTPStatusError,
+                httpx.ReadTimeout,
             ) as e:
                 log.error(str(e))
                 self.tries += 1
@@ -135,6 +136,7 @@ class MakeRequest:
                 httpx.TimeoutException,
                 httpx.TooManyRedirects,
                 httpx.HTTPStatusError,
+                httpx.ReadTimeout,
             ) as e:
                 log.error(str(e))
                 self.tries += 1
@@ -167,6 +169,7 @@ class MakeRequest:
                 httpx.TimeoutException,
                 httpx.TooManyRedirects,
                 httpx.HTTPStatusError,
+                httpx.ReadTimeout,
             ) as e:
                 log.error(str(e))
                 self.tries += 1
@@ -192,13 +195,15 @@ class MakeRequest:
                 else:
                     continue
             except (
-                ConnectionError,
-                Timeout,
-                RequestException,
-                AttributeError,
-                RemoteDisconnected,
-                ProtocolError,
+                httpx.HTTPError,
+                httpx.NetworkError,
+                httpx.RequestError,
+                httpx.InvalidURL,
+                httpx.StreamError,
+                httpx.TimeoutException,
+                httpx.TooManyRedirects,
                 httpx.HTTPStatusError,
+                httpx.ReadTimeout,
             ) as e:
                 log.error(str(e))
                 self.tries += 1
