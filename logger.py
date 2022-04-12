@@ -73,7 +73,9 @@ def cloudwatch_handler():
         "forum.thotsbay.com",
     )
 
-    handler.setFormatter(fmt=logging.Formatter("%(levelname)s - %(module)s - %(message)s"))
+    handler.setFormatter(
+        fmt=logging.Formatter("%(levelname)s - %(module)s - %(message)s")
+    )
     return handler
 
 
@@ -96,4 +98,3 @@ def get_logger(logger_name):
     # with this pattern, it's rarely necessary to propagate the error up to parent
     logger.propagate = False
     return logger
-

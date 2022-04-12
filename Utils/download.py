@@ -8,9 +8,9 @@ from concurrent.futures import ProcessPoolExecutor
 
 import yt_dlp as youtube_dl
 from dotenv import load_dotenv
-from logger import get_logger
 
 import Utils.thotshub as thotsbay
+from logger import get_logger
 from Utils.thumb_maker import Thumbmaker
 from Utils.utils import (
     CONFIG_WRITE,
@@ -62,7 +62,9 @@ cmd = f"""rclone --verbose \
         copy --ignore-existing {src} OneDrive_Edu:{dst}"""
 
 
-def download_upload(path, link, i, j, payload, thot, remaining, contador, max_posts_at_once, config):
+def download_upload(
+    path, link, i, j, payload, thot, remaining, contador, max_posts_at_once, config
+):
 
     tries = 0
     max_tries = 5
@@ -91,8 +93,14 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
                 log.error(f"Erro: {not_found_error}")
                 # remaining = remaining - contador
                 api.put(ID_CONFIG_WRITE, headers=headers, data=payload)
-                api.put(ID_CONFIG_READ, json=api.get(ID_CONFIG_WRITE).json(), headers=headers)
-                log.warning(f"Arquivo não encontrado no servidor, ainda faltam {remaining} arquivos.")
+                api.put(
+                    ID_CONFIG_READ,
+                    json=api.get(ID_CONFIG_WRITE).json(),
+                    headers=headers,
+                )
+                log.warning(
+                    f"Arquivo não encontrado no servidor, ainda faltam {remaining} arquivos."
+                )
             else:
                 tries += 1
                 log.error(err)
@@ -100,7 +108,9 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
                 time.sleep(5)
                 if tries == max_tries:
                     log.error(f"Tentativas excedidas para baixar {download_file}")
-                    log.warning(f"Pulando esse arquivo, ainda faltam {remaining} arquivos.")
+                    log.warning(
+                        f"Pulando esse arquivo, ainda faltam {remaining} arquivos."
+                    )
                 continue
 
     if not os.path.isfile(download_file):
@@ -117,21 +127,32 @@ def download_upload(path, link, i, j, payload, thot, remaining, contador, max_po
 
     if has_topic > 0 and enable_posting and not failed:
         if max_posts_at_once <= 9 and remaining > 0:
-            log.info(f"Ainda faltam {remaining}, a postagem será feita depois para evitar flood...")
+            log.info(
+                f"Ainda faltam {remaining}, a postagem será feita depois para evitar flood..."
+            )
         else:
             log.info("Prosseguindo com a postagem...")
             latest_post = datetime.datetime.fromisoformat(config[thot]["latest_post"])
             agora = datetime.datetime.utcnow()
             diff_minutes = get_time_diff(start=latest_post, end=agora)
             if diff_minutes > 1:
-                log.info(f"A última postagem foi em {latest_post} a diferença é: {int(diff_minutes)} minutos")
+                log.info(
+                    f"A última postagem foi em {latest_post} a diferença é: {int(diff_minutes)} minutos"
+                )
                 path_list = absolute_file_paths(path)
-                imgur_list = [Thumbmaker().get_thumb_upload(path, name=thot) for path in path_list]
+                imgur_list = [
+                    Thumbmaker().get_thumb_upload(path, name=thot) for path in path_list
+                ]
                 lista_nomes = get_files_in_path_without_extension(path)
                 thotsbay.Account.check_thotsbay()
                 log.info("Atualizando tópico agora...")
-                thotsbay.Account.send_message_in_thread(has_topic, msg(imgur_list, folder_link, lista_nomes))
-                latest_post_payload = json.dumps({thot: {"latest_post": datetime.datetime.utcnow()}}, cls=DateTimeEncoder)
+                thotsbay.Account.send_message_in_thread(
+                    has_topic, msg(imgur_list, folder_link, lista_nomes)
+                )
+                latest_post_payload = json.dumps(
+                    {thot: {"latest_post": datetime.datetime.utcnow()}},
+                    cls=DateTimeEncoder,
+                )
                 api.put(CONFIG_WRITE, headers=headers, data=latest_post_payload)
                 # Pruning temporary files
                 # clean_tmp(path)
@@ -161,7 +182,11 @@ def msg(lista_urls: list, folder_link: str, lista_nomes: list):
     titulo = "[TABLE][TR][TD][HEADING=3][CENTER][COLOR=#5e9ca0]{0}[/COLOR][/CENTER][/HEADING][/TD][/TR][/TABLE]"
     linha = "[TABLE][TR]{0}[/TR][/TABLE]"
     coluna = "[TD][IMG]{0}[/IMG][/TD]"
-    tabela = [titulo.format(lista_nomes[i]) + linha.format("".join([coluna.format(a) for a in item])) for i, item in enumerate(lista_urls)]
+    tabela = [
+        titulo.format(lista_nomes[i])
+        + linha.format("".join([coluna.format(a) for a in item]))
+        for i, item in enumerate(lista_urls)
+    ]
 
     msg = msg.format("".join(tabela), folder_link=folder_link)
     return msg

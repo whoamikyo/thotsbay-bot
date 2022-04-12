@@ -3,7 +3,6 @@ from random import randrange
 from subprocess import call
 
 from logger import get_logger
-
 from Utils.utils import get_video_duration, image_uploader, thumbnails_path
 
 log = get_logger(__name__)
@@ -22,7 +21,9 @@ class Thumbmaker:
 
         duration = int(get_video_duration(input))
         log.debug(f"Duration: {duration}")
-        shots = (lambda x: x[0] * x[1])(list(map(int, self.options["dimension"].split("x"))))
+        shots = (lambda x: x[0] * x[1])(
+            list(map(int, self.options["dimension"].split("x")))
+        )
         log.debug(f"Shots: {shots}")
         shotlist = []
         for _ in range(3):

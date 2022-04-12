@@ -1,7 +1,6 @@
 import asyncio
 
 from logger import get_logger
-
 from thots.thot_parse import alt_thot_parse, parse_album, thot_parse
 
 log = get_logger(__name__)
@@ -36,11 +35,17 @@ class Thots:
             tatycasadinha,
             vidasafada,  # has_topic
         ]
-        self.enable = [x.__name__ for x in self.thots if self.config[f"{x.__name__}"]["enable_task"]]
+        self.enable = [
+            x.__name__
+            for x in self.thots
+            if self.config[f"{x.__name__}"]["enable_task"]
+        ]
 
     def run(self):
         for i in range(len(self.enable)):
-            log.warning(f"---------------| Iniciando tarefa {self.enable[i]}, {i + 1} de {len(self.enable)}")
+            log.warning(
+                f"---------------| Iniciando tarefa {self.enable[i]}, {i + 1} de {len(self.enable)}"
+            )
             self.thots[i](self.config, self.id_config, self.enable[i])
             log.warning(f"---------------| {self.enable[i]} - Fim da lista de videos.")
 

@@ -14,7 +14,6 @@ from json import JSONEncoder
 import aiohttp
 import requests
 from dotenv import load_dotenv
-from logger import get_logger
 from requests.exceptions import (
     ConnectionError,
     ConnectTimeout,
@@ -26,6 +25,8 @@ from requests.exceptions import (
     TooManyRedirects,
 )
 from urllib3.exceptions import ProtocolError
+
+from logger import get_logger
 
 log = get_logger(__name__)
 load_dotenv()
@@ -53,7 +54,11 @@ if DEVELOPMENT:
 else:
     ID_CONFIG_WRITE = ID_CONFIG_WRITE
     log.info("Ambiente de produção ativado")
-headers = {"Content-Type": "application/json", "X-Master-Key": API_KEY, "X-Bin-Meta": "false"}
+headers = {
+    "Content-Type": "application/json",
+    "X-Master-Key": API_KEY,
+    "X-Bin-Meta": "false",
+}
 headers_scrapy = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4922.0 Safari/537.36 Edg/101.0.1198.0",
     "referer": f"{REFERER}",
@@ -93,11 +98,20 @@ class MakeRequest:
             try:
                 response.raise_for_status()
                 if response.status_code == 200:
-                    log.info(f"Requisição <<{method}>> realizada com sucesso, status code: {response.status_code}")
+                    log.info(
+                        f"Requisição <<{method}>> realizada com sucesso, status code: {response.status_code}"
+                    )
                     return response
                 else:
                     continue
-            except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
+            except (
+                ConnectionError,
+                Timeout,
+                RequestException,
+                AttributeError,
+                RemoteDisconnected,
+                ProtocolError,
+            ) as e:
                 log.error(str(e))
                 self.tries += 1
                 log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
@@ -114,11 +128,20 @@ class MakeRequest:
             try:
                 response.raise_for_status()
                 if response.status_code == 200:
-                    log.info(f"Requisição GET realizada com sucesso, status code: {response.status_code}")
+                    log.info(
+                        f"Requisição GET realizada com sucesso, status code: {response.status_code}"
+                    )
                     return response
                 else:
                     continue
-            except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
+            except (
+                ConnectionError,
+                Timeout,
+                RequestException,
+                AttributeError,
+                RemoteDisconnected,
+                ProtocolError,
+            ) as e:
                 log.error(str(e))
                 self.tries += 1
                 log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
@@ -135,17 +158,28 @@ class MakeRequest:
             try:
                 response.raise_for_status()
                 if response.status_code == 200:
-                    log.info(f"Requisição PUT realizada com sucesso, status code: {response.status_code}")
+                    log.info(
+                        f"Requisição PUT realizada com sucesso, status code: {response.status_code}"
+                    )
                     return response
                 else:
                     continue
-            except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
+            except (
+                ConnectionError,
+                Timeout,
+                RequestException,
+                AttributeError,
+                RemoteDisconnected,
+                ProtocolError,
+            ) as e:
                 log.error(str(e))
                 self.tries += 1
                 log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
                 time.sleep(self.sleep_between_retries)
                 if self.tries == self.max_retries:
-                    raise RequestException(f"Tentativas esgotadas, {self.tries}/{self.max_retries}")
+                    raise RequestException(
+                        f"Tentativas esgotadas, {self.tries}/{self.max_retries}"
+                    )
                 continue
         return response
 
@@ -155,11 +189,20 @@ class MakeRequest:
             try:
                 response.raise_for_status()
                 if response.status_code == 200:
-                    log.info(f"Requisição POST realizada com sucesso, status code: {response.status_code}")
+                    log.info(
+                        f"Requisição POST realizada com sucesso, status code: {response.status_code}"
+                    )
                     return response
                 else:
                     continue
-            except (ConnectionError, Timeout, RequestException, AttributeError, RemoteDisconnected, ProtocolError) as e:
+            except (
+                ConnectionError,
+                Timeout,
+                RequestException,
+                AttributeError,
+                RemoteDisconnected,
+                ProtocolError,
+            ) as e:
                 log.error(str(e))
                 self.tries += 1
                 log.warning(f"Tentando novamente, {self.tries}/{self.max_retries}")
@@ -255,7 +298,9 @@ def image_uploader(filelist):
         log.info(f"Enviando imagem {file_index} de {total_file_number} : {file}")
         file_index = file_index + 1
         files = {"image": convert_to_b64(file), "album": "0S5j3ML"}
-        url = upload.post(imgur_url, headers=imgur_headers, data=files).json()["data"]["link"]
+        url = upload.post(imgur_url, headers=imgur_headers, data=files).json()["data"][
+            "link"
+        ]
         log.debug(f"URL: {url}")
         success = url
         if success:
@@ -264,7 +309,9 @@ def image_uploader(filelist):
         else:
             # fallback to cyberdrop
             files = {"files[]": open(file, "rb")}
-            url = upload.post(cyberdrop_upload_url, headers=cyberdrop_header, files=files).json()["files"][0]["url"]
+            url = upload.post(
+                cyberdrop_upload_url, headers=cyberdrop_header, files=files
+            ).json()["files"][0]["url"]
             log.debug(f"URL: {url}")
             success = url
             if success:
@@ -298,7 +345,9 @@ def imgur(file):
     imgur = "https://api.imgur.com/3/image"
     try:
         # ["data"]["link"]
-        return json.loads(requests.post(imgur, headers=headers, data=data).text)["data"]["link"]
+        return json.loads(requests.post(imgur, headers=headers, data=data).text)[
+            "data"
+        ]["link"]
     except Exception as err:
         return {"success": False, "error": f"{err}"}
 
@@ -377,7 +426,11 @@ def slugify(value, allow_unicode=False):
     if allow_unicode:
         value = unicodedata.normalize("NFKC", value)
     else:
-        value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
+        value = (
+            unicodedata.normalize("NFKD", value)
+            .encode("ascii", "ignore")
+            .decode("ascii")
+        )
     value = re.sub(r"[^\w\s-]", "", value.lower())
     return re.sub(r"[-\s]+", "-", value).strip("-_")
 
@@ -390,7 +443,9 @@ def truncate_string(value, max_length=238, suffix="..."):
         suffix: string to append to the end of truncated string.
     """
     string_value = str(value)
-    string_truncated = string_value[: min(len(string_value), (max_length - len(suffix)))]
+    string_truncated = string_value[
+        : min(len(string_value), (max_length - len(suffix)))
+    ]
     suffix = suffix if len(string_value) > max_length else ""
     return string_truncated + suffix
 
@@ -460,7 +515,9 @@ def list_to_int(value):
 def get_video_duration(input):
     """Get the duration of a video using ffprobe."""
     cmd = f'ffprobe -i {input} -show_entries format=duration -v quiet -of csv="p=0"'
-    output = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT)  # Let this run in the shell
+    output = subprocess.check_output(
+        cmd, shell=True, stderr=subprocess.STDOUT
+    )  # Let this run in the shell
     # return round(float(output))  # ugly, but rounds your seconds up or down
     return float(output)
 
@@ -477,4 +534,8 @@ def get_files_in_path_without_extension(path):
     """
     Get files in path without extension
     """
-    return [f.split(".")[0] for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
+    return [
+        f.split(".")[0]
+        for f in os.listdir(path)
+        if os.path.isfile(os.path.join(path, f))
+    ]
