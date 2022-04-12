@@ -33,6 +33,9 @@ def get_project_root() -> Path:
 
 
 def fileNameLocation():
+    logs_path = "Logs/"
+    if not os.path.exists(logs_path):
+        os.makedirs(logs_path)
     today = date.today()
     return f"{get_project_root()}/Logs/{today.day}-{today.month}-{today.year}.log"
 
@@ -73,9 +76,7 @@ def cloudwatch_handler():
         "forum.thotsbay.com",
     )
 
-    handler.setFormatter(
-        fmt=logging.Formatter("%(levelname)s - %(module)s - %(message)s")
-    )
+    handler.setFormatter(fmt=logging.Formatter("%(levelname)s - %(module)s - %(message)s"))
     return handler
 
 
@@ -87,13 +88,15 @@ def get_file_handler():
 
 def get_logger(logger_name):
     logger = logging.getLogger(logger_name)
-    # logger.setLevel(logging.DEBUG)  # better to have too much log than not enough
+    if sys.platform.startswith("win"):
+        logger.setLevel(logging.DEBUG)  # better to have too much log than not enough
+    else:
+        logger.setLevel(logging.INFO)
     # logger.setLevel(logging.WARNING)
-    logger.setLevel(logging.INFO)
     # logger.setLevel(logging.CRITICAL)
     logger.addHandler(get_console_handler())
     logger.addHandler(get_file_handler())
-    # logger.addHandler(cloudwatch_handler())  # type: ignore
+    # logger.addHandler(cloudwatch_handler())  # Disable due to cloudwatch limit
 
     # with this pattern, it's rarely necessary to propagate the error up to parent
     logger.propagate = False

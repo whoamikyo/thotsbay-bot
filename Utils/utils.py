@@ -65,7 +65,6 @@ regexGetCategory = r"/videos/([-?A-Z]+)\">"
 regexGetRangeSize = r"([\d]+)\.jpg"
 download_path = "Downloads/"
 tmp = "tmp/"
-logs_path = "Logs/"
 if not os.path.exists(tmp):
     os.makedirs(tmp)
 if not os.path.exists(download_path):
@@ -73,8 +72,6 @@ if not os.path.exists(download_path):
 thumbnails_path = "Thumbnails/"
 if not os.path.exists(thumbnails_path):
     os.makedirs(thumbnails_path)
-if not os.path.exists(logs_path):
-    os.makedirs(logs_path)
 
 
 class MakeRequest:
