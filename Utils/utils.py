@@ -7,19 +7,15 @@ import os
 import re
 import subprocess
 import time
-import httpx
 import unicodedata
 from http.client import RemoteDisconnected
 from json import JSONEncoder
 
 import aiohttp
+import httpx
 import requests
 from dotenv import load_dotenv
-from requests.exceptions import (
-    ConnectionError,
-    RequestException,
-    Timeout,
-)
+from requests.exceptions import ConnectionError, RequestException, Timeout
 from urllib3.exceptions import ProtocolError
 
 from logger import get_logger
@@ -205,7 +201,7 @@ class MakeRequest:
                 AttributeError,
                 RemoteDisconnected,
                 ProtocolError,
-                httpx.HTTPStatusError
+                httpx.HTTPStatusError,
             ) as e:
                 log.error(str(e))
                 self.tries += 1
