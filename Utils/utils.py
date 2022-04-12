@@ -11,9 +11,20 @@ import unicodedata
 from json import JSONEncoder
 
 import aiohttp
-from httpx import Client, ReadTimeout, HTTPError, HTTPStatusError, TooManyRedirects, NetworkError, RequestError, InvalidURL, StreamError, TimeoutException
-from dotenv import load_dotenv
 import httpcore
+from dotenv import load_dotenv
+from httpx import (
+    Client,
+    HTTPError,
+    HTTPStatusError,
+    InvalidURL,
+    NetworkError,
+    ReadTimeout,
+    RequestError,
+    StreamError,
+    TimeoutException,
+    TooManyRedirects,
+)
 
 from logger import get_logger
 
@@ -101,7 +112,7 @@ class MakeRequest:
                 HTTPStatusError,
                 ReadTimeout,
                 TimeoutError,
-                httpcore.ReadTimeout
+                httpcore.ReadTimeout,
             ) as e:
                 log.error(str(e))
                 self.tries += 1
@@ -199,9 +210,9 @@ def image_uploader(filelist):
         log.info(f"Enviando imagem {file_index} de {total_file_number} : {file}")
         file_index = file_index + 1
         files = {"image": convert_to_b64(file), "album": "0S5j3ML"}
-        url = upload.request("POST", imgur_url, headers=imgur_headers, data=files).json()["data"][
-            "link"
-        ]
+        url = upload.request(
+            "POST", imgur_url, headers=imgur_headers, data=files
+        ).json()["data"]["link"]
         log.debug(f"URL: {url}")
         success = url
         if success:
@@ -210,8 +221,8 @@ def image_uploader(filelist):
         else:
             # fallback to cyberdrop
             files = {"files[]": open(file, "rb")}
-            url = upload.request("POST", 
-                cyberdrop_upload_url, headers=cyberdrop_header, files=files
+            url = upload.request(
+                "POST", cyberdrop_upload_url, headers=cyberdrop_header, files=files
             ).json()["files"][0]["url"]
             log.debug(f"URL: {url}")
             success = url
@@ -246,9 +257,9 @@ def imgur(file):
     imgur = "https://api.imgur.com/3/image"
     try:
         # ["data"]["link"]
-        return json.loads(requests.request("POST", imgur, headers=headers, data=data).text)[
-            "data"
-        ]["link"]
+        return json.loads(
+            requests.request("POST", imgur, headers=headers, data=data).text
+        )["data"]["link"]
     except Exception as err:
         return {"success": False, "error": f"{err}"}
 

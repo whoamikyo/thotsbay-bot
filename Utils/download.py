@@ -93,7 +93,8 @@ def download_upload(
                 log.error(f"Erro: {not_found_error}")
                 # remaining = remaining - contador
                 api.request("PUT", ID_CONFIG_WRITE, headers=headers, data=payload)
-                api.request("PUT", 
+                api.request(
+                    "PUT",
                     ID_CONFIG_READ,
                     json=api.request("GET", ID_CONFIG_WRITE).json(),
                     headers=headers,
@@ -123,7 +124,12 @@ def download_upload(
         remaining = remaining - contador
         log.info(f"Arquivo {name} enviado com sucesso, ainda faltam: {remaining}")
         api.request("PUT", ID_CONFIG_WRITE, headers=headers, data=payload)
-        api.request("PUT", ID_CONFIG_READ, json=api.request("GET", ID_CONFIG_WRITE).json(), headers=headers)
+        api.request(
+            "PUT",
+            ID_CONFIG_READ,
+            json=api.request("GET", ID_CONFIG_WRITE).json(),
+            headers=headers,
+        )
 
     if has_topic > 0 and enable_posting and not failed:
         if max_posts_at_once <= 9 and remaining > 0:
@@ -153,7 +159,9 @@ def download_upload(
                     {thot: {"latest_post": datetime.datetime.utcnow()}},
                     cls=DateTimeEncoder,
                 )
-                api.request("PUT", CONFIG_WRITE, headers=headers, data=latest_post_payload)
+                api.request(
+                    "PUT", CONFIG_WRITE, headers=headers, data=latest_post_payload
+                )
                 # Pruning temporary files
                 # clean_tmp(path)
                 clean_tmp(thumbnails_path)
