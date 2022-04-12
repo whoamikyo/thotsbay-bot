@@ -76,7 +76,9 @@ def cloudwatch_handler():
         "forum.thotsbay.com",
     )
 
-    handler.setFormatter(fmt=logging.Formatter("%(levelname)s - %(module)s - %(message)s"))
+    handler.setFormatter(
+        fmt=logging.Formatter("%(levelname)s - %(module)s - %(message)s")
+    )
     return handler
 
 
