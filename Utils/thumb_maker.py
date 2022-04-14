@@ -59,7 +59,7 @@ class Thumbmaker:
 
 
 if __name__ == "__main__":
-    
+
     # Run python -m Utils.thumb_maker
     path = ""
     name = "teste"
