@@ -56,3 +56,12 @@ class Thumbmaker:
                 imgur_urls = image_uploader(shotlist)
                 log.debug(f"Imgur urls: {imgur_urls}")
                 return imgur_urls
+
+
+if __name__ == "__main__":
+    
+    # Run python -m Utils.thumb_maker
+    path = ""
+    name = "teste"
+
+    Thumbmaker().get_thumb_upload(path, name)

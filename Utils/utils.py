@@ -95,9 +95,7 @@ class MakeRequest:
             try:
                 response.raise_for_status()
                 if response.status_code == 200:
-                    log.info(
-                        f"Requisição <<{method}>> realizada com sucesso, status code: {response.status_code}"
-                    )
+                    log.info(f"Requisição <<{method}>> realizada com sucesso, status code: {response.status_code}")
                     return response
                 else:
                     continue
@@ -197,10 +195,11 @@ async def make_request(session, url):
 
 
 def image_uploader(filelist):
-    imgur_url = "https://api.imgur.com/3/image"
+
+    imgur_url = "https://api.imgur.com/3/upload"
     imgur_headers = {"Authorization": f"Bearer {IMGUR_BEARER}"}
     cyberdrop_upload_url = "https://cyberdrop.me/api/upload"
-    cyberdrop_header = {"token": f"{CYBERDROP_TOKEN}", "albumid": "90539"}
+    cyberdrop_header = {"token": f"{CYBERDROP_TOKEN}", "albumid": "90539", "Content-Type": "multipart/form-data"}
     total_file_number = len(filelist)
     file_index = 1
     upload = MakeRequest()
@@ -209,10 +208,13 @@ def image_uploader(filelist):
     for file in filelist:
         log.info(f"Enviando imagem {file_index} de {total_file_number} : {file}")
         file_index = file_index + 1
-        files = {"image": convert_to_b64(file), "album": "0S5j3ML"}
-        url = upload.request(
-            "POST", imgur_url, headers=imgur_headers, data=files
-        ).json()["data"]["link"]
+        # file_64 = convert_to_b64(file)
+        data = {
+            "image": convert_to_b64(file),
+            "type": "base64",
+            "album": "uZGNuSu",
+        }
+        url = upload.request("POST", imgur_url, headers=imgur_headers, data=data).json()["data"]["link"]
         log.debug(f"URL: {url}")
         success = url
         if success:
@@ -220,10 +222,10 @@ def image_uploader(filelist):
             url_list.append(url)
         else:
             # fallback to cyberdrop
+            # files = {"files[]": convert_to_b64(file)}
             files = {"files[]": open(file, "rb")}
-            url = upload.request(
-                "POST", cyberdrop_upload_url, headers=cyberdrop_header, files=files
-            ).json()["files"][0]["url"]
+            log.debug(f"Enviando: {files}")
+            url = upload.request("POST", cyberdrop_upload_url, headers=cyberdrop_header, files=files).json()["files"][0]["url"]
             log.debug(f"URL: {url}")
             success = url
             if success:
@@ -237,31 +239,7 @@ def convert_to_b64(file):
     Convert file to base64
     """
     with open(file, "rb") as img:
-        return base64.b64encode(img.read())
-
-
-def imgur(file):
-    """
-    recebe um arquivo e retorna um link para o imgur
-
-    try:
-        with open(file, "rb") as img:
-            img_b64 = base64.b64encode(img.read())
-    except Exception as file_exception:
-        print(file_exception)
-        sys.exit(1)
-    """
-
-    headers = {"Authorization": f"Client-ID {IMGUR_CLIENT_ID}"}
-    data = {"image": convert_to_b64(file)}
-    imgur = "https://api.imgur.com/3/image"
-    try:
-        # ["data"]["link"]
-        return json.loads(
-            requests.request("POST", imgur, headers=headers, data=data).text
-        )["data"]["link"]
-    except Exception as err:
-        return {"success": False, "error": f"{err}"}
+        return base64.b64encode(img.read()).decode("utf-8")
 
 
 def write_ids(req, filename):
@@ -338,11 +316,7 @@ def slugify(value, allow_unicode=False):
     if allow_unicode:
         value = unicodedata.normalize("NFKC", value)
     else:
-        value = (
-            unicodedata.normalize("NFKD", value)
-            .encode("ascii", "ignore")
-            .decode("ascii")
-        )
+        value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii")
     value = re.sub(r"[^\w\s-]", "", value.lower())
     return re.sub(r"[-\s]+", "-", value).strip("-_")
 
@@ -355,9 +329,7 @@ def truncate_string(value, max_length=238, suffix="..."):
         suffix: string to append to the end of truncated string.
     """
     string_value = str(value)
-    string_truncated = string_value[
-        : min(len(string_value), (max_length - len(suffix)))
-    ]
+    string_truncated = string_value[: min(len(string_value), (max_length - len(suffix)))]
     suffix = suffix if len(string_value) > max_length else ""
     return string_truncated + suffix
 
@@ -427,9 +399,7 @@ def list_to_int(value):
 def get_video_duration(input):
     """Get the duration of a video using ffprobe."""
     cmd = f'ffprobe -i {input} -show_entries format=duration -v quiet -of csv="p=0"'
-    output = subprocess.check_output(
-        cmd, shell=True, stderr=subprocess.STDOUT
-    )  # Let this run in the shell
+    output = subprocess.check_output(cmd, shell=True, stderr=subprocess.STDOUT)  # Let this run in the shell
     # return round(float(output))  # ugly, but rounds your seconds up or down
     return float(output)
 
@@ -446,8 +416,4 @@ def get_files_in_path_without_extension(path):
     """
     Get files in path without extension
     """
-    return [
-        f.split(".")[0]
-        for f in os.listdir(path)
-        if os.path.isfile(os.path.join(path, f))
-    ]
+    return [f.split(".")[0] for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
