@@ -35,7 +35,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -84,6 +84,11 @@ jobs:
         run: python -m poetry run python -m black .
 
       - name: Run main.py
+        run: |
+          poetry run python main.py
+
+      - name: Run if Failed
+        if: steps.build.status == 'failed'
         run: |
           poetry run python main.py
 
