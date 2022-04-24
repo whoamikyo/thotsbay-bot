@@ -86,10 +86,10 @@ jobs:
       - name: Run main.py
         id: main
         run: |
-          exit 1
+          poetry run python main.py
         continue-on-error: true
 
-      - name: Run if exit code 1
+      - name: Run if failed
         if: steps.main.outcome != 'success'
         run: |
           poetry run python main.py
