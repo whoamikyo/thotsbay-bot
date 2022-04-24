@@ -84,11 +84,12 @@ jobs:
         run: python -m poetry run python -m black .
 
       - name: Run main.py
+        id: main
         run: |
           exit 1
 
       - name: Run if exit code 1
-        if: steps.build.exit_code == 1
+        if: steps.main.exit_code == 1
         run: |
           poetry run python main.py
 
