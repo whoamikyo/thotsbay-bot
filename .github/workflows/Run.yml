@@ -85,12 +85,28 @@ jobs:
 
       - name: Run main.py
         run: |
-          poetry run python main.py
+          exit 1
 
-      - name: Run if Failed
-        if: steps.build.status == 'failed'
+      - name: Run if exit code 1
+        if: steps.build.exit_code == 1
         run: |
           poetry run python main.py
+
+      # - name: JobA
+      #   id: seedBuild
+      #   run: |
+      #         echo "failing on purpose"
+      #         exit 1
+
+      # - name: JobB
+      #   id: allJobs
+      #   run: |
+      #         echo "::set-output name=exit_code::$(echo -n "$?")"
+
+      # - name: Debug Job Failure
+      #   run: |
+      #         echo "******** Job Logs from ********"
+      #   if: ${{ always() && (steps.seedBuild.outcome == 'failure' || steps.allJobs.outcome == 'failure') }}
 
       - name: 🚀 Deploy changes
         run: |
