@@ -178,7 +178,8 @@ def msg(lista_urls: list, folder_link: str, lista_nomes: list):
     {0}
     [HEADING=1][CENTER][COLOR=#2e6c80][COLOR=#ff6600]Link para a pasta: [URL='{folder_link}'][COLOR=#ff6600]Clicka aqui[/COLOR][/URL][/COLOR][/COLOR][/CENTER][/HEADING]
     [CENTER][SPOILER="Senha"][CODE]https://forum.thotsbay.com[/CODE][/SPOILER][/CENTER]
-    [HEADING=2][CENTER][COLOR=#ff6600]Obs: A senha é o endereço do thotsbay mesmo.[/COLOR][/CENTER][/HEADING]
+    [HEADING=2][CENTER][COLOR=#ff6600]Obs: A senha é o endereço do thotsbay mesmo e está CORRETA!!![/COLOR][/CENTER][/HEADING]
+    [HEADING=2][CENTER][COLOR=#ff6600]Obs: Caso a senha acima não funcione, tente digitá-la MANUALMENTE ao invés de copiar/colar.[/COLOR][/CENTER][/HEADING]
     [HEADING=2][CENTER][URL='https://github.com/whoamikyo/thotsbay-bot']Powered by: thotsbay-bot[/URL][/CENTER][COLOR=#2e6c80][/COLOR][/HEADING]
     [TABLE]
     [TR]
