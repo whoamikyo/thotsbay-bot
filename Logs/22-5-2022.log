@@ -716,3 +716,238 @@
 2022-05-22 08:08:17,372 - __main__ - INFO - Salvando ID's da API localmente....
 2022-05-22 08:08:17,800 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
 2022-05-22 08:08:18,394 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:35,154 - Utils.utils - INFO - Ambiente de produção ativado
+2022-05-22 12:10:35,783 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:35,822 - __main__ - INFO - Checando thotsbay forum...
+2022-05-22 12:10:35,822 - Utils.thotshub - INFO - Autorizando...
+2022-05-22 12:10:36,377 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:37,403 - Utils.utils - INFO - Requisição <<POST>> realizada com sucesso, status code: 200
+2022-05-22 12:10:37,405 - Utils.thotshub - INFO - Autorizado
+2022-05-22 12:10:37,405 - Utils.thotshub - INFO - Logado no thotsbay com sucesso.
+2022-05-22 12:10:37,405 - __main__ - INFO - Checando colab...
+2022-05-22 12:10:37,405 - Utils.utils - INFO - COLAB enviorement not detected
+2022-05-22 12:10:37,406 - __main__ - INFO - Checando config...
+2022-05-22 12:10:38,023 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:39,024 - __main__ - INFO - Checando ids...
+2022-05-22 12:10:39,298 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:39,299 - thots.thots - WARNING - ---------------| Iniciando tarefa afroditehotwife, 1 de 17
+2022-05-22 12:10:39,299 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:10:40,002 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:40,003 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:10:40,244 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:40,247 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:10:40,478 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:40,696 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:40,919 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:41,143 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:41,387 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:41,618 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:41,865 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:42,109 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:42,363 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:42,611 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:42,866 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:43,124 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:43,134 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:10:43,135 - thots.thots - WARNING - ---------------| afroditehotwife - Fim da lista de videos.
+2022-05-22 12:10:43,135 - thots.thots - WARNING - ---------------| Iniciando tarefa agathalira, 2 de 17
+2022-05-22 12:10:43,136 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:10:43,870 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:43,870 - thots.thot_parse - INFO - Primeiro padrão de regex definido com sucesso!
+2022-05-22 12:10:44,397 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:44,399 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:10:44,778 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:45,206 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:45,517 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:45,835 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:46,172 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:46,527 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:46,823 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:47,116 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:47,404 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:47,723 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:48,113 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:48,566 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:48,983 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:48,993 - thots.thot_parse - INFO - Foi encontrado um total de : -5 videos restantes.
+2022-05-22 12:10:48,994 - thots.thots - WARNING - ---------------| agathalira - Fim da lista de videos.
+2022-05-22 12:10:48,994 - thots.thots - WARNING - ---------------| Iniciando tarefa barbaracastroo, 3 de 17
+2022-05-22 12:10:48,994 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:10:49,552 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:49,553 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:10:49,923 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:49,924 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:10:50,365 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:50,366 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:10:50,366 - thots.thots - WARNING - ---------------| barbaracastroo - Fim da lista de videos.
+2022-05-22 12:10:50,366 - thots.thots - WARNING - ---------------| Iniciando tarefa bellacasada, 4 de 17
+2022-05-22 12:10:50,366 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:10:51,128 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:51,128 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:10:51,437 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:51,439 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:10:51,609 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:51,809 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:52,045 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:52,287 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:52,647 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:52,911 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:52,914 - thots.thot_parse - INFO - Foi encontrado um total de : -2 videos restantes.
+2022-05-22 12:10:52,914 - thots.thots - WARNING - ---------------| bellacasada - Fim da lista de videos.
+2022-05-22 12:10:52,915 - thots.thots - WARNING - ---------------| Iniciando tarefa casalruivaecornooficial, 5 de 17
+2022-05-22 12:10:52,915 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:10:53,162 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:53,163 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:10:53,393 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:53,395 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:10:53,622 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:53,853 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:54,080 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:54,272 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:54,509 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:54,826 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:54,829 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:10:54,829 - thots.thots - WARNING - ---------------| casalruivaecornooficial - Fim da lista de videos.
+2022-05-22 12:10:54,829 - thots.thots - WARNING - ---------------| Iniciando tarefa casaltopbessa, 6 de 17
+2022-05-22 12:10:54,829 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:10:55,213 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:55,214 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:10:55,592 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:55,594 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:10:55,867 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:56,099 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:56,100 - thots.thot_parse - INFO - Foi encontrado um total de : -2 videos restantes.
+2022-05-22 12:10:56,100 - thots.thots - WARNING - ---------------| casaltopbessa - Fim da lista de videos.
+2022-05-22 12:10:56,100 - thots.thots - WARNING - ---------------| Iniciando tarefa elaquer, 7 de 17
+2022-05-22 12:10:56,101 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:10:56,370 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:56,371 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:10:56,679 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:56,681 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:10:56,921 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:57,190 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:57,474 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:57,800 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:57,802 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:10:57,802 - thots.thots - WARNING - ---------------| elaquer - Fim da lista de videos.
+2022-05-22 12:10:57,802 - thots.thots - WARNING - ---------------| Iniciando tarefa emilysales, 8 de 17
+2022-05-22 12:10:57,802 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:10:58,001 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:58,002 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:10:58,226 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:58,228 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:10:58,481 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:58,745 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:58,974 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:59,284 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:59,542 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:10:59,544 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:10:59,544 - thots.thots - WARNING - ---------------| emilysales - Fim da lista de videos.
+2022-05-22 12:10:59,544 - thots.thots - WARNING - ---------------| Iniciando tarefa esposagulosinha, 9 de 17
+2022-05-22 12:10:59,544 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:11:00,041 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:00,042 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:11:00,429 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:00,432 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:11:00,610 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:00,874 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:01,050 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:01,278 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:01,586 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:01,833 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:02,096 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:02,271 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:02,275 - thots.thot_parse - INFO - Foi encontrado um total de : -2 videos restantes.
+2022-05-22 12:11:02,276 - thots.thots - WARNING - ---------------| esposagulosinha - Fim da lista de videos.
+2022-05-22 12:11:02,276 - thots.thots - WARNING - ---------------| Iniciando tarefa fabioeanaes, 10 de 17
+2022-05-22 12:11:02,276 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:11:02,839 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:02,840 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:11:03,017 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:03,020 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:11:03,200 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:03,400 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:03,599 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:03,777 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:03,953 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:04,132 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:04,134 - thots.thot_parse - INFO - Foi encontrado um total de : -1 videos restantes.
+2022-05-22 12:11:04,134 - thots.thots - WARNING - ---------------| fabioeanaes - Fim da lista de videos.
+2022-05-22 12:11:04,134 - thots.thots - WARNING - ---------------| Iniciando tarefa helenafilmes, 11 de 17
+2022-05-22 12:11:04,135 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:11:04,629 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:04,630 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:11:04,821 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:04,823 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:11:05,017 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:05,211 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:05,212 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:11:05,213 - thots.thots - WARNING - ---------------| helenafilmes - Fim da lista de videos.
+2022-05-22 12:11:05,213 - thots.thots - WARNING - ---------------| Iniciando tarefa lualencar11, 12 de 17
+2022-05-22 12:11:05,214 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:11:05,504 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:05,505 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:11:05,740 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:05,742 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:11:06,087 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:06,088 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:11:06,088 - thots.thots - WARNING - ---------------| lualencar11 - Fim da lista de videos.
+2022-05-22 12:11:06,089 - thots.thots - WARNING - ---------------| Iniciando tarefa melissadias, 13 de 17
+2022-05-22 12:11:06,089 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:11:06,378 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:06,379 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:11:06,650 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:06,652 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:11:06,899 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:07,132 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:07,288 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:07,446 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:07,623 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:07,787 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:07,946 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:07,949 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:11:07,950 - thots.thots - WARNING - ---------------| melissadias - Fim da lista de videos.
+2022-05-22 12:11:07,950 - thots.thots - WARNING - ---------------| Iniciando tarefa nicoleballs_trans, 14 de 17
+2022-05-22 12:11:07,950 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:11:08,117 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:08,118 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:11:08,320 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:08,321 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:11:08,484 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:08,710 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:08,711 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:11:08,711 - thots.thots - WARNING - ---------------| nicoleballs_trans - Fim da lista de videos.
+2022-05-22 12:11:08,711 - thots.thots - WARNING - ---------------| Iniciando tarefa nikkecasada, 15 de 17
+2022-05-22 12:11:08,711 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:11:09,059 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:09,060 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:11:09,228 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:09,231 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:11:09,424 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:09,661 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:09,905 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:10,148 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:10,426 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:10,428 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:11:10,428 - thots.thots - WARNING - ---------------| nikkecasada - Fim da lista de videos.
+2022-05-22 12:11:10,428 - thots.thots - WARNING - ---------------| Iniciando tarefa tatycasadinha, 16 de 17
+2022-05-22 12:11:10,746 - thots.thots - WARNING - ---------------| tatycasadinha - Fim da lista de videos.
+2022-05-22 12:11:10,747 - thots.thots - WARNING - ---------------| Iniciando tarefa vidasafada, 17 de 17
+2022-05-22 12:11:10,747 - thots.thot_parse - INFO - Definindo o padrão de regex...
+2022-05-22 12:11:11,168 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:11,168 - thots.thot_parse - INFO - Segundo padrão de regex definido com sucesso!
+2022-05-22 12:11:11,417 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:11,419 - thots.thot_parse - INFO - Usando método alternativo para encontrar a quantidade de videos.
+2022-05-22 12:11:11,673 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:11,910 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:12,136 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:12,375 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:12,587 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:12,815 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:13,058 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:13,061 - thots.thot_parse - INFO - Foi encontrado um total de : 0 videos restantes.
+2022-05-22 12:11:13,061 - thots.thots - WARNING - ---------------| vidasafada - Fim da lista de videos.
+2022-05-22 12:11:13,061 - __main__ - INFO - Fazendo backup dos IDs na API backup...
+2022-05-22 12:11:13,062 - __main__ - INFO - Salvando ID's da API localmente....
+2022-05-22 12:11:13,401 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
+2022-05-22 12:11:13,998 - Utils.utils - INFO - Requisição <<GET>> realizada com sucesso, status code: 200
