@@ -26,6 +26,8 @@ from Utils.utils import (
     regexName_Album,
     slugify,
     truncate_string,
+    find_duplicates,
+    remove_duplicates
 )
 
 log = get_logger(__name__)
@@ -48,14 +50,21 @@ def thot_parse(thot, config, id_config, get_category):
 
     url = config[thot]["url"]
     id_list = id_config[f"{thot}ID"]
+    log.debug(f"ID list length: {len(id_list)}")
     categoria = config[thot]["categoria"]
+    duplicates = find_duplicates(id_list)
+    if duplicates:
+        log.debug(f"Duplicates in ID_LIST: {duplicates}")
+        log.debug(f"ID list lenght without duplicates: {len(id_list)}")
+        id_list = remove_duplicates(id_list)
+        log.debug(f"ID list: {id_list}")
+        log.debug(f"ID list lenght after remove duplicates: {len(id_list)}")
     # if get_category:
     #     categorias = re.findall(regexGetCategory, request_html(url=url + "videos/", mode="GET"), re.MULTILINE | re.IGNORECASE)
     #     path_list = [download_path + thot + "/" + categorias[i] + "/" for i in range(len(categorias))]
     #     url_list = [f"{url}videos/{categorias[i]}/" for i in range(len(categorias))]
     #     get_range = get_list_from_nested([re.findall(RegexRange, request_html(url=url_list[i], mode="GET")) for i in range(len(url_list))])
     #     print(get_range)
-
     pattern = r"title=\""
     log.info("Definindo o padrão de regex...")
     if (
