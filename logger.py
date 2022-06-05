@@ -90,7 +90,8 @@ def get_file_handler():
 
 def get_logger(logger_name):
     logger = logging.getLogger(logger_name)
-    if sys.platform.startswith("win"):
+    DEBUG = False
+    if DEBUG:
         logger.setLevel(logging.DEBUG)  # better to have too much log than not enough
     else:
         logger.setLevel(logging.INFO)
