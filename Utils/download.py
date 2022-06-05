@@ -13,6 +13,7 @@ import Utils.thotshub as thotsbay
 from logger import get_logger
 from Utils.thumb_maker import Thumbmaker
 from Utils.utils import (
+    CONFIG_READ,
     CONFIG_WRITE,
     ID_CONFIG_READ,
     ID_CONFIG_WRITE,
@@ -161,6 +162,12 @@ def download_upload(
                 )
                 api.request(
                     "PUT", CONFIG_WRITE, headers=headers, data=latest_post_payload
+                )
+                api.request(
+                    "PUT",
+                    CONFIG_READ,
+                    json=api.request("GET", CONFIG_WRITE).json(),
+                    headers=headers,
                 )
                 # Pruning temporary files
                 # clean_tmp(path)
