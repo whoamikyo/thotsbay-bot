@@ -275,9 +275,15 @@ def get_ids_from_json(file_path):
         return ids
 
 
-def find_duplicates(list_of_strings):
+def find_duplicates(lista):
     """Acha valores duplicados em uma lista"""
-    return list(set([x for x in list_of_strings if list_of_strings.count(x) > 1]))
+    return list(set([x for x in lista if lista.count(x) > 1]))
+
+
+def remove_duplicates(lista):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in lista if not (x in seen or seen_add(x))]
 
 
 def delete_file(filename):
